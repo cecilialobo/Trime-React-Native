@@ -1,30 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 
+
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-import Home from './assets/pages/lading'
-import SignUp1 from './assets/pages/SignUp1'
-import SignUp2 from './assets/pages/SignUp2'
-import SignUp3 from './assets/pages/SignUp3'
 
-export default function App() {
+export default function Home() {
 
+    console.log("Landing page");
+ 
+    const signUp = () => {
+      console.log('sign up');
+    };
+  
+    const logIn = () => {
+      console.log('log in');
+    };
 
-  return (
-    <>
-    <NativeRouter>
-    <SafeAreaView style={styles.container}>
-      <Route exact path="/" component={Home} />
-      <Route path="/sign-up-1" component={SignUp1} />
-      <Route path="/sign-up-2" component={SignUp2} />
-      <Route path="/sign-up-3" component={SignUp3} />
-    </SafeAreaView>
-  </NativeRouter>
-  </>
-  );
-}
+    return (
+      <View style={styles.container}>
+        <Image source={require('../images/Trime-main.png')} style={styles.logo} />
+          
+        <View style={styles.buttonContainer}>
+          <TouchableHighlight style={[styles.button, styles.signUpBtn]} onPress={signUp}>
+            <Link to="/sign-up-1"><Text style={styles.buttonText}>Sign Up</Text></Link>
+          </TouchableHighlight>
+          <TouchableHighlight style={[styles.button, styles.logInBtn]} onPress={logIn}><Text style={styles.buttonText}>Log In</Text></TouchableHighlight>
+        </View>
+      </View>
+    )
+  }
+ 
 
 const styles = StyleSheet.create({
   container: {

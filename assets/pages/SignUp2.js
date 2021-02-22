@@ -1,37 +1,37 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 
+
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-import Home from './assets/pages/lading'
-import SignUp1 from './assets/pages/SignUp1'
-import SignUp2 from './assets/pages/SignUp2'
-import SignUp3 from './assets/pages/SignUp3'
 
-export default function App() {
-
-
-  return (
-    <>
-    <NativeRouter>
-    <SafeAreaView style={styles.container}>
-      <Route exact path="/" component={Home} />
-      <Route path="/sign-up-1" component={SignUp1} />
-      <Route path="/sign-up-2" component={SignUp2} />
-      <Route path="/sign-up-3" component={SignUp3} />
-    </SafeAreaView>
-  </NativeRouter>
-  </>
-  );
-}
+export default function SignUp2() {
+    console.log('sign up 2')
+    return (
+      <View style={styles.container}>
+        {/* <Image source={require('../images/Trime-main.png')} style={styles.logo} /> */}
+   
+        <View style={styles.buttonContainer}>
+          
+            <TouchableHighlight style={[styles.button, styles.signUpBtn]}>
+                <Link to="/sign-up-3">
+                    <Text style={styles.buttonText}>Next</Text>
+                </Link>
+            </TouchableHighlight>
+          
+        </View>
+      </View>
+    )
+  }
+ 
 
 const styles = StyleSheet.create({
   container: {
     flex: 1, // takes up the entire screen
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal
-    justifyContent: 'space-between', 
+    justifyContent: 'flex-end', 
   },
   logo: {
     marginTop: 125
