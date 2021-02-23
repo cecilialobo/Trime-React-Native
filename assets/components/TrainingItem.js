@@ -1,15 +1,11 @@
-
 import React, { useState } from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-import Boxing from '../images/training-icons/Boxing.svg'
 
 export default function trainingItem ( { id, icon, type, selectedTypes, setSelectedTypes } ) {
 
     const [bgColor, setBgColor] = useState('#05668D');
-    console.log(selectedTypes)
     
+
     const selectTrainingType = () => {
         bgColor == '#05668D' ? setBgColor('#0BD8A7') : setBgColor('#05668D');
 
@@ -21,7 +17,6 @@ export default function trainingItem ( { id, icon, type, selectedTypes, setSelec
                 type
             ])
         }
-        
       }
 
     return (

@@ -39,7 +39,7 @@ export default function SignUp3() {
         </View>
         <SelectTrainingType />
 
-        <BigButton BGColor='#0BD8A7' linkTo='/' text='Continue' />
+        <BigButton BGColor='#0BD8A7' linkTo='/feed' text='Continue' />
         
       </View>
     )

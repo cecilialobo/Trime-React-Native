@@ -73,6 +73,7 @@ export default function SelectTrainingType() {
       }
     ];
 
+    console.log('selected: ' + selectedTypes)
 
     return (
       <View style={styles.container}>
@@ -80,6 +81,7 @@ export default function SelectTrainingType() {
             return(
               <TrainingItem id={item.key} icon={item.icon} type={item.type} 
                 selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
+                
               // <TouchableHighlight key={item.key} style={styles.trainingItem} onPress={selectTrainingType}>
               //   <>
               //   <View style={styles.trainingIcon}>

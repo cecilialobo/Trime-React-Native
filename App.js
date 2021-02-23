@@ -8,6 +8,7 @@ import Home from './assets/pages/lading'
 import SignUp1 from './assets/pages/SignUp1'
 import SignUp2 from './assets/pages/SignUp2'
 import SignUp3 from './assets/pages/SignUp3'
+import Feed from './assets/pages/feed'
 
 export default function App() {
 
@@ -20,6 +21,7 @@ export default function App() {
       <Route path="/sign-up-1" component={SignUp1} />
       <Route path="/sign-up-2" component={SignUp2} />
       <Route path="/sign-up-3" component={SignUp3} />
+      <Route path="/feed" component={Feed} />
     </SafeAreaView>
   </NativeRouter>
   </>
