@@ -38,9 +38,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal 
   },
-  logo: {
-    marginTop: 125
-  },
   buttonContainer: {
     flex: 1,
     paddingBottom: 125,

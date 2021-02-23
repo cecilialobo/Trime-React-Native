@@ -13,7 +13,6 @@ export default function SignUp2() {
     console.log('sign up 2')
     return (
       <View style={styles.container}>
-        {/* <LogoSignUp style={styles.logo}/> */}
         <SmallLogo />
    
         <View style={styles.buttonContainer}>
@@ -34,9 +33,6 @@ const styles = StyleSheet.create({
     flex: 1, // takes up the entire screen
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal 
-  },
-  logo: {
-    marginTop: 125
   },
   buttonContainer: {
     flex: 1,
