@@ -5,6 +5,7 @@ import { TextInput, SectionList } from 'react-native';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
+import LogoSignUp  from '../images/logo-sign-up.svg';
 import SelectTrainingType from '../components/SelectTrainingType'
 
 export default function SignUp3() {
@@ -15,9 +16,8 @@ export default function SignUp3() {
 
 
     return (
-      <View style={styles.container}>
-        {/* <Image source={require('../images/Trime-main.png')} style={styles.logo} /> */}
-        <Image source={require('../images/Trime.png')} style={styles.logo} />
+      <View style={styles.container}>        
+        <LogoSignUp style={styles.logo}/>
 
         <Text>Time to set up your profile</Text>
         <Text>Profile Picture:</Text>
@@ -51,8 +51,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // takes up the entire screen
     backgroundColor: '#082D4C',
-    alignItems: 'center', //horizontal
-    justifyContent: 'flex-end', 
+    alignItems: 'center', //horizontal 
   },
   logo: {
     marginTop: 125
@@ -67,7 +66,9 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
   },
   buttonContainer: {
+    flex: 1,
     paddingBottom: 125,
+    justifyContent: 'flex-end',
   },
   button: {
     alignItems: 'center', //horizontal
