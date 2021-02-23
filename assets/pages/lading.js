@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
-
+import LogoLanding  from '../images/logo-landing.svg';
 
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
@@ -20,7 +20,7 @@ export default function Home() {
 
     return (
       <View style={styles.container}>
-        <Image source={require('../images/Trime-main.png')} style={styles.logo} />
+        <LogoLanding style={styles.logo}/>
           
         <View style={styles.buttonContainer}>
           <TouchableHighlight style={[styles.button, styles.signUpBtn]} onPress={signUp}>
