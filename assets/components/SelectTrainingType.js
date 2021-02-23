@@ -2,8 +2,6 @@
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 import { TextInput, SectionList, VirtualizedList } from 'react-native';
-
-
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
@@ -81,7 +79,7 @@ export default function SelectTrainingType() {
     ];
 
     const selectTrainingType = (e) => {
-      console.log(e.key)
+      console.log(e.type)
     }
 
     return (
@@ -93,7 +91,7 @@ export default function SelectTrainingType() {
                 <View style={styles.trainingIcon}>
                   <Image source={item.icon}  />
                 </View>
-                <Text>{item.type}</Text>
+                <Text style={styles.whiteText}>{item.type}</Text>
                 </>
               </TouchableHighlight>
             )
@@ -123,6 +121,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     alignItems: 'flex-start', //horizontal
     justifyContent: "space-evenly", 
+  },
+  whiteText: {
+    color: 'white'
   },
   trainingItem: {
     alignItems: 'center',

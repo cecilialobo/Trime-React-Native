@@ -1,65 +1,47 @@
 
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
-
-
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-export default function Home() {
-
-    console.log("Landing page");
- 
-    const signUp = () => {
-      console.log('sign up');
-    };
-  
-    const logIn = () => {
-      console.log('log in');
-    };
+export default function BigButton ( { BGColor, text, linkTo } ) {
 
     return (
         <View style={styles.buttonContainer}>
-          <TouchableHighlight style={[styles.button, styles.signUpBtn]} onPress={signUp}>
-            <Link to="/sign-up-1"><Text style={styles.buttonText}>Sign Up</Text></Link>
-          </TouchableHighlight>
-          <TouchableHighlight style={[styles.button, styles.logInBtn]} onPress={logIn}><Text style={styles.buttonText}>Log In</Text></TouchableHighlight>
+          
+            <TouchableHighlight style={[styles.button, {backgroundColor: BGColor}]}>
+              <Link to={linkTo}>
+                <Text style={styles.buttonText}>{text}</Text>
+              </Link>
+            </TouchableHighlight>
+          
         </View>
     )
   }
  
 
 const styles = StyleSheet.create({
-  buttonContainer: {
-
-    flex: 1, // takes up the entire screen
-    backgroundColor: '#082D4C',
-    alignItems: 'center', //horizontal
-    justifyContent: 'space-between', 
-    paddingBottom: 125,
-  },
-  button: {
-    alignItems: 'center', //horizontal
-    justifyContent: 'center', 
-
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    margin: 10,
-
-    borderRadius: 40,
-
-    width: 260,
-    height: 73,
-  },
-  buttonText: {
-    fontSize: 30,
-    color: "white",
-  },
-  signUpBtn: {
-    backgroundColor: '#0BD8A7',
-  },
-  logInBtn: {
-    backgroundColor: '#05668D',
-  }
-
+    buttonContainer: {
+        flex: 1,
+        paddingBottom: 93,
+        justifyContent: 'flex-end',
+      },
+      button: {
+        alignItems: 'center', //horizontal
+        justifyContent: 'center', 
+    
+        paddingVertical: 15,
+        paddingHorizontal: 40,
+        margin: 10,
+    
+        borderRadius: 40,
+    
+        width: 260,
+        height: 73,
+      },
+      buttonText: {
+        flex: 1,
+        fontSize: 30,
+        color: "white",
+      }
 });

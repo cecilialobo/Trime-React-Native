@@ -8,6 +8,7 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import LogoSignUp  from '../images/logo-sign-up.svg';
 import SelectTrainingType from '../components/SelectTrainingType'
 import SmallLogo from '../components/SmallLogo'
+import BigButton from '../components/BigButton'
 
 export default function SignUp3() {
 
@@ -27,7 +28,7 @@ export default function SignUp3() {
         <Image source={require('../images/profile-image.png')} style={styles.logo} />
 
         <View>
-            <Text  style={[styles.whiteText, {fontSize: '16'}]}>Description: </Text>
+            <Text  style={[styles.whiteText, {fontSize: 16}]}>Description: </Text>
             <TextInput
                 style={styles.textInput}
                 onChangeText={text => onChangeText(text)}
@@ -39,15 +40,8 @@ export default function SignUp3() {
         <Text>What type of training do you do?</Text>
         <SelectTrainingType />
 
-        <View style={styles.buttonContainer}>
-          
-            <TouchableHighlight style={[styles.button, styles.signUpBtn]}>
-              <Link to="/">
-                <Text style={styles.buttonText}>Next</Text>
-              </Link>
-            </TouchableHighlight>
-          
-        </View>
+        <BigButton BGColor='#0BD8A7' linkTo='/' text='Continue' />
+        
       </View>
     )
   }
@@ -73,35 +67,5 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 10,
       backgroundColor: 'white',
-  },
-  buttonContainer: {
-    flex: 1,
-    paddingBottom: 125,
-    justifyContent: 'flex-end',
-  },
-  button: {
-    alignItems: 'center', //horizontal
-    justifyContent: 'center', 
-
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    margin: 10,
-
-    borderRadius: 40,
-
-    width: 260,
-    height: 73,
-  },
-  buttonText: {
-    flex: 1,
-    fontSize: 30,
-    color: "white",
-  },
-  signUpBtn: {
-    backgroundColor: '#0BD8A7',
-  },
-  logInBtn: {
-    backgroundColor: '#05668D',
   }
-
 });
