@@ -78,7 +78,7 @@ export default function SelectTrainingType() {
       <View style={styles.container}>
         { TRAININGTYPES.map(item => {
             return(
-              <TrainingItem key={item.key} icon={item.icon} type={item.type} 
+              <TrainingItem id={item.key} icon={item.icon} type={item.type} 
                 selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
               // <TouchableHighlight key={item.key} style={styles.trainingItem} onPress={selectTrainingType}>
               //   <>

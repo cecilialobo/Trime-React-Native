@@ -5,24 +5,29 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 import Boxing from '../images/training-icons/Boxing.svg'
 
-export default function trainingItem ( { key, icon, type, selectedTypes, setSelectedTypes } ) {
+export default function trainingItem ( { id, icon, type, selectedTypes, setSelectedTypes } ) {
 
     const [bgColor, setBgColor] = useState('#05668D');
-
+    console.log(selectedTypes)
+    
     const selectTrainingType = () => {
         bgColor == '#05668D' ? setBgColor('#0BD8A7') : setBgColor('#05668D');
-        setSelectedTypes([
-            ...selectedTypes,
-            type
-        ])
-        console.log(selectedTypes)
+
+        if (selectedTypes.includes(type)){
+            setSelectedTypes(selectedTypes.filter(el => el !== type))
+        } else {
+            setSelectedTypes([
+                ...selectedTypes,
+                type
+            ])
+        }
+        
       }
 
     return (
-        <TouchableHighlight key={key} style={styles.trainingItem} onPress={selectTrainingType}>
+        <TouchableHighlight key={id} style={styles.trainingItem} onPress={selectTrainingType}>
             <>
                 <View style={[styles.trainingIcon, {backgroundColor: bgColor}]}>
-                    {/* <Image source={icon}  /> */}
                     {icon}
                 </View>
                 <Text style={styles.whiteText}>{type}</Text>
