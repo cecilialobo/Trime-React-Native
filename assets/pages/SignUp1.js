@@ -1,9 +1,6 @@
 
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
-
-
-
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 

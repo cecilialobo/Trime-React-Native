@@ -1,110 +1,96 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 import { TextInput, SectionList, VirtualizedList } from 'react-native';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
+import TrainingItem from './TrainingItem'
+import Boxing from '../images/training-icons/Boxing.svg'
+import Running from '../images/training-icons/Running.svg'
+import Crossfit from '../images/training-icons/Crossfit.svg'
+import Cycling from '../images/training-icons/Cycling.svg'
+import Diet from '../images/training-icons/Diet.svg'
+import Gym from '../images/training-icons/Gym.svg'
+import Swimming from '../images/training-icons/Swimming.svg'
+import Yoga from '../images/training-icons/Yoga.svg'
+import Golf from '../images/training-icons/Golf.svg'
+import Tennis from '../images/training-icons/Tennis.svg'
+
 export default function SelectTrainingType() {
-
-    console.log('select training list')
-
-    // const getItem = (data, type) => ({
-    //   id: Math.random().toString(10).substring(0),
-    //   type: data[item].type,
-    //   icon: data[item].icon
-    // });
-
-    // const getItemCount = (data) => 10;
-
-    // const Item = ({ type, icon }) => (
-    //   <View style={styles.item}>
-    //     {/* <Image source={require('../images/training-icons/running.png')} style={styles.logo} /> */}
-    //     <Text style={styles.title}>{type}</Text>
-    //   </View>
-    // );
-
+    const [ selectedTypes, setSelectedTypes ] = useState([]);
 
     const TRAININGTYPES = [
       {
         key: 1,
         type: "Running",
-        icon: require('../images/training-icons/running.png')
+        icon: <Running />
       },
       {
         key: 2,
         type: "Swimming",
-        icon: require('../images/training-icons/running.png')
+        icon: <Swimming />
       },
       {
         key: 3,
         type: "Gym",
-        icon: require('../images/training-icons/running.png')
+        icon: <Gym />
       },
       {
         key: 4,
         type: "Boxing",
-        icon: require('../images/training-icons/running.png')
+        icon: <Boxing />
       },
       {
         key: 5,
         type: "Golf",
-        icon: require('../images/training-icons/running.png')
+        icon: <Golf />
       },
       {
         key: 6,
         type: "Yoga",
-        icon: require('../images/training-icons/running.png')
+        icon: <Yoga />
       },
       {
         key: 7,
         type: "Cycling",
-        icon: require('../images/training-icons/running.png')
+        icon: <Cycling />
       },
       {
         key: 8,
         type: "Diet",
-        icon: require('../images/training-icons/running.png')
+        icon: <Diet />
       },
       {
         key: 9,
         type: "Crossfit",
-        icon: require('../images/training-icons/running.png')
+        icon: <Crossfit />
       },
       {
         key: 10,
         type: "Tennis",
-        icon: require('../images/training-icons/running.png')
+        icon: <Tennis />
       }
     ];
 
-    const selectTrainingType = (e) => {
-      console.log(e.type)
-    }
 
     return (
       <View style={styles.container}>
         { TRAININGTYPES.map(item => {
             return(
-              <TouchableHighlight key={item.key} style={styles.trainingItem} onPress={selectTrainingType}>
-                <>
-                <View style={styles.trainingIcon}>
-                  <Image source={item.icon}  />
-                </View>
-                <Text style={styles.whiteText}>{item.type}</Text>
-                </>
-              </TouchableHighlight>
+              <TrainingItem key={item.key} icon={item.icon} type={item.type} 
+                selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
+              // <TouchableHighlight key={item.key} style={styles.trainingItem} onPress={selectTrainingType}>
+              //   <>
+              //   <View style={styles.trainingIcon}>
+              //     <Image source={item.icon}  />
+              //   </View>
+              //   <Text style={styles.whiteText}>{item.type}</Text>
+              //   </>
+              // </TouchableHighlight>
             )
           })
         }
-        {/* <VirtualizedList
-          data={TRAININGTYPES}
-          initialNumToRender={10}
-          renderItem={({ item }) => <Item title={item.type} icon={item.icon} />}
-          keyExtractor={item => item.key}
-          getItemCount={getItemCount}
-          getItem={getItem}
-      /> */}
       </View>
     )
   }

@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal
     justifyContent: 'space-between', 
+    overflow: 'scroll'
   },
   logo: {
     marginTop: 125

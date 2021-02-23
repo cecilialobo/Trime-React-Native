@@ -5,7 +5,6 @@ import { TextInput, SectionList } from 'react-native';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-import LogoSignUp  from '../images/logo-sign-up.svg';
 import SelectTrainingType from '../components/SelectTrainingType'
 import SmallLogo from '../components/SmallLogo'
 import BigButton from '../components/BigButton'
@@ -19,16 +18,15 @@ export default function SignUp3() {
 
     return (
       <View style={styles.container}>
-        
-        {/* <Image source={require('../images/Trime.png')} style={styles.logo} /> */}
+      
         <SmallLogo />
 
-        <Text style={[styles.whiteText, {fontSize: 16}]}>Time to set up your profile</Text>
-        <Text style={[styles.whiteText, {fontSize: 14}]}>Profile Picture:</Text>
-        <Image source={require('../images/profile-image.png')} style={styles.logo} />
+        <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
+        <Text style={[styles.whiteText, {fontSize: 14, marginTop: 14}]}>Profile Picture:</Text>
+        <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
 
         <View>
-            <Text  style={[styles.whiteText, {fontSize: 16}]}>Description: </Text>
+            <Text  style={[styles.whiteText, {fontSize: 14}]}>Description: </Text>
             <TextInput
                 style={styles.textInput}
                 onChangeText={text => onChangeText(text)}
@@ -36,8 +34,9 @@ export default function SignUp3() {
                 />
         </View>
 
-
-        <Text>What type of training do you do?</Text>
+        <View style={{width: 414, paddingHorizontal: 35, marginBottom: 10}}>
+        <Text style={[styles.whiteText, {textAlign: "left"}]}>What type of training do you do?</Text>
+        </View>
         <SelectTrainingType />
 
         <BigButton BGColor='#0BD8A7' linkTo='/' text='Continue' />
@@ -67,5 +66,6 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 10,
       backgroundColor: 'white',
+      marginBottom: 38
   }
 });
