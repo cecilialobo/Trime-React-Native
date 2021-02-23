@@ -1,40 +1,62 @@
-
 import React from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
+import { Link } from "react-router-native";
 
 import LogoSignUp  from '../images/logo-sign-up.svg';
+import SignUp2Input from '../components/SignUp2Input.js';
 
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight } from 'react-native';
 
 export default function SignUp2() {
-    console.log('sign up 2')
+    console.log('sign up 2');
+
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <LogoSignUp style={styles.logo}/>
-   
+        <Text style={styles.subtitle}>Time to set up your profile</Text>
+        
+        <View style={styles.inputBlock}>
+          <SignUp2Input label='Age:'/>
+          <SignUp2Input label='Height:'/>
+        </View>
+        <View style={styles.inputBlock}>
+          <SignUp2Input label='Gender:'/>
+          <SignUp2Input label='Weight:'/>
+        </View>
+
+        <Text>Level of training:</Text>
+
         <View style={styles.buttonContainer}>
-          
             <TouchableHighlight style={[styles.button, styles.signUpBtn]}>
                 <Link to="/sign-up-3">
                     <Text style={styles.buttonText}>Next</Text>
                 </Link>
             </TouchableHighlight>
-          
         </View>
-      </View>
+      </SafeAreaView>
     )
   }
  
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1, 
     backgroundColor: '#082D4C',
-    alignItems: 'center', //horizontal 
+    alignItems: 'center', 
   },
   logo: {
-    marginTop: 125
+    marginTop: 76,
+  },
+  subtitle: {
+    marginTop: 15,
+    color: '#fff',
+    fontSize: 16,
+  },
+  inputBlock: {
+    flex: 0.3,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    //backgroundColor: 'pink',
+    width: 335,
   },
   buttonContainer: {
     flex: 1,
