@@ -13,15 +13,15 @@ export default function PersonalFeed() {
           data: [
               { 
                 topic: "1", 
-                img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+                img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
               },
               { 
                 topic: "2", 
-                img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+                img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
               },
               { 
                 topic: "3", 
-                img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+                img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
               }
           ]
         },
@@ -30,15 +30,15 @@ export default function PersonalFeed() {
           data: [
             { 
               topic: "1", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             },
             { 
               topic: "2", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             },
             { 
               topic: "3", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             }
         ]
         },
@@ -47,15 +47,15 @@ export default function PersonalFeed() {
           data: [
             { 
               topic: "1", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             },
             { 
               topic: "2", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             },
             { 
               topic: "3", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             }
         ]
         },
@@ -64,15 +64,15 @@ export default function PersonalFeed() {
           data: [
             { 
               topic: "1", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             },
             { 
               topic: "2", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             },
             { 
               topic: "3", 
-              img: <Image source={require('../images/profile-image.png')} style={{margin: 4}} />
+              img: <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
             }
         ]
         }
@@ -92,6 +92,8 @@ const Item = ({ title, img }) => (
        <Text>Personal</Text>
         <SectionList
             // horizontal={true}
+            contentContainerStyle={{ paddingHorizontal: 10 }}
+            stickySectionHeadersEnabled={false}
             sections={DATA}
             keyExtractor={(item, index) => item + index}
             renderItem={({ item }) => <Item title={item.topic} img={item.img} />}

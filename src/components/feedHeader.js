@@ -5,7 +5,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 import SmallLogo from './SmallLogo'
-import LogoFeed  from '../images/logo-feed.svg';
+import LogoFeed  from '../../assets/images/logo-feed.svg';
 
 export default function FeedHeader( { personal, setPersonal, general, setGeneral } ) {
     

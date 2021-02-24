@@ -1,7 +1,9 @@
 
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
-import LogoLanding  from '../images/logo-landing.svg';
+
+import LogoLanding from '../../assets/images/logo-landing.svg'
+
 
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';

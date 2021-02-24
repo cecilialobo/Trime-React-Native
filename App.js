@@ -1,17 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
-
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-import Home from './assets/pages/lading'
-import SignUp1 from './assets/pages/SignUp1'
-import SignUp2 from './assets/pages/SignUp2'
-import SignUp3 from './assets/pages/SignUp3'
-import Feed from './assets/pages/feed'
+import Home from './src/pages/lading'
+import SignUp1 from './src/pages/SignUp1'
+import SignUp2 from './src/pages/SignUp2'
+import SignUp3 from './src/pages/SignUp3'
+import Feed from './src/pages/feed'
 
 export default function App() {
-
 
   return (
     <>

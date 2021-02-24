@@ -13,7 +13,6 @@ export default function Feed() {
 
     console.log('feed')
 
-    const [ active, setActive ] = useState('false');
     const [personal, setPersonal] = useState(true);
     const [general, setGeneral] = useState(false);
 
@@ -25,7 +24,7 @@ export default function Feed() {
           { personal && <PersonalFeed /> }
           { general && <GeneralFeed /> }
 
-       <FooterMenu active={true} />  
+       <FooterMenu active={'Home'} />  
     
       </View>
     )

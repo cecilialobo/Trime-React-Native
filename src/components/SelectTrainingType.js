@@ -3,16 +3,16 @@ import React, { useState } from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import TrainingItem from './TrainingItem'
-import Boxing from '../images/training-icons/Boxing.svg'
-import Running from '../images/training-icons/Running.svg'
-import Crossfit from '../images/training-icons/Crossfit.svg'
-import Cycling from '../images/training-icons/Cycling.svg'
-import Diet from '../images/training-icons/Diet.svg'
-import Gym from '../images/training-icons/Gym.svg'
-import Swimming from '../images/training-icons/Swimming.svg'
-import Yoga from '../images/training-icons/Yoga.svg'
-import Golf from '../images/training-icons/Golf.svg'
-import Tennis from '../images/training-icons/Tennis.svg'
+import Boxing from '../../assets/images/training-icons/Boxing.svg'
+import Running from '../../assets/images/training-icons/Running.svg'
+import Crossfit from '../../assets/images/training-icons/Crossfit.svg'
+import Cycling from '../../assets/images/training-icons/Cycling.svg'
+import Diet from '../../assets/images/training-icons/Diet.svg'
+import Gym from '../../assets/images/training-icons/Gym.svg'
+import Swimming from '../../assets/images/training-icons/Swimming.svg'
+import Yoga from '../../assets/images/training-icons/Yoga.svg'
+import Golf from '../../assets/images/training-icons/Golf.svg'
+import Tennis from '../../assets/images/training-icons/Tennis.svg'
 
 export default function SelectTrainingType() {
     const [ selectedTypes, setSelectedTypes ] = useState([]);
