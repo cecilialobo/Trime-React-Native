@@ -8,7 +8,7 @@ export default function SignUp1Input ( { label } ) {
         <View style={styles.inputContainer}>
             <Text style={styles.label}>{label}</Text>
             <TextInput
-            style={{ height: 44, width: 353, backgroundColor: '#fff', borderRadius: 8 }}
+            style={{ height: 35, width: 340, backgroundColor: '#fff', borderRadius: 8 }}
             onChangeText={text => onChangeText(text)}
             value={value}
             />
@@ -21,11 +21,11 @@ const styles = StyleSheet.create({
         marginTop: 16,
         flex: 1,
         flexDirection: 'column',
-        padding: 30,
+        padding: 20,
     },
     label: {
         color: '#fff',
-        fontSize: 14,
+        fontSize: 13,
         padding: 4,
     }
 })
