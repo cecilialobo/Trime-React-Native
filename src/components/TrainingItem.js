@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
 
 export default function trainingItem ( { id, icon, type, selectedTypes, setSelectedTypes } ) {
 
@@ -20,14 +20,14 @@ export default function trainingItem ( { id, icon, type, selectedTypes, setSelec
       }
 
     return (
-        <TouchableHighlight key={id} style={styles.trainingItem} onPress={selectTrainingType}>
+        <TouchableOpacity key={id} style={styles.trainingItem} onPress={selectTrainingType}>
             <>
                 <View style={[styles.trainingIcon, {backgroundColor: bgColor}]}>
                     {icon}
                 </View>
                 <Text style={styles.whiteText}>{type}</Text>
             </>
-        </TouchableHighlight>
+        </TouchableOpacity>
     )
   }
  

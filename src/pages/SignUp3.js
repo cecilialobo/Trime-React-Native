@@ -15,7 +15,6 @@ export default function SignUp3() {
 
      const [value, onChangeText] = React.useState('Who are you?');
 
-
     return (
       <View style={styles.container}>
       

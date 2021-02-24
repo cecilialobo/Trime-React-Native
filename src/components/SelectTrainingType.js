@@ -1,9 +1,6 @@
 
 import React, { useState } from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { TextInput, SectionList, VirtualizedList } from 'react-native';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { StyleSheet, View } from 'react-native';
 
 import TrainingItem from './TrainingItem'
 import Boxing from '../images/training-icons/Boxing.svg'
@@ -80,16 +77,7 @@ export default function SelectTrainingType() {
         { TRAININGTYPES.map(item => {
             return(
               <TrainingItem id={item.key} icon={item.icon} type={item.type} 
-                selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
-                
-              // <TouchableHighlight key={item.key} style={styles.trainingItem} onPress={selectTrainingType}>
-              //   <>
-              //   <View style={styles.trainingIcon}>
-              //     <Image source={item.icon}  />
-              //   </View>
-              //   <Text style={styles.whiteText}>{item.type}</Text>
-              //   </>
-              // </TouchableHighlight>
+                            selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
             )
           })
         }
