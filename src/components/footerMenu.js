@@ -11,7 +11,6 @@ import Search from '../../assets/images/menu-icons/Search.svg'
 
 export default function FooterMenu( active ) {
 
-    console.log(active.active === "Home")
     return (
         <View style={styles.footer}>
             <Link to={'/feed'} underlayColor="#f0f4f7">

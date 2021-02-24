@@ -20,8 +20,6 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
         setPersonal(!personal)
     }
 
-    console.log(personal, general);
-
     return (
         <View style={styles.header}>
             <LogoFeed style={{marginBottom: 15}} />
@@ -30,10 +28,10 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
                     {
                         personal && 
                             <>
-                                <View style={[styles.btn, styles.selected, {left: 0}]}>
+                                <View style={[styles.btn, styles.selected, {right: 0}]}>
                                     <Text style={[styles.btnText, styles.selected]}>Personal</Text>
                                 </View>
-                                <TouchableOpacity onPress={selectGeneral} style={[styles.btn, {right: 0}]}>
+                                <TouchableOpacity onPress={selectGeneral} style={[styles.btn, {left: 0}]}>
                                     <Text style={[styles.btnText]}>General</Text>
                                 </TouchableOpacity>
                             </>
@@ -41,10 +39,10 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
                     {
                         general &&
                             <>
-                                <TouchableOpacity onPress={selectPersonal} style={[styles.btn, {left: 0}]}>
+                                <TouchableOpacity onPress={selectPersonal} style={[styles.btn, {right: 0}]}>
                                     <Text style={[styles.btnText, {backgroundColor: 'transparent'}]}>Personal</Text>
                                 </TouchableOpacity>
-                                <View style={[styles.btn, styles.selected, {right: 0}]}>
+                                <View style={[styles.btn, styles.selected, {left: 0}]}>
                                     <Text style={[styles.btnText, styles.selected]}>General</Text>
                                 </View>
                             </>
