@@ -6,12 +6,12 @@ export default function SignUp2Input ( { label } ) {
 
     return (
         <View style={styles.inputContainer}>
-        <Text style={styles.label}>{label}</Text>
-        <TextInput
-          style={{ height: 36, width: 83, backgroundColor: '#fff', borderRadius: 8 }}
-          onChangeText={text => onChangeText(text)}
-          value={value}
-        />
+            <Text style={styles.label}>{label}</Text>
+            <TextInput
+                style={{ height: 36, width: 83, backgroundColor: '#fff', borderRadius: 8 }}
+                onChangeText={text => onChangeText(text)}
+                value={value}
+            />
         </View>
     )
 }
@@ -26,6 +26,7 @@ const styles = StyleSheet.create({
     label: {
         color: '#fff',
         fontSize: 14,
+        height: 20,
         marginRight: 10,
     }
 })
