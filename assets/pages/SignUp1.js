@@ -1,22 +1,32 @@
 
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
+import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 import LogoSignUp  from '../images/logo-sign-up.svg';
+import SignUp1Input from '../components/SignUp1Input.js';
+import CircleButton from '../components/CircleButton.js';
 
-
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight } from 'react-native';
 
 export default function SignUp1() {
 
     console.log('sign up 1')
 
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
        <LogoSignUp style={styles.logo}/>
-          
-     
+        <Text style={styles.title}>What are you?</Text>
+        <View style={styles.circles}>
+          <CircleButton buttonLabel='Trainee'></CircleButton>
+          <CircleButton buttonLabel='Trainer'></CircleButton>
+        </View>
+        <View style={styles.signupContainer}>
+          <SignUp1Input label='First Name'/>
+          <SignUp1Input label='Last Name'/>
+          <SignUp1Input label='E-mail address'/>
+          <SignUp1Input secureTextEntry={true} label='Password'/>
+        </View>
         <View style={styles.buttonContainer}>
           
             <TouchableHighlight style={[styles.button, styles.signUpBtn]}>
@@ -26,7 +36,7 @@ export default function SignUp1() {
             </TouchableHighlight>
           
         </View>
-      </View>
+      </SafeAreaView>
     )
   }
  
@@ -38,10 +48,24 @@ const styles = StyleSheet.create({
     alignItems: 'center', //horizontal 
   },
   logo: {
-    marginTop: 125
+    marginTop: 75,
+  },
+  title: {
+    marginTop: 15,
+    color: '#fff',
+    fontSize: 16,
+  },
+  circles: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    marginTop: 45,
+  },
+  signupContainer: {
+    flex: 3,
+    flexDirection: 'column',
   },
   buttonContainer: {
-    flex: 1,
     paddingBottom: 125,
     justifyContent: 'flex-end',
   },
