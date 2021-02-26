@@ -1,17 +1,19 @@
 
 import React, { useState } from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
+import { StyleSheet, ImageBackground, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 import Home from '../../assets/images/menu-icons/Home.svg'
 import Calendar from '../../assets/images/menu-icons/Calendar.svg'
 import Menu from '../../assets/images/menu-icons/Menu.svg'
 import Search from '../../assets/images/menu-icons/Search.svg'
+import FooterBackground from '../../assets/images/footerBackground.svg'
 
 export default function FooterMenu( active ) {
 
     return (
+        <>
         <View style={styles.footer}>
             <Link to={'/feed'} underlayColor="#f0f4f7">
                     { active.active === 'Home' ? <Home fill={'#0BD8A7'} /> : <Home fill={'white'} /> }
@@ -28,7 +30,10 @@ export default function FooterMenu( active ) {
             <Link to={'/'} underlayColor="#f0f4f7">
                 { active.active === 'Menu' ? <Menu fill={'#0BD8A7'} /> : <Menu fill={'white'} /> } 
             </Link>
+            <FooterBackground style={styles.footerBackground}/>    
         </View>
+        
+        </>
     )
   }
  
@@ -39,9 +44,19 @@ const styles = StyleSheet.create({
       bottom: 0,
       flexDirection: 'row',
       justifyContent: 'space-evenly',
-      paddingVertical: 30,
+      paddingTop: 40,
+      paddingHorizontal: 10,
       left: 0,
       width: '100%',
-      backgroundColor: '#082D4C'
+      backgroundColor: 'transparent'
+    },
+    footerBackground: {
+        width: 450,
+        resizeMode: "cover",
+        position: 'absolute',
+        right: 0,
+        // top: 0,
+        zIndex: -1,
+        flex: 1,
     }
 });

@@ -108,6 +108,6 @@ const styles = StyleSheet.create({
   },
   logInBtn: {
     backgroundColor: '#05668D',
-  }
+  },
 
 });

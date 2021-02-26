@@ -16,7 +16,7 @@ export default function SignUp3() {
     const [value, onChangeText] = React.useState('Who are you?');
     const [singleFile, setSingleFile] = useState(null);
 
-     const selectImage = async () => {
+   
   
     return (
       <View style={styles.container}>
@@ -72,5 +72,5 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       backgroundColor: 'white',
       marginBottom: 38
-  }
+  },
 });
