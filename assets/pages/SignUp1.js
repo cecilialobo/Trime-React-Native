@@ -29,8 +29,8 @@ export default function SignUp1() {
           <SignUp1Input label='Last Name'/>
           <SignUp1Input label='E-mail address'/>
           <SignUp1Input secureTextEntry={true} label='Password'/>
-          <View style={styles.birthdateContainer}>
-          <Text style={styles.birthLabel}>Birth date</Text>
+          <View style={styles.birthDateContainer}>
+          <Text style={styles.birthDateLabel}>Birth date</Text>
           <View style={styles.dateInput}>
             <TextInput style={[styles.input, styles.day]}  onChangeText={day => onChangeText(day)}
             value={value} />
@@ -89,12 +89,12 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     marginTop: 15,
   },
-   birthdateContainer: {
+   birthDateContainer: {
     flexDirection: 'column',
     marginTop: 16,
     padding: 20,
    },
-   birthLabel: {
+   birthDateLabel: {
     color: 'white',
     padding: 4,
     fontSize: 13,
