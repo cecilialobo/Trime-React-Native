@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 import { TextInput, SectionList, TouchableOpacity } from 'react-native';
-import DocumentPicker from 'react-native-document-picker';
+//import DocumentPicker from 'react-native-document-picker';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
@@ -16,8 +16,7 @@ export default function SignUp3() {
     const [value, onChangeText] = React.useState('Who are you?');
     const [singleFile, setSingleFile] = useState(null);
 
-   
-  
+     
     return (
       <View style={styles.container}>
       
@@ -26,7 +25,7 @@ export default function SignUp3() {
         <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
         <Text style={[styles.whiteText, {fontSize: 14, marginTop: 14}]}>Profile Picture:</Text>
         
-        <TouchableOpacity onPress={selectImage} >
+        <TouchableOpacity >
           <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
         </TouchableOpacity>
 
@@ -50,7 +49,6 @@ export default function SignUp3() {
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
     flex: 1, // takes up the entire screen

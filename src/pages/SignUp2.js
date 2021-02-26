@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from "react-router-native";
 import Slider from '@react-native-community/slider';
 
-import LogoSignUp  from '../images/logo-sign-up.svg';
+import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp2Input from '../components/SignUp2Input.js';
 
 import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight } from 'react-native';
