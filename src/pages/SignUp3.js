@@ -1,8 +1,7 @@
-
 import React, { useState } from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 import { TextInput, SectionList, TouchableOpacity } from 'react-native';
-import DocumentPicker from 'react-native-document-picker';
+//import DocumentPicker from 'react-native-document-picker';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
@@ -17,42 +16,7 @@ export default function SignUp3() {
     const [value, onChangeText] = React.useState('Who are you?');
     const [singleFile, setSingleFile] = useState(null);
 
-     const selectImage = async () => {
-      // Opening Document Picker to select one file
-    // try {
-    //   const res = await DocumentPicker.pick({
-    //     // Provide which type of file you want user to pick
-    //     type: [DocumentPicker.types.images],
-    //     // There can me more options as well
-    //     // DocumentPicker.types.allFiles
-    //     // DocumentPicker.types.images
-    //     // DocumentPicker.types.plainText
-    //     // DocumentPicker.types.audio
-    //     // DocumentPicker.types.pdf
-    //   });
-    //   // Printing the log realted to the file
-    //   console.log(
-    //     res.uri,
-    //     res.type, // mime type
-    //     res.name,
-    //     res.size
-    //   );
-    //   // Setting the state to show single file attributes
-    //   setSingleFile(res);
-    // } catch (err) {
-    //   setSingleFile(null);
-    //   // Handling any exception (If any)
-    //   if (DocumentPicker.isCancel(err)) {
-    //     // If user canceled the document selection
-    //     alert('Canceled');
-    //   } else {
-    //     // For Unknown Error
-    //     alert('Unknown Error: ' + JSON.stringify(err));
-    //     throw err;
-    //   }
-    // }
-     }
-
+     
     return (
       <View style={styles.container}>
       
@@ -61,7 +25,7 @@ export default function SignUp3() {
         <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
         <Text style={[styles.whiteText, {fontSize: 14, marginTop: 14}]}>Profile Picture:</Text>
         
-        <TouchableOpacity onPress={selectImage} >
+        <TouchableOpacity >
           <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
         </TouchableOpacity>
 
@@ -86,7 +50,6 @@ export default function SignUp3() {
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
     flex: 1, // takes up the entire screen
