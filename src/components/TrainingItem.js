@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
 
-export default function trainingItem ( { id, icon, type, selectedTypes, setSelectedTypes } ) {
+export default function trainingItem ( { key, icon, type, selectedTypes, setSelectedTypes } ) {
 
     const [bgColor, setBgColor] = useState('#05668D');
     
@@ -20,7 +20,7 @@ export default function trainingItem ( { id, icon, type, selectedTypes, setSelec
       }
 
     return (
-        <TouchableOpacity key={id} style={styles.trainingItem} onPress={selectTrainingType}>
+        <TouchableOpacity key={key} style={styles.trainingItem} onPress={selectTrainingType}>
             <>
                 <View style={[styles.trainingIcon, {backgroundColor: bgColor}]}>
                     {icon}

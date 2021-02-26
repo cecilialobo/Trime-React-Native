@@ -69,6 +69,7 @@ export default function SignUp3() {
             <Text  style={[styles.whiteText, {fontSize: 14}]}>Description: </Text>
             <TextInput
                 style={styles.textInput}
+                multiline={true}
                 onChangeText={text => onChangeText(text)}
                 value={value}
                 />
@@ -99,13 +100,13 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   textInput: { 
-      justifyContent: 'flex-start', 
       height: 109,
       width: 353, 
+      padding: 10,
       borderColor: 'gray', 
       borderWidth: 1,
       borderRadius: 10,
       backgroundColor: 'white',
-      marginBottom: 38
+      marginBottom: 38,
   }
 });

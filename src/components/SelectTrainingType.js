@@ -76,7 +76,7 @@ export default function SelectTrainingType() {
       <View style={styles.container}>
         { TRAININGTYPES.map(item => {
             return(
-              <TrainingItem id={item.key} icon={item.icon} type={item.type} 
+              <TrainingItem key={item.key} icon={item.icon} type={item.type} 
                             selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
             )
           })

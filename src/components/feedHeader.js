@@ -4,7 +4,7 @@ import { NativeRouter, Route, Link } from "react-router-native";
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-import SmallLogo from './SmallLogo'
+import NotificationIcons from './NotificationIcons'
 import LogoFeed  from '../../assets/images/logo-feed.svg';
 
 export default function FeedHeader( { personal, setPersonal, general, setGeneral } ) {
@@ -22,7 +22,10 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
 
     return (
         <View style={styles.header}>
-            <LogoFeed style={{marginBottom: 15}} />
+            <View style={{flexDirection: 'row', alignItems: 'center'}}>
+                <LogoFeed style={{marginBottom: 15}} />
+                {/* <NotificationIcons  style={[styles.notificationIcons, {backgroundColor: '#fff'}]} /> */}
+            </View>
             <View style={styles.selectFeedBtn}>
                 <>
                     {
@@ -66,6 +69,13 @@ const styles = StyleSheet.create({
         backgroundColor: '#082D4C',
         alignItems: 'center',
         justifyContent: "flex-end"
+    },
+    notificationIcons: {
+        position: 'absolute',
+        right: 0,
+        width: 100,
+        backgroundColor: 'yellow'
+
     },
     selectFeedBtn: {
         width: 244,
