@@ -3,7 +3,7 @@ import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-import LogoSignUp  from '../images/logo-sign-up.svg';
+import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp1Input from '../components/SignUp1Input.js';
 import CircleButton from '../components/CircleButton.js';
 
