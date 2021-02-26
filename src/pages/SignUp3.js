@@ -50,7 +50,7 @@ export default function SignUp3() {
     )
   }
  
-
+}
 const styles = StyleSheet.create({
   container: {
     flex: 1, // takes up the entire screen
