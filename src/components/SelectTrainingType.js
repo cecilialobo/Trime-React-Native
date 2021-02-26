@@ -1,85 +1,85 @@
+import React, { useState } from 'react';
+import { StyleSheet, View } from 'react-native';
 
-import React from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { TextInput, SectionList, VirtualizedList } from 'react-native';
-
-
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import TrainingItem from './TrainingItem'
+import Boxing from '../../assets/images/training-icons/Boxing.svg'
+import Running from '../../assets/images/training-icons/Running.svg'
+import Crossfit from '../../assets/images/training-icons/Crossfit.svg'
+import Cycling from '../../assets/images/training-icons/Cycling.svg'
+import Diet from '../../assets/images/training-icons/Diet.svg'
+import Gym from '../../assets/images/training-icons/Gym.svg'
+import Swimming from '../../assets/images/training-icons/Swimming.svg'
+import Yoga from '../../assets/images/training-icons/Yoga.svg'
+import Golf from '../../assets/images/training-icons/Golf.svg'
+import Tennis from '../../assets/images/training-icons/Tennis.svg'
 
 export default function SelectTrainingType() {
-
-    console.log('select training list')
-
-    const getItem = (data, type) => ({
-      id: Math.random().toString(10).substring(0),
-      type: data[item].type,
-      icon: data[item].icon
-    });
-
-    const getItemCount = (data) => 10;
-
-    const Item = ({ type, icon }) => (
-      <View style={styles.item}>
-        {/* <Image source={require('../images/training-icons/running.png')} style={styles.logo} /> */}
-        <Text style={styles.title}>{type}</Text>
-      </View>
-    );
-
+    const [ selectedTypes, setSelectedTypes ] = useState([]);
 
     const TRAININGTYPES = [
       {
+        key: 1,
         type: "Running",
-        icon: '../images/training-icons/running.png'
+        icon: <Running />
       },
       {
+        key: 2,
         type: "Swimming",
-        icon: '../images/training-icons/running.png'
+        icon: <Swimming />
       },
       {
+        key: 3,
         type: "Gym",
-        icon: '../images/training-icons/running.png'
+        icon: <Gym />
       },
       {
+        key: 4,
         type: "Boxing",
-        icon: '../images/training-icons/running.png'
+        icon: <Boxing />
       },
       {
+        key: 5,
         type: "Golf",
-        icon: '../images/training-icons/running.png'
+        icon: <Golf />
       },
       {
+        key: 6,
         type: "Yoga",
-        icon: '../images/training-icons/running.png'
+        icon: <Yoga />
       },
       {
+        key: 7,
         type: "Cycling",
-        icon: '../images/training-icons/running.png'
+        icon: <Cycling />
       },
       {
+        key: 8,
+        type: "Diet",
+        icon: <Diet />
+      },
+      {
+        key: 9,
         type: "Crossfit",
-        icon: '../images/training-icons/running.png'
+        icon: <Crossfit />
       },
       {
-        type: "Training",
-        icon: '../images/training-icons/running.png'
+        key: 10,
+        type: "Tennis",
+        icon: <Tennis />
       }
     ];
-    
-    console.log(TRAININGTYPES)
+
+    console.log('selected: ' + selectedTypes)
 
     return (
       <View style={styles.container}>
-
-        <Text>What type of training do you do?</Text>
-        <VirtualizedList
-          data={TRAININGTYPES}
-          initialNumToRender={10}
-          renderItem={({ item }) => <Item title={item.type} icon={item.icon} />}
-          keyExtractor={item => item.key}
-          getItemCount={getItemCount}
-          getItem={getItem}
-      />
+        { TRAININGTYPES.map(item => {
+            return(
+              <TrainingItem id={item.key} icon={item.icon} type={item.type} 
+                            selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
+            )
+          })
+        }
       </View>
     )
   }
@@ -88,47 +88,34 @@ export default function SelectTrainingType() {
 const styles = StyleSheet.create({
   container: {
     flex: 1, // takes up the entire screen
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    width: 414,
+    height: 180,
     backgroundColor: '#082D4C',
-    alignItems: 'center', //horizontal
-    justifyContent: 'flex-end', 
+    paddingHorizontal: 25,
+    alignItems: 'flex-start', //horizontal
+    justifyContent: "space-evenly", 
   },
-  logo: {
-    marginTop: 125
+  whiteText: {
+    color: 'white'
   },
-  textInput: { 
-      justifyContent: 'flex-start', 
-      height: 109,
-      width: 353, 
-      borderColor: 'gray', 
-      borderWidth: 1,
-      borderRadius: 10,
-      backgroundColor: 'white',
+  trainingItem: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 70,
+    height: 95,
+    paddingBottom: 20
   },
-  buttonContainer: {
-    paddingBottom: 125,
-  },
-  button: {
-    alignItems: 'center', //horizontal
-    justifyContent: 'center', 
-
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    margin: 10,
-
-    borderRadius: 40,
-
-    width: 260,
-    height: 73,
-  },
-  buttonText: {
-    fontSize: 30,
-    color: "white",
-  },
-  signUpBtn: {
-    backgroundColor: '#0BD8A7',
-  },
-  logInBtn: {
+  trainingIcon: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: 51,
+    height: 51,
+    borderRadius: 50,
     backgroundColor: '#05668D',
+    marginBottom: 5
   }
 
 });

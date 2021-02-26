@@ -61,7 +61,6 @@ export default function SignUp2() {
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
     flex: 1, 

@@ -1,29 +1,37 @@
-
-import React from 'react';
+import React, { useState } from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
-import { TextInput, SectionList } from 'react-native';
+import { TextInput, SectionList, TouchableOpacity } from 'react-native';
+import DocumentPicker from 'react-native-document-picker';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-import LogoSignUp  from '../images/logo-sign-up.svg';
 import SelectTrainingType from '../components/SelectTrainingType'
+import SmallLogo from '../components/SmallLogo'
+import BigButton from '../components/BigButton'
 
 export default function SignUp3() {
 
     console.log('sign up 3')
 
-     const [value, onChangeText] = React.useState('Who are you?');
+    const [value, onChangeText] = React.useState('Who are you?');
+    const [singleFile, setSingleFile] = useState(null);
 
-
+     const selectImage = async () => {
+  
     return (
-      <View style={styles.container}>        
-        <LogoSignUp style={styles.logo}/>
+      <View style={styles.container}>
+      
+        <SmallLogo />
 
-        <Text>Time to set up your profile</Text>
-        <Text>Profile Picture:</Text>
-        <Image source={require('../images/profile-image.png')} style={styles.logo} />
+        <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
+        <Text style={[styles.whiteText, {fontSize: 14, marginTop: 14}]}>Profile Picture:</Text>
+        
+        <TouchableOpacity onPress={selectImage} >
+          <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
+        </TouchableOpacity>
 
         <View>
+            <Text  style={[styles.whiteText, {fontSize: 14}]}>Description: </Text>
             <TextInput
                 style={styles.textInput}
                 onChangeText={text => onChangeText(text)}
@@ -31,17 +39,13 @@ export default function SignUp3() {
                 />
         </View>
 
-        {/* <SelectTrainingType /> */}
-
-        <View style={styles.buttonContainer}>
-          
-            <TouchableHighlight style={[styles.button, styles.signUpBtn]}>
-              <Link to="/">
-                <Text style={styles.buttonText}>Next</Text>
-              </Link>
-            </TouchableHighlight>
-          
+        <View style={{width: 414, paddingHorizontal: 35, marginBottom: 10}}>
+        <Text style={[styles.whiteText, {textAlign: "left"}]}>What type of training do you do?</Text>
         </View>
+        <SelectTrainingType />
+
+        <BigButton BGColor='#0BD8A7' linkTo='/feed' text='Continue' />
+        
       </View>
     )
   }
@@ -53,8 +57,11 @@ const styles = StyleSheet.create({
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal 
   },
-  logo: {
-    marginTop: 125
+  whiteText: {
+    color: 'white'
+  },
+  fontSize16: {
+    fontSize: 16
   },
   textInput: { 
       justifyContent: 'flex-start', 
@@ -64,34 +71,6 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 10,
       backgroundColor: 'white',
-  },
-  buttonContainer: {
-    flex: 1,
-    paddingBottom: 125,
-    justifyContent: 'flex-end',
-  },
-  button: {
-    alignItems: 'center', //horizontal
-    justifyContent: 'center', 
-
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    margin: 10,
-
-    borderRadius: 40,
-
-    width: 260,
-    height: 73,
-  },
-  buttonText: {
-    fontSize: 30,
-    color: "white",
-  },
-  signUpBtn: {
-    backgroundColor: '#0BD8A7',
-  },
-  logInBtn: {
-    backgroundColor: '#05668D',
+      marginBottom: 38
   }
-
 });

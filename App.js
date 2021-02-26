@@ -1,16 +1,15 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
-
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
-import Home from './assets/pages/lading'
-import SignUp1 from './assets/pages/SignUp1'
-import SignUp2 from './assets/pages/SignUp2'
-import SignUp3 from './assets/pages/SignUp3'
+import Home from './src/pages/lading'
+import SignUp1 from './src/pages/SignUp1'
+import SignUp2 from './src/pages/SignUp2'
+import SignUp3 from './src/pages/SignUp3'
+import Feed from './src/pages/feed'
 
 export default function App() {
-
 
   return (
     <>
@@ -20,6 +19,7 @@ export default function App() {
       <Route path="/sign-up-1" component={SignUp1} />
       <Route path="/sign-up-2" component={SignUp2} />
       <Route path="/sign-up-3" component={SignUp3} />
+      <Route path="/feed" component={Feed} />
     </SafeAreaView>
   </NativeRouter>
   </>
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal
     justifyContent: 'space-between', 
+    overflow: 'scroll'
   },
   logo: {
     marginTop: 125
