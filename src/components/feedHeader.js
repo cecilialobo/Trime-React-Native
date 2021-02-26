@@ -22,9 +22,9 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
 
     return (
         <View style={styles.header}>
-            <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <LogoFeed style={{marginBottom: 15}} />
-                {/* <NotificationIcons  style={[styles.notificationIcons, {backgroundColor: '#fff'}]} /> */}
+            <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%'}}>
+                <LogoFeed style={{marginBottom: 15, flex: 1}} />
+                <NotificationIcons />
             </View>
             <View style={styles.selectFeedBtn}>
                 <>
@@ -73,8 +73,6 @@ const styles = StyleSheet.create({
     notificationIcons: {
         position: 'absolute',
         right: 0,
-        width: 100,
-        backgroundColor: 'yellow'
 
     },
     selectFeedBtn: {
