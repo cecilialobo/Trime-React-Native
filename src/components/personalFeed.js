@@ -26,7 +26,7 @@ export default function PersonalFeed() {
             trainer: 'Johan K',
             location: 'place',
             date: 'Monday, 01/01/21',
-            status: 'Paid',
+            status: 'Not Paid',
             img: <Image source={{uri: 'https://picsum.photos/100',}} style={styles.itemImage} />
           },
           { 
@@ -231,7 +231,9 @@ const Item = ({ item }) => (
       </View>
       <View style={styles.status}>
           <Text>Status</Text>
-          <Text>{item.status}</Text>
+          { item.status === 'Paid' ? 
+              <Text style={styles.statusText, { color: '#0BD8A7' }}>{item.status}</Text> :
+              <Text style={styles.statusText, { color: '#E84747'}}>{item.status}</Text> }
       </View>
     </View>
   );
@@ -268,8 +270,6 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    // backgroundColor: "#f9c2ff",
-    // padding: 20,
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
@@ -293,7 +293,9 @@ const styles = StyleSheet.create({
   header: {
     fontSize: 16,
     backgroundColor: "#fff",
-    width: '100%'
+    width: '100%',
+    fontWeight: 'bold',
+    marginTop: 10
   },
   title: {
     // fontSize: 24
@@ -303,5 +305,10 @@ const styles = StyleSheet.create({
     width: 100,
     alignItems: 'center',
     marginRight: 20
+  },
+  statusText: {
+    fontWeight: 'bold',
+    fontSize: 20, 
+    backgroundColor: 'green'
   }
 });

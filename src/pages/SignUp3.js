@@ -19,38 +19,38 @@ export default function SignUp3() {
 
      const selectImage = async () => {
       // Opening Document Picker to select one file
-    try {
-      const res = await DocumentPicker.pick({
-        // Provide which type of file you want user to pick
-        type: [DocumentPicker.types.images],
-        // There can me more options as well
-        // DocumentPicker.types.allFiles
-        // DocumentPicker.types.images
-        // DocumentPicker.types.plainText
-        // DocumentPicker.types.audio
-        // DocumentPicker.types.pdf
-      });
-      // Printing the log realted to the file
-      console.log(
-        res.uri,
-        res.type, // mime type
-        res.name,
-        res.size
-      );
-      // Setting the state to show single file attributes
-      setSingleFile(res);
-    } catch (err) {
-      setSingleFile(null);
-      // Handling any exception (If any)
-      if (DocumentPicker.isCancel(err)) {
-        // If user canceled the document selection
-        alert('Canceled');
-      } else {
-        // For Unknown Error
-        alert('Unknown Error: ' + JSON.stringify(err));
-        throw err;
-      }
-    }
+    // try {
+    //   const res = await DocumentPicker.pick({
+    //     // Provide which type of file you want user to pick
+    //     type: [DocumentPicker.types.images],
+    //     // There can me more options as well
+    //     // DocumentPicker.types.allFiles
+    //     // DocumentPicker.types.images
+    //     // DocumentPicker.types.plainText
+    //     // DocumentPicker.types.audio
+    //     // DocumentPicker.types.pdf
+    //   });
+    //   // Printing the log realted to the file
+    //   console.log(
+    //     res.uri,
+    //     res.type, // mime type
+    //     res.name,
+    //     res.size
+    //   );
+    //   // Setting the state to show single file attributes
+    //   setSingleFile(res);
+    // } catch (err) {
+    //   setSingleFile(null);
+    //   // Handling any exception (If any)
+    //   if (DocumentPicker.isCancel(err)) {
+    //     // If user canceled the document selection
+    //     alert('Canceled');
+    //   } else {
+    //     // For Unknown Error
+    //     alert('Unknown Error: ' + JSON.stringify(err));
+    //     throw err;
+    //   }
+    // }
      }
 
     return (
