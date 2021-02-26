@@ -9,15 +9,9 @@ import LogoFeed  from '../../assets/images/logo-feed.svg';
 
 export default function FeedHeader( { personal, setPersonal, general, setGeneral } ) {
     
-    const selectPersonal = () => {
+    const selectFeed = () => {
         setPersonal(!personal)
         setGeneral(!general)
-    }
-    
-
-    const selectGeneral = () => {
-        setGeneral(!general)
-        setPersonal(!personal)
     }
 
     return (
@@ -34,7 +28,7 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
                                 <View style={[styles.btn, styles.selected, {right: 0}]}>
                                     <Text style={[styles.btnText, styles.selected]}>Personal</Text>
                                 </View>
-                                <TouchableOpacity onPress={selectGeneral} style={[styles.btn, {left: 0}]}>
+                                <TouchableOpacity onPress={selectFeed} style={[styles.btn, {left: 0}]}>
                                     <Text style={[styles.btnText]}>General</Text>
                                 </TouchableOpacity>
                             </>
@@ -42,7 +36,7 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
                     {
                         general &&
                             <>
-                                <TouchableOpacity onPress={selectPersonal} style={[styles.btn, {right: 0}]}>
+                                <TouchableOpacity onPress={selectFeed} style={[styles.btn, {right: 0}]}>
                                     <Text style={[styles.btnText, {backgroundColor: 'transparent'}]}>Personal</Text>
                                 </TouchableOpacity>
                                 <View style={[styles.btn, styles.selected, {left: 0}]}>
