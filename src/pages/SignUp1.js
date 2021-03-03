@@ -50,7 +50,7 @@ export default function SignUp1() {
                     <Text style={[{fontSize: 30}, styles.buttonText]}>Next</Text>
                 </Link>
             </TouchableHighlight>
-            <TouchableHighlight style={[styles.button, styles.logInBtn]}>
+            <TouchableHighlight style={[styles.logInBtn]}>
                 <Link to="">
                     <Text style={styles.buttonText}>Log in</Text>
                 </Link>
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     width: 120,
   },
   buttonContainer: {
-    flex: 1,
+    // flex: 1,
     justifyContent: 'center',
   },
   button: {
@@ -140,6 +140,9 @@ const styles = StyleSheet.create({
     height: 73,
   },
   logInBtn: {
+    borderRadius: 40,
+    alignItems: 'center', //horizontal
+    justifyContent: 'center', 
     fontSize: 14,
     backgroundColor: '#05668D',
     width: 132,

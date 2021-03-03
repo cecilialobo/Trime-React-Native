@@ -22,9 +22,9 @@ export default function BigButton ( { BGColor, text, linkTo } ) {
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        flex: 1,
-        paddingBottom: 93,
-        justifyContent: 'flex-end',
+        // flex: 1,
+        // paddingBottom: 93,
+        // justifyContent: 'flex-end',
       },
       button: {
         alignItems: 'center', //horizontal

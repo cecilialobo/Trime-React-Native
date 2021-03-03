@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { TextInput, SectionList } from 'react-native';
-import DatePicker from 'react-native-date-picker';
+import { TextInput, SectionList, TouchableOpacity } from 'react-native';
+import DateTimePicker from '@react-native-community/datetimepicker';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
@@ -10,9 +10,32 @@ import SelectTrainingType from '../components/SelectTrainingType'
 export default function SearchOptions() {
 
 
-    const [date, setDate] = useState(new Date())
+  const [date, setDate] = useState(new Date(1598051730000));
+  const [mode, setMode] = useState('date');
+  const [show, setShow] = useState(false);
+
+    // const [date, setDate] = useState(new Date())
     const [value, setValue] = useState('Search');
 
+
+    const onChange = (event, selectedDate) => {
+      const currentDate = selectedDate || date;
+      setShow(Platform.OS === 'ios');
+      setDate(currentDate);
+    };
+  
+    const showMode = (currentMode) => {
+      setShow(true);
+      setMode(currentMode);
+    };
+  
+    const showDatepicker = () => {
+      showMode('date');
+    };
+  
+    const showTimepicker = () => {
+      showMode('time');
+    };
 
     return (
       <View style={styles.container}>
@@ -22,15 +45,33 @@ export default function SearchOptions() {
             value={value}
             />
        
-       <View style={{width: 414, paddingHorizontal: 35, marginTop: 30, marginBottom: 15}}>
+       <View style={{width: 414, paddingHorizontal: 35, marginTop: 30, marginBottom: 15, 
+                      borderBottomColor: '#eee'}}>
         <Text style={[{textAlign: "left", fontWeight: 'bold'}]}>Type of training:</Text>
         </View>
         <SelectTrainingType whiteText={false} />
+
       
-        {/* <DatePicker
-            date={date}
-            onDateChange={setDate}
-        /> */}
+      <View style={styles.datePicker}>
+        <Text>Date:</Text>
+          <TouchableOpacity onPress={showDatepicker} >
+            <Text>Show Date Picker</Text>
+          </TouchableOpacity>
+          <TouchableOpacity onPress={showTimepicker} >
+          <Text>Show Time Picker</Text>
+          </TouchableOpacity>
+          {show && (
+            <DateTimePicker
+              testID="dateTimePicker"
+              value={date}
+              mode={mode}
+              is24Hour={true}
+              display="default"
+              onChange={onChange}
+            />
+          )}
+      </View>
+   
     
       </View>
     )
@@ -43,6 +84,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingTop: 20,
     alignItems: 'center', //horizontal 
+    justifyContent: 'flex-start',
     width: '100%',
     marginTop: 104,
     marginBottom: 40
@@ -55,7 +97,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
     paddingHorizontal: 20
   },
-
+  datePicker: {
+    flex: 1,
+    width: '100%',
+    position: "relative",
+    justifyContent: 'flex-start'
+  },
   item: {
     flexDirection: 'row',
     alignItems: 'center',

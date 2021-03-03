@@ -172,7 +172,6 @@ export default function GeneralFeed() {
       <View style={styles.container}>
     
         <SectionList
-            // contentContainerStyle={{marginTop: 10}}
             stickySectionHeadersEnabled={false}
             sections={DATA}
             keyExtractor={(item, index) => item + index}

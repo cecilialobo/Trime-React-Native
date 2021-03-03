@@ -27,7 +27,9 @@ export default function Home() {
           <TouchableHighlight style={[styles.button, styles.signUpBtn]} onPress={signUp}>
             <Link to="/sign-up-1"><Text style={styles.buttonText}>Sign Up</Text></Link>
           </TouchableHighlight>
-          <TouchableHighlight style={[styles.button, styles.logInBtn]} onPress={logIn}><Text style={styles.buttonText}>Log In</Text></TouchableHighlight>
+          <TouchableHighlight style={[styles.button, styles.logInBtn]} onPress={logIn}>
+            <Link to="/sign-up-3"><Text style={styles.buttonText}>Log In</Text></Link>
+          </TouchableHighlight>
         </View>
       </View>
     )

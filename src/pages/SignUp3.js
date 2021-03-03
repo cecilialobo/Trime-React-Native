@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 import { TextInput, SectionList, TouchableOpacity } from 'react-native';
-//import DocumentPicker from 'react-native-document-picker';
+import * as ImagePicker from 'expo-image-picker';
+import Constants from 'expo-constants';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
@@ -12,10 +13,38 @@ import BigButton from '../components/BigButton'
 export default function SignUp3() {
 
     console.log('sign up 3')
+    // require('../../assets/images/profile-image.png')
 
+    const [image, setImage] = useState('https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png');
     const [value, onChangeText] = React.useState('Who are you?');
-    const [singleFile, setSingleFile] = useState(null);
 
+
+    useEffect(() => {
+      (async () => {
+        if (Platform.OS !== 'web') {
+          const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
+          if (status !== 'granted') {
+            alert('Sorry, we need camera roll permissions to make this work!');
+          }
+        }
+      })();
+    }, []);
+
+    const selectImage = async () => {
+        let result = await ImagePicker.launchImageLibraryAsync({
+          mediaTypes: ImagePicker.MediaTypeOptions.All,
+          allowsEditing: true,
+          aspect: [4, 3],
+          quality: 1,
+        });
+    
+        console.log(result);
+    
+        if (!result.cancelled) {
+          setImage(result.uri);
+        }
+      }
+    
      
     return (
       <View style={styles.container}>
@@ -25,8 +54,8 @@ export default function SignUp3() {
         <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
         <Text style={[styles.whiteText, {fontSize: 14, marginTop: 14}]}>Profile Picture:</Text>
         
-        <TouchableOpacity >
-          <Image source={require('../../assets/images/profile-image.png')} style={{margin: 4}} />
+        <TouchableOpacity onPress={selectImage} >
+         { image && <Image source={{uri: image}} style={{margin: 4, width: 100, height: 100, borderRadius: 100}} />}
         </TouchableOpacity>
 
         <View>

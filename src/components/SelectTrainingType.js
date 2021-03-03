@@ -19,7 +19,7 @@ export default function SelectTrainingType( { whiteText } ) {
 
     const TRAININGTYPES = [
       {
-        key: 1,
+        key: '1',
         type: "Running",
         icon: <Running />
       },
@@ -74,6 +74,7 @@ export default function SelectTrainingType( { whiteText } ) {
 
     return (
       <View style={styles.container}>
+    
         { TRAININGTYPES.map(item => {
             return(
               <TrainingItem key={item.key} icon={item.icon} type={item.type} whiteText={whiteText}
