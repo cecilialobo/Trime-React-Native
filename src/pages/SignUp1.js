@@ -7,6 +7,7 @@ import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp1Input from '../components/SignUp1Input.js';
 import CircleButton from '../components/CircleButton.js';
 
+
 import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, Dimensions, TextInput } from 'react-native';
 const { width, height} = Dimensions.get('window');
 
@@ -50,11 +51,11 @@ export default function SignUp1() {
                     <Text style={[{fontSize: 30}, styles.buttonText]}>Next</Text>
                 </Link>
             </TouchableHighlight>
-            <TouchableHighlight style={[styles.button, styles.logInBtn]}>
+            {/* <TouchableHighlight style={[styles.button, styles.logInBtn]}>
                 <Link to="">
                     <Text style={styles.buttonText}>Log in</Text>
                 </Link>
-            </TouchableHighlight>
+            </TouchableHighlight> */}
           
         </View>
       </SafeAreaView>
@@ -71,7 +72,7 @@ const styles = StyleSheet.create({
     height: height,
   },
   logo: {
-    marginTop: 55,
+    marginTop: 76,
   },
   title: {
     marginTop: 15,
@@ -119,7 +120,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     flex: 1,
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
   button: {
     alignItems: 'center', //horizontal
@@ -139,12 +140,4 @@ const styles = StyleSheet.create({
     width: 260,
     height: 73,
   },
-  logInBtn: {
-    fontSize: 14,
-    backgroundColor: '#05668D',
-    width: 132,
-    height: 37,
-    alignSelf: 'center',
-  }
-
 });
