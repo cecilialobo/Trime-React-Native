@@ -42,7 +42,7 @@ export default function SignUp3() {
         <View style={{width: 414, paddingHorizontal: 35, marginBottom: 10}}>
         <Text style={[styles.whiteText, {textAlign: "left"}]}>What type of training do you do?</Text>
         </View>
-        <SelectTrainingType />
+        <SelectTrainingType whiteText={true} />
 
         <BigButton BGColor='#0BD8A7' linkTo='/feed' text='Continue' />
         

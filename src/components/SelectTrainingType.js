@@ -13,7 +13,8 @@ import Yoga from '../../assets/images/training-icons/Yoga.svg'
 import Golf from '../../assets/images/training-icons/Golf.svg'
 import Tennis from '../../assets/images/training-icons/Tennis.svg'
 
-export default function SelectTrainingType() {
+export default function SelectTrainingType( { whiteText } ) {
+  
     const [ selectedTypes, setSelectedTypes ] = useState([]);
 
     const TRAININGTYPES = [
@@ -75,7 +76,7 @@ export default function SelectTrainingType() {
       <View style={styles.container}>
         { TRAININGTYPES.map(item => {
             return(
-              <TrainingItem key={item.key} icon={item.icon} type={item.type} 
+              <TrainingItem key={item.key} icon={item.icon} type={item.type} whiteText={whiteText}
                             selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
             )
           })
@@ -92,7 +93,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     width: 414,
     height: 180,
-    backgroundColor: '#082D4C',
+    // backgroundColor: '#082D4C',
     paddingHorizontal: 25,
     alignItems: 'flex-start', //horizontal
     justifyContent: "space-evenly", 

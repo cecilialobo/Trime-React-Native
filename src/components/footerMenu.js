@@ -19,7 +19,7 @@ export default function FooterMenu( active ) {
                     { active.active === 'Home' ? <Home fill={'#0BD8A7'} /> : <Home fill={'white'} /> }
             </Link>
 
-            <Link to={'/'} underlayColor="#f0f4f7">
+            <Link to={'/search'} underlayColor="#f0f4f7">
                 { active.active === 'Search' ? <Search fill={'#0BD8A7'} /> : <Search fill={'white'} /> }
             </Link>
 
@@ -64,5 +64,6 @@ const styles = StyleSheet.create({
         
         resizeMode: "cover",
         justifyContent: "center"
+
     }
 });
