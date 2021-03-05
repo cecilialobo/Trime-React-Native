@@ -172,7 +172,6 @@ export default function GeneralFeed() {
       <View style={styles.container}>
     
         <SectionList
-            // contentContainerStyle={{marginTop: 10}}
             stickySectionHeadersEnabled={false}
             sections={DATA}
             keyExtractor={(item, index) => item + index}
@@ -205,7 +204,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start', //horizontal 
     width: '100%',
     marginTop: 150,
-    marginBottom: 88
+    marginBottom: 40
   },
   sectionContainer: {
     marginTop: 20,

@@ -7,7 +7,7 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import NotificationIcons from './NotificationIcons'
 import LogoFeed  from '../../assets/images/logo-feed.svg';
 
-export default function FeedHeader( { personal, setPersonal, general, setGeneral } ) {
+export default function SearchHeader( { personal, setPersonal, general, setGeneral } ) {
     
     const selectFeed = () => {
         setPersonal(!personal)
@@ -17,10 +17,11 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
     return (
         <View style={styles.header}>
             <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%'}}>
-                <LogoFeed style={{marginBottom: 15, flex: 1}} />
+                <Text  style={{marginBottom: 15, color: 'white', fontSize: 30}}>Search</Text>
+                {/* <LogoFeed style={{marginBottom: 15, flex: 1}} /> */}
                 <NotificationIcons />
             </View>
-            <View style={styles.selectFeedBtn}>
+            {/* <View style={styles.selectFeedBtn}>
                 <>
                     {
                         personal && 
@@ -46,7 +47,7 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
                     }
                     
                 </>
-            </View>
+            </View> */}
         </View>
     )
   }
@@ -58,7 +59,8 @@ const styles = StyleSheet.create({
         top: 0,
         left: 0,
         width: '100%',
-        height: 141,
+        height: 103,
+        paddingBottom: 20,
 
         backgroundColor: '#082D4C',
         alignItems: 'center',

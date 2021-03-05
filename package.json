@@ -8,18 +8,31 @@
     "eject": "expo eject"
   },
   "dependencies": {
+    "@expo-google-fonts/inter": "^0.1.0",
+    "@react-native-community/datetimepicker": "^3.0.4",
     "@react-native-community/hooks": "^2.6.0",
     "@react-native-community/slider": "^3.0.3",
+    "clean-webpack-plugin": "^3.0.0",
     "expo": "~40.0.0",
+    "expo-app-loading": "^1.0.1",
+    "expo-font": "~8.4.0",
+    "expo-image-picker": "~9.2.0",
     "expo-status-bar": "~1.0.3",
+    "json-loader": "^0.5.7",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.1.tar.gz",
+    "react-native-datepicker": "^1.7.2",
     "react-native-document-picker": "^5.0.0",
+    "react-native-dom": "^0.5.0",
+    "react-native-image-picker": "^3.2.1",
+    "react-native-router": "^0.2.1",
     "react-native-svg": "^12.1.0",
     "react-native-svg-transformer": "^0.14.3",
     "react-native-web": "~0.13.12",
-    "react-router-native": "^5.2.0"
+    "react-native-webpack": "^0.1.1",
+    "react-router-native": "^5.2.0",
+    "webpack": "^5.24.3"
   },
   "devDependencies": {
     "@babel/core": "~7.9.0"

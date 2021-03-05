@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     flex: 0.3,
     flexDirection: 'row',
     paddingLeft: 15,
-    width: 346,
+    width: 346
   },
   textTitle: {
     color: '#fff',  
