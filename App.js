@@ -14,16 +14,16 @@ export default function App() {
 
   return (
     <>
-    <NativeRouter>
-    <SafeAreaView style={styles.container}>
+    <NativeRouter style={{width: '100%', height: '100%'}}>
       <Route exact path="/" component={Home} />
-      <Route path="/sign-up-1" component={SignUp1} />
-      <Route path="/sign-up-2" component={SignUp2} />
-      <Route path="/sign-up-3" component={SignUp3} />
-      <Route path="/feed" component={Feed} />
-      <Route path="/search" component={Search} />
-    </SafeAreaView>
-  </NativeRouter>
+      <SafeAreaView style={styles.container}>
+        <Route path="/sign-up-1" component={SignUp1} />
+        <Route path="/sign-up-2" component={SignUp2} />
+        <Route path="/sign-up-3" component={SignUp3} />
+        <Route path="/feed" component={Feed} />
+        <Route path="/search" component={Search} />
+      </SafeAreaView>
+    </NativeRouter>
   </>
   );
 }
@@ -34,7 +34,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal
     justifyContent: 'space-between', 
-    overflow: 'scroll'
+    overflow: 'scroll',
   },
   logo: {
     marginTop: 125

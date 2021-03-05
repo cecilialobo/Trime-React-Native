@@ -1,7 +1,8 @@
 
 import React, { useState } from 'react';
-import { TextInput, SectionList, TouchableOpacity } from 'react-native';
-import DateTimePicker from '@react-native-community/datetimepicker';
+import { TextInput } from 'react-native';
+
+import DatePicker from 'react-native-datepicker';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
@@ -10,32 +11,9 @@ import SelectTrainingType from '../components/SelectTrainingType'
 export default function SearchOptions() {
 
 
-  const [date, setDate] = useState(new Date(1598051730000));
-  const [mode, setMode] = useState('date');
-  const [show, setShow] = useState(false);
-
-    // const [date, setDate] = useState(new Date())
+    const [dateFrom, setDateFrom] = useState('03-03-2021');
+    const [dateTo, setDateTo] = useState('03-03-2021');
     const [value, setValue] = useState('Search');
-
-
-    const onChange = (event, selectedDate) => {
-      const currentDate = selectedDate || date;
-      setShow(Platform.OS === 'ios');
-      setDate(currentDate);
-    };
-  
-    const showMode = (currentMode) => {
-      setShow(true);
-      setMode(currentMode);
-    };
-  
-    const showDatepicker = () => {
-      showMode('date');
-    };
-  
-    const showTimepicker = () => {
-      showMode('time');
-    };
 
     return (
       <View style={styles.container}>
@@ -45,33 +23,78 @@ export default function SearchOptions() {
             value={value}
             />
        
-       <View style={{width: 414, paddingHorizontal: 35, marginTop: 30, marginBottom: 15, 
+        <View style={{width: 414, paddingHorizontal: 35, marginTop: 30, marginBottom: 15, 
                       borderBottomColor: '#eee'}}>
-        <Text style={[{textAlign: "left", fontWeight: 'bold'}]}>Type of training:</Text>
+          <Text style={[{textAlign: "left", fontWeight: 'bold'}]}>Type of training:</Text>
         </View>
         <SelectTrainingType whiteText={false} />
 
-      
-      <View style={styles.datePicker}>
-        <Text>Date:</Text>
-          <TouchableOpacity onPress={showDatepicker} >
-            <Text>Show Date Picker</Text>
-          </TouchableOpacity>
-          <TouchableOpacity onPress={showTimepicker} >
-          <Text>Show Time Picker</Text>
-          </TouchableOpacity>
-          {show && (
-            <DateTimePicker
-              testID="dateTimePicker"
-              value={date}
-              mode={mode}
-              is24Hour={true}
-              display="default"
-              onChange={onChange}
-            />
-          )}
-      </View>
-   
+        <View style={{flex: 1}}>
+          <Text style={{alignSelf: 'flex-start'}}>Date:</Text>
+          <View style={styles.datePicker}>
+
+            <DatePicker
+            style={styles.datePickerStyle}
+            date={dateFrom} //initial date from state
+            mode="date" //The enum of date, datetime and time
+            placeholder="From date"
+            format="DD-MM-YYYY"
+            minDate="03-01-2021"
+            maxDate="01-01-2022"
+            confirmBtnText="Confirm"
+            cancelBtnText="Cancel"
+            customStyles={{
+              dateIcon: {
+                display: 'none',
+                position: 'absolute',
+                left: 0,
+                top: 4,
+                marginLeft: 0,
+              },
+              dateInput: {
+                marginLeft: '5%',
+                borderRadius: 7,
+                backgroundColor: '#eee',
+                borderColor: '#eee',
+              },
+            }}
+            onDateChange={(date) => {
+              setDateFrom(date);
+            }}
+          />
+
+          <DatePicker
+            style={styles.datePickerStyle}
+            date={dateTo} //initial date from state
+            mode="date" //The enum of date, datetime and time
+            placeholder="From date"
+            format="DD-MM-YYYY"
+            minDate="03-01-2021"
+            maxDate="01-01-2022"
+            confirmBtnText="Confirm"
+            cancelBtnText="Cancel"
+            customStyles={{
+              dateIcon: {
+                display: 'none',
+                position: 'absolute',
+                left: 0,
+                top: 4,
+                marginLeft: 0,
+              },
+              dateInput: {
+                borderRadius: 7,
+                backgroundColor: '#eee',
+                borderColor: '#eee',
+                marginLeft: '5%',
+              },
+            }}
+            onDateChange={(date) => {
+              setDateTo(date);
+            }}
+          />
+
+          </View>
+        </View>
     
       </View>
     )
@@ -100,8 +123,21 @@ const styles = StyleSheet.create({
   datePicker: {
     flex: 1,
     width: '100%',
-    position: "relative",
-    justifyContent: 'flex-start'
+    // position: "relative",
+    justifyContent: 'flex-start',
+    flexDirection: 'row'
+  },
+  datePickerStyle: {
+    width: 200,
+    marginTop: 20,
+  },
+  select: {
+    height: 35, 
+    width: 158, 
+    borderRadius: 7,
+    backgroundColor: '#eee',
+    paddingHorizontal: 20,
+    justifyContent: 'center'
   },
   item: {
     flexDirection: 'row',
