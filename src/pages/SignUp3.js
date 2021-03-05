@@ -8,6 +8,7 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import SelectTrainingType from '../components/SelectTrainingType'
 import SmallLogo from '../components/SmallLogo'
 import BigButton from '../components/BigButton'
+import Shape from '../components/Shape.js';
 
 export default function SignUp3() {
 
@@ -44,8 +45,8 @@ export default function SignUp3() {
         </View>
         <SelectTrainingType whiteText={true} />
 
-        <BigButton BGColor='#0BD8A7' linkTo='/feed' text='Continue' />
-        
+        <BigButton BGColor='#0BD8A7' UColor='#05668D' linkTo='/feed' text='Continue'  />
+        <Shape></Shape>
       </View>
     )
   }

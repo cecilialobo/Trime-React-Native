@@ -14,8 +14,8 @@ export default function App() {
   return (
     <>
     <NativeRouter>
+    <Route exact path="/" component={Home} />
     <SafeAreaView style={styles.container}>
-      <Route exact path="/" component={Home} />
       <Route path="/sign-up-1" component={SignUp1} />
       <Route path="/sign-up-2" component={SignUp2} />
       <Route path="/sign-up-3" component={SignUp3} />

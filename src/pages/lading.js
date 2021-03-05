@@ -4,7 +4,8 @@ import { NativeRouter, Route, Link } from "react-router-native";
 import LogoLanding from '../../assets/images/logo-landing.svg'
 import LandingImg from '../../assets/images/landing-image.svg' 
 
-import { StyleSheet, Text, View, Image, SafeAreaView,TouchableHighlight, Button } from 'react-native';
+
+import { StyleSheet, Text, View, Image, SafeAreaView,TouchableHighlight, Button, TouchableOpacity } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 export default function Home() {
@@ -20,16 +21,16 @@ export default function Home() {
     };
 
     return (
-        <View style={styles.container}>
+        <SafeAreaView style={styles.container}>
           <LandingImg style={styles.landingImg}/>
             <LogoLanding style={styles.logo}/>
               <View style={styles.buttonContainer}>
-                <TouchableHighlight style={[styles.button, styles.signUpBtn]} onPress={signUp}>
-                  <Link to="/sign-up-1"><Text style={styles.buttonText}>Sign Up</Text></Link>
+                <TouchableHighlight style={[styles.button, styles.signUpBtn]} underlayColor = {'#05668D'} onPress={signUp}>
+                  <Link to="/sign-up-1" underlayColor = {'#05668D'} style={{ height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }}><Text style={styles.buttonText}>Sign Up</Text></Link>
                 </TouchableHighlight>
-                <TouchableHighlight style={[styles.button, styles.logInBtn]} onPress={logIn}><Text style={styles.buttonText}>Log In</Text></TouchableHighlight>
+                <TouchableHighlight style={[styles.button, styles.logInBtn]} underlayColor = {'#0BD8A7'} onPress={logIn}><Text style={styles.buttonText}>Log In</Text></TouchableHighlight>
               </View>
-        </View>
+        </SafeAreaView>
     )
   }
  
@@ -40,6 +41,8 @@ const styles = StyleSheet.create({
     // backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal
     justifyContent: 'space-between',
+    zIndex: 100,
+    height: '100%',
 
   },
   landingImg: {
@@ -56,14 +59,12 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   buttonContainer: {
-    paddingBottom: 125,
+    position: 'absolute',
+    top: 600,
   },
   button: {
     alignItems: 'center', //horizontal
     justifyContent: 'center', 
-
-    paddingVertical: 15,
-    paddingHorizontal: 40,
     margin: 10,
 
     borderRadius: 40,
@@ -76,10 +77,10 @@ const styles = StyleSheet.create({
     color: "white",
   },
   signUpBtn: {
-    backgroundColor: '#0BD8A7',
+    backgroundColor: ' rgba(11,216,167,0.8)',
   },
   logInBtn: {
-    backgroundColor: '#05668D',
+    backgroundColor: 'rgba(5,102,141,0.8)',
   }
 
 });
