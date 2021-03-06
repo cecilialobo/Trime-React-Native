@@ -1,13 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { TextInput, SectionList, TouchableOpacity } from 'react-native';
+import { TextInput, TouchableOpacity } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import Constants from 'expo-constants';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-// import { useFonts, Inter_900Black } from '@expo-google-fonts/inter';
-// import { useFonts } from 'expo-font'
-
-// import AppLoading from 'expo-app-loading';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 import SelectTrainingType from '../components/SelectTrainingType'
 import SmallLogo from '../components/SmallLogo'
@@ -17,19 +11,9 @@ import BigButton from '../components/BigButton'
 export default function SignUp3() {
 
     console.log('sign up 3')
-
-    // let [fontsLoaded] = useFonts({
-    //   // Inter_900Black,
-    //   'open-sans-400': require('../../assets/fonts/OpenSans_400Regular_Italic.ttf'),
-    //   // 'co-headline': 'https://use.typekit.net/nyl3xak.css' 
-    // });
-  
-    // console.log(fontsLoaded)
     
-
     const [image, setImage] = useState('https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png');
     const [value, onChangeText] = React.useState('Who are you?');
-
 
     useEffect(() => {
       (async () => {
@@ -57,12 +41,6 @@ export default function SignUp3() {
         }
       }
     
-    // if (!fontsLoaded) {
-    //   console.log('not loaded')
-    //   // return <AppLoading />;
-    //   return <Image source={require('../../assets/images/splash.png')} />
-    // }
-
     return (
       <View style={styles.container}>
       

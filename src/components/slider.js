@@ -8,11 +8,31 @@ import Slider from '@react-native-community/slider';
 export default function LevelSlider () {
 
     const [value, setValue] = useState(0.5)
+    const [level, setLevel] = useState('Intermediate')
+
+    const setTrainingLevel = (value) => {
+
+      let level = Math.floor(value * 100);
+      if (level < 30){ 
+        console.log('Level: ' + level + ' - Beginner')
+        setLevel('Beginner')
+
+      } else if (level >=30 && level < 70) {
+         console.log('Level: ' + level + ' - Intermediate')
+        setLevel('Intermediate')
+        
+      } else if (level >= 70) {
+        console.log('Level: ' + level + ' - Pro')
+        setLevel('Pro')
+      }
+    }
+    
     return (
         <View style={styles.container}>
             <Text style={styles.textTitle}>Level of training:</Text>
             <Slider
-                value={value}
+                value={0.5}
+                onSlidingComplete={(value) => setTrainingLevel(value)}
                 style={{width: 340, height: 40}}
                 minimumValue={0}
                 maximumValue={1}
