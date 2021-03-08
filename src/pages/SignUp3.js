@@ -8,6 +8,7 @@ import SelectTrainingType from '../components/SelectTrainingType'
 import SmallLogo from '../components/SmallLogo'
 import LevelSlider from '../components/slider';
 import BigButton from '../components/BigButton'
+import Shape from '../components/Shape.js';
 
 export default function SignUp3() {
 
@@ -83,6 +84,7 @@ export default function SignUp3() {
         <Link onPress={() => saveChanges()} to={'/feed'} >
           <BigButton  BGColor='#0BD8A7'  text='Next' />
         </Link>
+        <Shape></Shape>
       </View>
     )
   }

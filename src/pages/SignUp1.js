@@ -6,6 +6,8 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp1Input from '../components/SignUp1Input.js';
 import CircleButton from '../components/CircleButton.js';
+import Emoticons from '../components/Emoticons.js';
+import Shape from '../components/Shape.js';
 
 import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, Dimensions, TextInput } from 'react-native';
 const { width, height} = Dimensions.get('window');
@@ -18,6 +20,7 @@ export default function SignUp1() {
 
     return (
       <SafeAreaView style={styles.container}>
+      <Emoticons></Emoticons>
        <LogoSignUp style={styles.logo}/>
         <Text style={styles.title}>What are you?</Text>
         <View style={styles.circles}>
@@ -25,38 +28,32 @@ export default function SignUp1() {
           <CircleButton buttonLabel='Trainer'></CircleButton>
         </View>
         <View style={styles.signupContainer}>
-          <SignUp1Input label='First Name'/>
-          <SignUp1Input label='Last Name'/>
+          <SignUp1Input label='Full Name'/>
           <SignUp1Input label='E-mail address'/>
           <SignUp1Input secureTextEntry={true} label='Password'/>
+           <SignUp1Input label='Gender'/>
           <View style={styles.birthDateContainer}>
-          <Text style={styles.birthDateLabel}>Birth date</Text>
-          <View style={styles.dateInput}>
-            <TextInput style={[styles.input, styles.day]}  onChangeText={day => onChangeText(day)}
-            value={value} />
-            <TextInput style={[styles.input, styles.month]}
-             onChangeText={month => onChangeText(month)}
-             value={value} />
-            <TextInput style={[styles.input, styles.year]}  onChangeText={year => onChangeText(year)}
-            value={value} />
+            <Text style={styles.birthDateLabel}>Birth date</Text>
+            <View style={styles.dateInput}>
+              <TextInput style={[styles.input, styles.day]}  onChangeText={day => onChangeText(day)}
+              value={value} />
+              <TextInput style={[styles.input, styles.month]}
+              onChangeText={month => onChangeText(month)}
+              value={value} />
+              <TextInput style={[styles.input, styles.year]}  onChangeText={year => onChangeText(year)}
+              value={value} />
             </View>
           </View>
-          
         </View>
         <View style={styles.buttonContainer}>
-          
-            <TouchableHighlight style={[styles.button, styles.signUpBtn]}>
-                <Link to="/sign-up-2">
-                    <Text style={[{fontSize: 30}, styles.buttonText]}>Next</Text>
-                </Link>
-            </TouchableHighlight>
-            <TouchableHighlight style={[styles.logInBtn]}>
-                <Link to="">
-                    <Text style={styles.buttonText}>Log in</Text>
+            <TouchableHighlight style={[styles.button, styles.signUpBtn]} underlayColor = {'#05668D'}  >
+                <Link to="/sign-up-2" underlayColor = {'#05668D'} style={{ height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                    <Text style={[{fontSize: 30}, styles.buttonText]} underlayColor = {'#05668D'} >Next</Text>
                 </Link>
             </TouchableHighlight>
           
         </View>
+        <Shape style={{zIndex: -100}}></Shape>
       </SafeAreaView>
     )
   }
@@ -71,7 +68,7 @@ const styles = StyleSheet.create({
     height: height,
   },
   logo: {
-    marginTop: 55,
+    marginTop: 76,
   },
   title: {
     marginTop: 15,
@@ -83,9 +80,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: 45,
+    width: '70%',
   },
   signupContainer: {
-    flex: 2.2,
+    flex: 2.8,
     flexDirection: 'column',
     marginTop: 15,
   },
@@ -106,7 +104,7 @@ const styles = StyleSheet.create({
    input: {
     backgroundColor: '#fff', 
     borderRadius: 9,
-    height: 35,
+    height: 44,
    },
    day: {
      width: 90,
@@ -118,36 +116,22 @@ const styles = StyleSheet.create({
     width: 120,
   },
   buttonContainer: {
-    // flex: 1,
-    justifyContent: 'center',
+    flex: 1,
+    justifyContent: 'flex-start',
   },
   button: {
     alignItems: 'center', //horizontal
     justifyContent: 'center', 
-
-    paddingVertical: 15,
-    paddingHorizontal: 40,
     margin: 10,
     borderRadius: 40,
-    color: "white",
+
+    width: 260,
+    height: 73,
   },
   buttonText: {
     color: "white",
   },
   signUpBtn: {
     backgroundColor: '#0BD8A7',
-    width: 260,
-    height: 73,
   },
-  logInBtn: {
-    borderRadius: 40,
-    alignItems: 'center', //horizontal
-    justifyContent: 'center', 
-    fontSize: 14,
-    backgroundColor: '#05668D',
-    width: 132,
-    height: 37,
-    alignSelf: 'center',
-  }
-
 });

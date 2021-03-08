@@ -4,7 +4,8 @@ import { NativeRouter, Route, Link } from "react-router-native";
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-export default function BigButton ( { BGColor, text, linkTo } ) {
+// export default function BigButton ( { BGColor, text, linkTo } ) 
+export default function BigButton ( { BGColor, UColor, text, linkTo } ){
 
     return (
         // <View style={styles.buttonContainer} pointerEvents={"none"}>
@@ -30,9 +31,7 @@ const styles = StyleSheet.create({
       button: {
         alignItems: 'center', //horizontal
         justifyContent: 'center', 
-    
-        paddingVertical: 15,
-        paddingHorizontal: 40,
+        
         margin: 10,
     
         borderRadius: 40,
@@ -44,5 +43,6 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 30,
         color: "white",
+        padding: 17,
       }
 });
