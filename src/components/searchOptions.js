@@ -7,6 +7,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 import SelectTrainingType from '../components/SelectTrainingType'
+import SearchBarComponent from '../components/searchBar'
 
 export default function SearchOptions() {
 
@@ -17,11 +18,13 @@ export default function SearchOptions() {
 
     return (
       <View style={styles.container}>
-           <TextInput
+           {/* <TextInput
             style={ styles.searchInput}
             onChangeText={text => setValue(text)}
             value={value}
-            />
+            /> */}
+            
+            <SearchBarComponent />
        
         <View style={{width: 414, paddingHorizontal: 35, marginTop: 30, marginBottom: 15, 
                       borderBottomColor: '#eee'}}>
