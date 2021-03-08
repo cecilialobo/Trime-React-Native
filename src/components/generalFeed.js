@@ -212,16 +212,16 @@ const styles = StyleSheet.create({
     borderBottomColor: '#eeeeee'
   },
   section: {
-    paddingVertical: 20,
+    paddingVertical: 15,
   },
   item: {
-    width: 100,
+    width: 160,
     marginVertical: 8,
     marginLeft: 20
   },
   itemImage: {
-    width:100, 
-    height: 100,
+    width:160, 
+    height: 160,
     borderRadius: 10,
     marginBottom: 4
   },
