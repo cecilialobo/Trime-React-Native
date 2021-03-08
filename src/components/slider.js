@@ -5,24 +5,23 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button
 import Slider from '@react-native-community/slider';
 
 
-export default function LevelSlider () {
+export default function LevelSlider ({ level, setLevel }) {
 
     const [value, setValue] = useState(0.5)
-    const [level, setLevel] = useState('Intermediate')
 
     const setTrainingLevel = (value) => {
 
-      let level = Math.floor(value * 100);
-      if (level < 30){ 
-        console.log('Level: ' + level + ' - Beginner')
+      let currentLevel = Math.floor(value * 100);
+      if (currentLevel < 30){ 
+        // console.log('Level: ' + level + ' - Beginner')
         setLevel('Beginner')
 
-      } else if (level >=30 && level < 70) {
-         console.log('Level: ' + level + ' - Intermediate')
+      } else if (currentLevel >=30 && currentLevel < 70) {
+        //  console.log('Level: ' + level + ' - Intermediate')
         setLevel('Intermediate')
-        
-      } else if (level >= 70) {
-        console.log('Level: ' + level + ' - Pro')
+
+      } else if (currentLevel >= 70) {
+        // console.log('Level: ' + level + ' - Pro')
         setLevel('Pro')
       }
     }
@@ -41,7 +40,7 @@ export default function LevelSlider () {
                 thumbTintColor='#0BD8A7'
             />
 
-            <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-around', marginBottom: 15}}>
+            <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-between', marginBottom: 15, paddingHorizontal: 24}}>
                 <Text style={{color: '#fff'}}>Beginner</Text>
                 <Text style={{color: '#fff', paddingRight: 35}}>Intermediate</Text>
                 <Text style={{color: '#fff'}}>Pro</Text>

@@ -13,9 +13,7 @@ import Yoga from '../../assets/images/training-icons/Yoga.svg'
 import Golf from '../../assets/images/training-icons/Golf.svg'
 import Tennis from '../../assets/images/training-icons/Tennis.svg'
 
-export default function SelectTrainingType( { whiteText } ) {
-  
-    const [ selectedTypes, setSelectedTypes ] = useState([]);
+export default function SelectTrainingType( { whiteText, selectedTypes, setSelectedTypes } ) {
 
     const TRAININGTYPES = [
       {
@@ -69,8 +67,6 @@ export default function SelectTrainingType( { whiteText } ) {
         icon: <Tennis />
       }
     ];
-
-    console.log('selected: ' + selectedTypes)
 
     return (
       <View style={styles.container}>

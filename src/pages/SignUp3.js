@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { TextInput, TouchableOpacity } from 'react-native';
+import { Link } from "react-router-native";
 import * as ImagePicker from 'expo-image-picker';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
@@ -10,10 +11,12 @@ import BigButton from '../components/BigButton'
 
 export default function SignUp3() {
 
-    console.log('sign up 3')
+    // console.log('sign up 3')
     
     const [image, setImage] = useState('https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png');
-    const [value, onChangeText] = React.useState('Who are you?');
+    const [value, onChangeText] = useState('');
+    const [ selectedTypes, setSelectedTypes ] = useState([]);
+    const [level, setLevel] = useState('Intermediate')
 
     useEffect(() => {
       (async () => {
@@ -41,6 +44,13 @@ export default function SignUp3() {
         }
       }
     
+      const saveChanges = () => {
+        console.log('Description: ' + value)
+        console.log('Image: ' + image)
+        console.log('Types of training: ' + selectedTypes)
+        console.log('Level of Training: ' + level)
+      }
+
     return (
       <View style={styles.container}>
       
@@ -49,11 +59,11 @@ export default function SignUp3() {
         <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
         
         <TouchableOpacity onPress={selectImage} style={{marginTop: 6}} >
-         { image && <Image source={{uri: image}} style={{margin: 4, width: 100, height: 100, borderRadius: 100}} />}
+         <Image source={{uri: image}} style={{margin: 4, width: 100, height: 100, borderRadius: 100}} />
         </TouchableOpacity>
 
         <View>
-            <Text  style={[styles.whiteText, {fontSize: 14, fontWeight: 'bold'}]}>Description: </Text>
+            <Text  style={[styles.whiteText, {fontSize: 14, fontWeight: 'bold', marginBottom: 7}]}>Description: </Text>
             <TextInput
                 style={styles.textInput}
                 multiline={true}
@@ -66,12 +76,13 @@ export default function SignUp3() {
         <Text style={[styles.whiteText, {textAlign: "left", fontWeight: 'bold'}]}>What type of training do you do?</Text>
         </View>
 
-        <SelectTrainingType whiteText={true} />
+        <SelectTrainingType whiteText={true} selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
 
-        <LevelSlider />
-
-        <BigButton BGColor='#0BD8A7' linkTo='/feed' text='Next' />
+        <LevelSlider level={level} setLevel={setLevel} />
         
+        <Link onPress={() => saveChanges()} to={'/feed'} >
+          <BigButton  BGColor='#0BD8A7'  text='Next' />
+        </Link>
       </View>
     )
   }
@@ -92,6 +103,7 @@ const styles = StyleSheet.create({
       height: 109,
       width: 353, 
       padding: 10,
+      paddingTop: 10,
       borderColor: 'gray', 
       borderWidth: 1,
       borderRadius: 10,
