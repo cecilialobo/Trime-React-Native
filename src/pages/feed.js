@@ -13,8 +13,8 @@ export default function Feed() {
 
     console.log('feed')
 
-    const [personal, setPersonal] = useState(true);
-    const [general, setGeneral] = useState(false);
+    const [personal, setPersonal] = useState(false);
+    const [general, setGeneral] = useState(true);
 
     return (
       <View style={styles.container}>

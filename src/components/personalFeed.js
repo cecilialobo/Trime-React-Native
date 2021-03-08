@@ -233,7 +233,7 @@ const Item = ({ item }) => (
           <Text>Status</Text>
           { item.status === 'Paid' ? 
               <Text style={styles.statusText, { color: '#0BD8A7' }}>{item.status}</Text> :
-              <Text style={styles.statusText, { color: '#E84747'}}>{item.status}</Text> }
+              <Text style={styles.statusText, { color: '#E84747' }}>{item.status}</Text> }
       </View>
     </View>
   );
@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start', //horizontal 
     width: '100%',
     marginTop: 150,
-    marginBottom: 88
+    marginBottom: 40
 
   },
 
@@ -308,7 +308,7 @@ const styles = StyleSheet.create({
   },
   statusText: {
     fontWeight: 'bold',
-    fontSize: 20, 
-    backgroundColor: 'green'
+    // fontSize: 20, 
+    // backgroundColor: 'green'
   }
 });

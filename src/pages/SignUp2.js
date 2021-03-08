@@ -4,6 +4,8 @@ import Slider from '@react-native-community/slider';
 
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp2Input from '../components/SignUp2Input.js';
+import Emoticons from '../components/Emoticons.js';
+import Shape from '../components/Shape.js';
 
 import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight } from 'react-native';
 import WorkOutPlaces from '../components/WorkOutPlaces';
@@ -13,6 +15,7 @@ export default function SignUp2() {
 
     return (
       <SafeAreaView style={styles.container}>
+        <Emoticons></Emoticons>
         <LogoSignUp style={styles.logo}/>
         <Text style={styles.subtitle}>Time to set up your profile</Text>
         
@@ -57,6 +60,7 @@ export default function SignUp2() {
                 </Link>
             </TouchableHighlight>
         </View>
+        <Shape></Shape>
       </SafeAreaView>
     )
   }
@@ -79,7 +83,7 @@ const styles = StyleSheet.create({
     flex: 0.3,
     flexDirection: 'row',
     paddingLeft: 15,
-    width: 346,
+    width: 346
   },
   textTitle: {
     color: '#fff',  

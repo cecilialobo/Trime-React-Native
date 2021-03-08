@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start', //horizontal 
     width: '100%',
     marginTop: 150,
-    marginBottom: 88
+    marginBottom: 40
   },
   sectionContainer: {
     marginTop: 20,

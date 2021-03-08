@@ -4,14 +4,15 @@ import { NativeRouter, Route, Link } from "react-router-native";
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
-export default function BigButton ( { BGColor, text, linkTo } ) {
+// export default function BigButton ( { BGColor, text, linkTo } ) 
+export default function BigButton ( { BGColor, UColor, text, linkTo } ){
 
     return (
         <View style={styles.buttonContainer}>
           
-            <TouchableHighlight style={[styles.button, {backgroundColor: BGColor}]}>
-              <Link to={linkTo}>
-                <Text style={styles.buttonText}>{text}</Text>
+            <TouchableHighlight style={[styles.button, {backgroundColor: BGColor}]} underlayColor={UColor}>
+              <Link to={linkTo} underlayColor={UColor} style={{ height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+                <Text style={[styles.buttonText]}>{text}</Text>
               </Link>
             </TouchableHighlight>
           
@@ -29,9 +30,7 @@ const styles = StyleSheet.create({
       button: {
         alignItems: 'center', //horizontal
         justifyContent: 'center', 
-    
-        paddingVertical: 15,
-        paddingHorizontal: 40,
+        
         margin: 10,
     
         borderRadius: 40,
@@ -43,5 +42,6 @@ const styles = StyleSheet.create({
         flex: 1,
         fontSize: 30,
         color: "white",
+        padding: 17,
       }
 });

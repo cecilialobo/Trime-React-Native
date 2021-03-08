@@ -8,6 +8,7 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import SelectTrainingType from '../components/SelectTrainingType'
 import SmallLogo from '../components/SmallLogo'
 import BigButton from '../components/BigButton'
+import Shape from '../components/Shape.js';
 
 export default function SignUp3() {
 
@@ -33,6 +34,7 @@ export default function SignUp3() {
             <Text  style={[styles.whiteText, {fontSize: 14}]}>Description: </Text>
             <TextInput
                 style={styles.textInput}
+                multiline={true}
                 onChangeText={text => onChangeText(text)}
                 value={value}
                 />
@@ -41,10 +43,10 @@ export default function SignUp3() {
         <View style={{width: 414, paddingHorizontal: 35, marginBottom: 10}}>
         <Text style={[styles.whiteText, {textAlign: "left"}]}>What type of training do you do?</Text>
         </View>
-        <SelectTrainingType />
+        <SelectTrainingType whiteText={true} />
 
-        <BigButton BGColor='#0BD8A7' linkTo='/feed' text='Continue' />
-        
+        <BigButton BGColor='#0BD8A7' UColor='#05668D' linkTo='/feed' text='Continue'  />
+        <Shape></Shape>
       </View>
     )
   }
@@ -62,13 +64,13 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   textInput: { 
-      justifyContent: 'flex-start', 
       height: 109,
       width: 353, 
+      padding: 10,
       borderColor: 'gray', 
       borderWidth: 1,
       borderRadius: 10,
       backgroundColor: 'white',
-      marginBottom: 38
-  },
+      marginBottom: 38,
+  }
 });
