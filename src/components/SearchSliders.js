@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 
@@ -26,7 +26,7 @@ export default function SearchSliders ({ text, beginning, middle, end }) {
             <Slider
                 value={0.5}
                 onSlidingComplete={(value) => setSliderValue(value)}
-                style={{width: 340, height: 40}}
+                style={{width: 340, height: 40, marginRight: 15}}
                 minimumValue={0}
                 maximumValue={1}
                 minimumTrackTintColor='#05668D'
@@ -34,9 +34,9 @@ export default function SearchSliders ({ text, beginning, middle, end }) {
                 thumbTintColor='#05668D'
             />
 
-            <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-between', marginBottom: 15, paddingHorizontal: 24}}>
+            <View style={{flexDirection: 'row', width: 320, justifyContent: 'space-between', marginBottom: 15, marginRight: 25, alignSelf: 'center'}}>
                 <Text>{beginning}</Text>
-                <Text style={{paddingRight: 20}}>{middle}</Text>
+                <Text style={{paddingRight: 10}}>{middle}</Text>
                 <Text>{end}</Text>
             </View>
           
@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
       },
       textTitle: {
         alignSelf: 'flex-start',
-        marginLeft: 25,
+        marginLeft: 40,
         marginTop: 30,
         marginBottom: 10,
         fontWeight: 'bold'

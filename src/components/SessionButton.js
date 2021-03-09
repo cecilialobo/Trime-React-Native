@@ -7,7 +7,7 @@ export default function SessionButton( {sessionType} ) {
             <TouchableHighlight 
             style={styles.sessionButton} 
             underlayColor="#0BD8A7" 
-            onPress={() => console.log(sessionType)}>
+            onPress={() => console.log(`Session type: ${sessionType}`)}>
                 <Text style={{color: '#fff', fontSize: 12}}>{sessionType}</Text>
             </TouchableHighlight>
     )

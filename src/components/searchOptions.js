@@ -103,7 +103,6 @@ const styles = StyleSheet.create({
     marginVertical: 8,
     width: 414,
     height: 100,
-
     borderBottomWidth: 4,
     borderBottomColor: '#eeeeee'
   },
@@ -112,7 +111,6 @@ const styles = StyleSheet.create({
     height: 72,
     marginHorizontal: 10,
     borderRadius: 10,
-
   },
   infoSection: {
     flex: 1
@@ -124,23 +122,20 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 10
   },
-  title: {
-    // fontSize: 24
-  },
   status: {
-    // height: 72,
     width: 100,
     alignItems: 'center',
     marginRight: 20
   },
   statusText: {
     fontWeight: 'bold',
-    // fontSize: 20, 
-    // backgroundColor: 'green'
   },
   sessionContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    width: 330
+    width: 370,
+    marginTop: 20,
+    marginRight: 15,
+    alignSelf: 'center'  
 }
 });
