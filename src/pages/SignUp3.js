@@ -5,6 +5,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
 import SelectTrainingType from '../components/SelectTrainingType'
+import Emoticons from '../components/Emoticons.js';
 import SmallLogo from '../components/SmallLogo'
 import LevelSlider from '../components/slider';
 import BigButton from '../components/BigButton'
@@ -55,6 +56,7 @@ export default function SignUp3() {
     return (
       <View style={styles.container}>
       
+      <Emoticons></Emoticons>
         <SmallLogo />
 
         <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>

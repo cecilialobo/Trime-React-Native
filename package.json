@@ -9,7 +9,6 @@
   },
   "dependencies": {
     "@expo-google-fonts/inter": "^0.1.0",
-    "@react-native-community/datetimepicker": "^3.0.4",
     "@react-native-community/hooks": "^2.6.0",
     "@react-native-community/slider": "^3.0.3",
     "clean-webpack-plugin": "^3.0.0",
