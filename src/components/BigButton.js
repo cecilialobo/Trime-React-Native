@@ -8,24 +8,25 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 export default function BigButton ( { BGColor, UColor, text, linkTo } ){
 
     return (
-        <View style={styles.buttonContainer}>
+        // <View style={styles.buttonContainer} pointerEvents={"none"}>
+
           
-            <TouchableHighlight style={[styles.button, {backgroundColor: BGColor}]} underlayColor={UColor}>
-              <Link to={linkTo} underlayColor={UColor} style={{ height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={[styles.buttonText]}>{text}</Text>
-              </Link>
-            </TouchableHighlight>
+            // <Link to={linkTo} onPress={() => console.log('go to feed')}>
+              <View style={[styles.button, {backgroundColor: BGColor}]} >
+                <Text style={styles.buttonText} pointerEvents={"none"}>{text}</Text>
+              </View>
+            // </Link>
           
-        </View>
+        // </View>
     )
   }
  
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        flex: 1,
-        paddingBottom: 93,
-        justifyContent: 'flex-end',
+        // flex: 1,
+        // paddingBottom: 93,
+        // justifyContent: 'flex-end',
       },
       button: {
         alignItems: 'center', //horizontal

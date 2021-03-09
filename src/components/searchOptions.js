@@ -1,36 +1,103 @@
 
 import React, { useState } from 'react';
-import { TextInput, SectionList } from 'react-native';
-import DatePicker from 'react-native-date-picker';
+import { TextInput } from 'react-native';
+
+import DatePicker from 'react-native-datepicker';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 import SelectTrainingType from '../components/SelectTrainingType'
+import SearchBarComponent from '../components/searchBar'
 
 export default function SearchOptions() {
 
 
-    const [date, setDate] = useState(new Date())
+    const [dateFrom, setDateFrom] = useState('03-03-2021');
+    const [dateTo, setDateTo] = useState('03-03-2021');
     const [value, setValue] = useState('Search');
-
 
     return (
       <View style={styles.container}>
-           <TextInput
+           {/* <TextInput
             style={ styles.searchInput}
             onChangeText={text => setValue(text)}
             value={value}
-            />
+            /> */}
+            
+            <SearchBarComponent />
        
-       <View style={{width: 414, paddingHorizontal: 35, marginTop: 30, marginBottom: 15}}>
-        <Text style={[{textAlign: "left", fontWeight: 'bold'}]}>Type of training:</Text>
+        <View style={{width: 414, paddingHorizontal: 35, marginTop: 30, marginBottom: 15, 
+                      borderBottomColor: '#eee'}}>
+          <Text style={[{textAlign: "left", fontWeight: 'bold'}]}>Type of training:</Text>
         </View>
         <SelectTrainingType whiteText={false} />
-      
-        {/* <DatePicker
-            date={date}
-            onDateChange={setDate}
-        /> */}
+
+        <View style={{flex: 1}}>
+          <Text style={{alignSelf: 'flex-start'}}>Date:</Text>
+          <View style={styles.datePicker}>
+
+            <DatePicker
+            style={styles.datePickerStyle}
+            date={dateFrom} //initial date from state
+            mode="date" //The enum of date, datetime and time
+            placeholder="From date"
+            format="DD-MM-YYYY"
+            minDate="03-01-2021"
+            maxDate="01-01-2022"
+            confirmBtnText="Confirm"
+            cancelBtnText="Cancel"
+            customStyles={{
+              dateIcon: {
+                display: 'none',
+                position: 'absolute',
+                left: 0,
+                top: 4,
+                marginLeft: 0,
+              },
+              dateInput: {
+                marginLeft: '5%',
+                borderRadius: 7,
+                backgroundColor: '#eee',
+                borderColor: '#eee',
+              },
+            }}
+            onDateChange={(date) => {
+              setDateFrom(date);
+            }}
+          />
+
+          <DatePicker
+            style={styles.datePickerStyle}
+            date={dateTo} //initial date from state
+            mode="date" //The enum of date, datetime and time
+            placeholder="From date"
+            format="DD-MM-YYYY"
+            minDate="03-01-2021"
+            maxDate="01-01-2022"
+            confirmBtnText="Confirm"
+            cancelBtnText="Cancel"
+            customStyles={{
+              dateIcon: {
+                display: 'none',
+                position: 'absolute',
+                left: 0,
+                top: 4,
+                marginLeft: 0,
+              },
+              dateInput: {
+                borderRadius: 7,
+                backgroundColor: '#eee',
+                borderColor: '#eee',
+                marginLeft: '5%',
+              },
+            }}
+            onDateChange={(date) => {
+              setDateTo(date);
+            }}
+          />
+
+          </View>
+        </View>
     
       </View>
     )
@@ -43,6 +110,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     paddingTop: 20,
     alignItems: 'center', //horizontal 
+    justifyContent: 'flex-start',
     width: '100%',
     marginTop: 104,
     marginBottom: 40
@@ -55,7 +123,25 @@ const styles = StyleSheet.create({
     backgroundColor: '#eee',
     paddingHorizontal: 20
   },
-
+  datePicker: {
+    flex: 1,
+    width: '100%',
+    // position: "relative",
+    justifyContent: 'flex-start',
+    flexDirection: 'row'
+  },
+  datePickerStyle: {
+    width: 200,
+    marginTop: 20,
+  },
+  select: {
+    height: 35, 
+    width: 158, 
+    borderRadius: 7,
+    backgroundColor: '#eee',
+    paddingHorizontal: 20,
+    justifyContent: 'center'
+  },
   item: {
     flexDirection: 'row',
     alignItems: 'center',

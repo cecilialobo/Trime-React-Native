@@ -71,6 +71,15 @@ const styles = StyleSheet.create({
 
     width: 260,
     height: 73,
+    opacity: 0.8
+  },
+  link: {
+    width:'100%', 
+    height: '100%', 
+    flex: 1, 
+    alignItems: 'center', 
+    justifyContent: 'center', 
+    borderRadius: 40
   },
   buttonText: {
     fontSize: 30,
