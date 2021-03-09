@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 export default function trainingItem ( { key, icon, type, selectedTypes, setSelectedTypes, whiteText } ) {
 
     const [bgColor, setBgColor] = useState('#05668D');
-
+    
     const selectTrainingType = () => {
         bgColor == '#05668D' ? setBgColor('#0BD8A7') : setBgColor('#05668D');
         
