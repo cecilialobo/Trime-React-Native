@@ -46,9 +46,11 @@ export default function SearchOptions() {
         <SearchSliders
         text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
     
-        <SessionButton sessionType = 'Solo Session'></SessionButton>
-        <SessionButton sessionType = 'Both'></SessionButton>
-        <SessionButton sessionType = 'Group Session'></SessionButton>
+        <View style={styles.sessionContainer}>
+          <SessionButton sessionType = 'Solo Session'></SessionButton>
+          <SessionButton sessionType = 'Both'></SessionButton>
+          <SessionButton sessionType = 'Group Session'></SessionButton>
+        </View>
 
       </View>
     )
@@ -57,10 +59,10 @@ export default function SearchOptions() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1,
     backgroundColor: 'white',
     paddingTop: 20,
-    alignItems: 'center', //horizontal 
+    alignItems: 'center', 
     justifyContent: 'flex-start',
     width: '100%',
     marginTop: 104,
@@ -133,5 +135,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     // fontSize: 20, 
     // backgroundColor: 'green'
-  }
+  },
+  sessionContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: 330
+}
 });

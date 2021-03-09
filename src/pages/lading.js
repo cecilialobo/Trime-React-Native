@@ -4,6 +4,7 @@ import { NativeRouter, Route, Link } from "react-router-native";
 import LogoLanding from '../../assets/images/logo-landing.svg'
 import LandingImg from '../../assets/images/landing-image.svg' 
 
+import SessionButton from '../components/SessionButton';
 
 import { StyleSheet, Text, View, Image, SafeAreaView,TouchableHighlight, Button, TouchableOpacity } from 'react-native';
 import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
@@ -43,7 +44,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     zIndex: 100,
     height: '100%',
-
   },
   landingImg: {
     flex: 1,
