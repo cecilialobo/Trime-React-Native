@@ -5,6 +5,7 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button
 import SelectTrainingType from '../components/SelectTrainingType'
 import SearchBarComponent from '../components/searchBar'
 import DatePickerComponent from '../components/datePickerComponent'
+import SearchSliders from '../components/SearchSliders';
 
 export default function SearchOptions() {
 
@@ -38,7 +39,10 @@ export default function SearchOptions() {
           <DatePickerComponent date={dateTo} setDate={setDateTo} />
         </View>
 
-
+        <SearchSliders
+        text='Distance Limit' beginning='0 km' middle='10 km' end='∞'></SearchSliders>
+        <SearchSliders
+        text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
     
       </View>
     )

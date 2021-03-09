@@ -8,15 +8,15 @@ export default function SearchSliders ({ text, beginning, middle, end }) {
     const setSliderValue = (value) => {
     let currentValue = Math.floor(value * 100);
     if (currentValue < 30){ 
-      console.log(`${text} = ${beginning}`);
+      console.log(`${text}: ${beginning}`);
     } 
       
     if (currentValue >=30 && currentValue < 70) {
-      console.log(`${text} = ${middle}`);
+      console.log(`${text}: ${middle}`);
     }
       
     if (currentValue >= 70) {
-      console.log(`${text} = ${end}`);
+      console.log(`${text}: ${end}`);
     }
   }
     
