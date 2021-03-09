@@ -5,11 +5,14 @@ import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button
 import SelectTrainingType from '../components/SelectTrainingType'
 import SearchBarComponent from '../components/searchBar'
 import DatePickerComponent from '../components/datePickerComponent'
+import DateTimePickerComponent from './dateTimePickerComponent'
 
 export default function SearchOptions() {
 
-    const [dateFrom, setDateFrom] = useState('03-03-2021');
-    const [dateTo, setDateTo] = useState('03-03-2021');
+  const [dateFrom, setDateFrom] = useState('From:');
+  const [timeFrom, setTimeFrom] = useState('From:');
+  const [dateTo, setDateTo] = useState('To:');
+  const [timeTo, setTimeTo] = useState('To:');
     const [value, setValue] = useState('Search');
 
     const HeaderText = ({text}) => (
@@ -28,14 +31,14 @@ export default function SearchOptions() {
 
         <HeaderText text={'Date'} />
         <View style={styles.datePicker}>
-          <DatePickerComponent date={dateFrom} setDate={setDateFrom} />
-          <DatePickerComponent date={dateTo} setDate={setDateTo} />
+          <DateTimePickerComponent type={'date'} input={dateFrom} setInput={setDateFrom} />
+          <DateTimePickerComponent type={'date'} input={dateTo} setInput={setDateTo} />
         </View>
 
         <HeaderText text={'Time'} />
         <View style={styles.datePicker}>
-          <DatePickerComponent date={dateFrom} setDate={setDateFrom} />
-          <DatePickerComponent date={dateTo} setDate={setDateTo} />
+          <DateTimePickerComponent type={'time'} input={timeFrom} setInput={setTimeFrom} />
+          <DateTimePickerComponent type={'time'} input={timeTo} setInput={setTimeTo} />
         </View>
 
 
