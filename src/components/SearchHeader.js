@@ -7,7 +7,7 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import NotificationIcons from './NotificationIcons'
 import LogoFeed  from '../../assets/images/logo-feed.svg';
 
-export default function SearchHeader( { personal, setPersonal, general, setGeneral } ) {
+export default function SearchHeader( { showButtons } ) {
     
     const selectFeed = () => {
         setPersonal(!personal)

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import SelectTrainingType from '../components/SelectTrainingType';
 import SearchBarComponent from '../components/searchBar';
@@ -23,6 +23,7 @@ export default function SearchOptions() {
 
     return (
       <View style={styles.container}>
+      <ScrollView>
             
         <SearchBarComponent />
        
@@ -52,6 +53,7 @@ export default function SearchOptions() {
           <SessionButton sessionType = 'Group Session'></SessionButton>
         </View>
 
+      </ScrollView>
       </View>
     )
   }
@@ -66,7 +68,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     width: '100%',
     marginTop: 104,
-    marginBottom: 40
+    marginBottom: 60
   },
   headerContainer: {
     width: 414, 
