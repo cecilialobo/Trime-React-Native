@@ -1,7 +1,5 @@
-
 import React, { useState } from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 
 

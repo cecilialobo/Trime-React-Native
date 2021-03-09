@@ -7,8 +7,7 @@ import { useDimensions, useDeviceOrientation } from '@react-native-community/hoo
 import FooterMenu from '../components/footerMenu'
 import SearchHeader from '../components/SearchHeader'
 import SearchOptions from '../components/searchOptions'
-import PersonalFeed from '../components/personalFeed'
-import GeneralFeed from '../components/generalFeed'
+import SearchSliders from '../components/SearchSliders';
 
 export default function Search() {
 
@@ -16,16 +15,21 @@ export default function Search() {
 
     const [searchOptions, setSearchOptions] = useState(true);
     const [searchResults, setSearchResults] = useState(false);
+  
 
     return (
       <View style={styles.container}>
-          <SearchHeader showButtons={searchResults} />
+        <SearchHeader showButtons={searchResults} />
          
+        { searchOptions && <SearchOptions /> }
+        { searchResults && <SearchFeed /> }
 
-          { searchOptions && <SearchOptions /> }
-          { searchResults && <SearchFeed /> }
-
-       <FooterMenu active={'Search'} />  
+        <SearchSliders
+        text='Distance Limit' beginning='0 km' middle='10 km' end='∞'></SearchSliders>
+        <SearchSliders
+        text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
+  
+        <FooterMenu active={'Search'} />  
     
       </View>
     )
