@@ -71,8 +71,9 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   datePicker: {
-    // flex: 1,
-    width: '100%',
+    alignSelf: 'flex-start',
+    paddingHorizontal: 35, 
+    width: '90%',
     justifyContent: 'flex-start',
     flexDirection: 'row'
   },

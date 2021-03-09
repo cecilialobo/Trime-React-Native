@@ -119,9 +119,9 @@ export default function SearchBarComponent () {
         alignItems: 'center',
         width: '100%',
         borderColor: '#eee',
-      backgroundColor: '#eee',
-      borderRadius: 20,
-      paddingLeft: 20,
+        backgroundColor: '#eee',
+        borderRadius: 20,
+        paddingLeft: 20,
     },
     textInputStyle: {
       height: 40,

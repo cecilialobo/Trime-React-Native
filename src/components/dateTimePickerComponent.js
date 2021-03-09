@@ -51,7 +51,7 @@ export default function DateTimePickerComponent ( { type, input, setInput } ){
     return (
         <View>
             <TouchableOpacity style={styles.inputStyle} onPress={showDatePicker}>
-                <Text>{input}</Text>
+                <Text placeholder="Search">{input}</Text>
             </TouchableOpacity>
             <DateTimePickerModal
                 isVisible={isDatePickerVisible}
@@ -65,12 +65,9 @@ export default function DateTimePickerComponent ( { type, input, setInput } ){
  
 
 const styles = StyleSheet.create({
-    datePickerStyle: {
-        // marginTop: 20,
-    },
     inputStyle: {
-        width: 200,
-        marginLeft: '5%',
+        width: 167,
+        marginRight: '5%',
         borderRadius: 7,
         padding: 7,
         backgroundColor: '#eee',
