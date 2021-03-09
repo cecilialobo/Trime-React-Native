@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import SelectTrainingType from '../components/SelectTrainingType'
-import SearchBarComponent from '../components/searchBar'
+import SelectTrainingType from '../components/SelectTrainingType';
+import SearchBarComponent from '../components/searchBar';
 import SearchSliders from '../components/SearchSliders';
-import DateTimePickerComponent from './dateTimePickerComponent'
+import DateTimePickerComponent from './dateTimePickerComponent';
+import SessionButton from './SessionButton';
 
 export default function SearchOptions() {
 
@@ -12,7 +13,7 @@ export default function SearchOptions() {
   const [timeFrom, setTimeFrom] = useState('From:');
   const [dateTo, setDateTo] = useState('To:');
   const [timeTo, setTimeTo] = useState('To:');
-    const [value, setValue] = useState('Search');
+  const [value, setValue] = useState('Search');
 
     const HeaderText = ({text}) => (
       <View style={styles.headerContainer}>
@@ -46,6 +47,12 @@ export default function SearchOptions() {
         <SearchSliders
         text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
     
+        <View style={styles.sessionContainer}>
+          <SessionButton sessionType = 'Solo Session'></SessionButton>
+          <SessionButton sessionType = 'Both'></SessionButton>
+          <SessionButton sessionType = 'Group Session'></SessionButton>
+        </View>
+
       </ScrollView>
       </View>
     )
@@ -54,10 +61,10 @@ export default function SearchOptions() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1,
     backgroundColor: 'white',
     paddingTop: 20,
-    alignItems: 'center', //horizontal 
+    alignItems: 'center', 
     justifyContent: 'flex-start',
     width: '100%',
     marginTop: 104,
@@ -130,5 +137,10 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     // fontSize: 20, 
     // backgroundColor: 'green'
-  }
+  },
+  sessionContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: 330
+}
 });
