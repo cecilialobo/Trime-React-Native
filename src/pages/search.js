@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, TextInput, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { StyleSheet, View } from 'react-native';
 
 import FooterMenu from '../components/footerMenu'
 import SearchHeader from '../components/SearchHeader'
@@ -31,9 +29,9 @@ export default function Search() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1, 
     backgroundColor: 'white',
-    alignItems: 'center', //horizontal 
+    alignItems: 'center',
     width: '100%',
   }
 });

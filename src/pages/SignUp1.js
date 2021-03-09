@@ -1,7 +1,5 @@
-
 import React from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { Link } from "react-router-native";
 
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp1Input from '../components/SignUp1Input.js';

@@ -34,7 +34,7 @@ export default function SearchSliders ({ text, beginning, middle, end }) {
                 thumbTintColor='#05668D'
             />
 
-            <View style={{flexDirection: 'row', width: 320, justifyContent: 'space-between', marginBottom: 15, marginRight: 25, alignSelf: 'center'}}>
+            <View style={{flexDirection: 'row', width: 330, justifyContent: 'space-between', marginBottom: 15, marginRight: 15, alignSelf: 'center'}}>
                 <Text>{beginning}</Text>
                 <Text style={{paddingRight: 10}}>{middle}</Text>
                 <Text>{end}</Text>
