@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-// import DatePicker from 'react-native-date-picker';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import SelectTrainingType from '../components/SelectTrainingType'
 import SearchBarComponent from '../components/searchBar'
