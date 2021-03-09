@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-import SelectTrainingType from '../components/SelectTrainingType'
-import SearchBarComponent from '../components/searchBar'
+import SelectTrainingType from '../components/SelectTrainingType';
+import SearchBarComponent from '../components/searchBar';
 import SearchSliders from '../components/SearchSliders';
-import DateTimePickerComponent from './dateTimePickerComponent'
+import DateTimePickerComponent from './dateTimePickerComponent';
+import SessionButton from './SessionButton';
 
 export default function SearchOptions() {
 
@@ -12,7 +13,7 @@ export default function SearchOptions() {
   const [timeFrom, setTimeFrom] = useState('From:');
   const [dateTo, setDateTo] = useState('To:');
   const [timeTo, setTimeTo] = useState('To:');
-    const [value, setValue] = useState('Search');
+  const [value, setValue] = useState('Search');
 
     const HeaderText = ({text}) => (
       <View style={styles.headerContainer}>
@@ -45,6 +46,10 @@ export default function SearchOptions() {
         <SearchSliders
         text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
     
+        <SessionButton sessionType = 'Solo Session'></SessionButton>
+        <SessionButton sessionType = 'Both'></SessionButton>
+        <SessionButton sessionType = 'Group Session'></SessionButton>
+
       </View>
     )
   }

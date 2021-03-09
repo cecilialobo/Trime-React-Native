@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { NativeRouter, Route, Link } from "react-router-native";
 import { StyleSheet, TextInput, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
