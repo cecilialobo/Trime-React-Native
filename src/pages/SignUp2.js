@@ -7,7 +7,7 @@ import SignUp2Input from '../components/SignUp2Input.js';
 import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
 
-import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, TouchableOpacity } from 'react-native';
 import WorkOutPlaces from '../components/WorkOutPlaces';
 
 export default function SignUp2() {
@@ -45,12 +45,11 @@ export default function SignUp2() {
           <Text style={{color: '#fff'}}>Pro</Text>
         </View>
 
-        <Text style={styles.textTitle}>Where do you want to work out:</Text>
+        <Text style={styles.textTitle}>How do you want to work out:</Text>
         
         <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-around', marginTop: 15, marginBottom: 40}}>
-          <WorkOutPlaces place='IRL'/>
-          <WorkOutPlaces place='Both'/>
-          <WorkOutPlaces place='Online'/>
+          <WorkOutPlaces place='Virtual'/>
+          <WorkOutPlaces place='In-Person'/>
         </View>
 
         <View style={styles.buttonContainer}>
