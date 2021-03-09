@@ -1,10 +1,9 @@
-
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 
 import SelectTrainingType from '../components/SelectTrainingType'
 import SearchBarComponent from '../components/searchBar'
-import DatePickerComponent from '../components/datePickerComponent'
+import SearchSliders from '../components/SearchSliders';
 import DateTimePickerComponent from './dateTimePickerComponent'
 
 export default function SearchOptions() {
@@ -41,7 +40,10 @@ export default function SearchOptions() {
           <DateTimePickerComponent type={'time'} input={timeTo} setInput={setTimeTo} />
         </View>
 
-
+        <SearchSliders
+        text='Distance Limit' beginning='0 km' middle='10 km' end='∞'></SearchSliders>
+        <SearchSliders
+        text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
     
       </View>
     )
