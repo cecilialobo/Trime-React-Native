@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
         color: '#fff',  
         alignSelf: 'flex-start',
         marginLeft: 25,
-        marginTop: 50,
+        marginTop: 10,
         marginBottom: 10,
         fontWeight: 'bold'
       }

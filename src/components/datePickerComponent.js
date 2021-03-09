@@ -44,6 +44,6 @@ export default function DatePickerComponent ( { date, setDate } ){
 const styles = StyleSheet.create({
     datePickerStyle: {
         width: 200,
-        marginTop: 20,
+        // marginTop: 20,
       },
 });

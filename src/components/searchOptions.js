@@ -1,17 +1,12 @@
 
 import React, { useState } from 'react';
-import { TextInput } from 'react-native';
-
-import DatePicker from 'react-native-datepicker';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 import SelectTrainingType from '../components/SelectTrainingType'
 import SearchBarComponent from '../components/searchBar'
 import DatePickerComponent from '../components/datePickerComponent'
 
 export default function SearchOptions() {
-
 
     const [dateFrom, setDateFrom] = useState('03-03-2021');
     const [dateTo, setDateTo] = useState('03-03-2021');
@@ -22,7 +17,6 @@ export default function SearchOptions() {
         <Text style={styles.headerText}>{text}</Text>
       </View>
     )
-    
 
     return (
       <View style={styles.container}>
@@ -74,9 +68,8 @@ const styles = StyleSheet.create({
     fontWeight: 'bold'
   },
   datePicker: {
-    flex: 1,
+    // flex: 1,
     width: '100%',
-    // position: "relative",
     justifyContent: 'flex-start',
     flexDirection: 'row'
   },

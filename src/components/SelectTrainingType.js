@@ -85,7 +85,7 @@ export default function SelectTrainingType( { whiteText, selectedTypes, setSelec
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    // flex: 1, // takes up the entire screen
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: 414,

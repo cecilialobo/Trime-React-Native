@@ -79,7 +79,7 @@ export default function SignUp3() {
         <Text style={[styles.whiteText, {textAlign: "left", fontWeight: 'bold'}]}>What type of training do you do?</Text>
         </View>
 
-        <SelectTrainingType whiteText={true} selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
+        <SelectTrainingType whiteText={true} selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} styles={{flex: 1}} />
 
         <LevelSlider level={level} setLevel={setLevel} />
         
@@ -112,6 +112,6 @@ const styles = StyleSheet.create({
       borderWidth: 1,
       borderRadius: 10,
       backgroundColor: 'white',
-      marginBottom: 38,
+      marginBottom: 20,
   }
 });
