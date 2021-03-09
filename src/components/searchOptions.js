@@ -1,6 +1,4 @@
-
 import React, { useState } from 'react';
-import { TextInput, SectionList } from 'react-native';
 // import DatePicker from 'react-native-date-picker';
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
 
