@@ -11,15 +11,12 @@ export default function LevelSlider ({ level, setLevel }) {
 
       let currentLevel = Math.floor(value * 100);
       if (currentLevel < 30){ 
-        // console.log('Level: ' + level + ' - Beginner')
-        setLevel('Beginner')
+         setLevel('Beginner')
 
       } else if (currentLevel >=30 && currentLevel < 70) {
-        //  console.log('Level: ' + level + ' - Intermediate')
         setLevel('Intermediate')
 
       } else if (currentLevel >= 70) {
-        // console.log('Level: ' + level + ' - Pro')
         setLevel('Pro')
       }
     }

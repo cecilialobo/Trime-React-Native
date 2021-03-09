@@ -53,7 +53,7 @@ const styles = StyleSheet.create({
       textTitle: {
         alignSelf: 'flex-start',
         marginLeft: 25,
-        marginTop: 50,
+        marginTop: 30,
         marginBottom: 10,
         fontWeight: 'bold'
       }
