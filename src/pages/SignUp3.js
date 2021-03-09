@@ -72,6 +72,7 @@ export default function SignUp3() {
                 multiline={true}
                 onChangeText={text => onChangeText(text)}
                 value={value}
+                placeholder={'Who are you?'}
                 />
         </View>
 
