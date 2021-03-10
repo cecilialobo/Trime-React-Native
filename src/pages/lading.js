@@ -1,12 +1,10 @@
 import React from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
+import { Link } from "react-router-native";
 
 import LogoLanding from '../../assets/images/logo-landing.svg'
 import LandingImg from '../../assets/images/landing-image.svg' 
 
-
-import { StyleSheet, Text, View, Image, SafeAreaView,TouchableHighlight, Button, TouchableOpacity } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { StyleSheet, Text, View, SafeAreaView,TouchableHighlight } from 'react-native';
 
 export default function Home() {
 
@@ -37,13 +35,11 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   container: {
-     flex: 1,// takes up the entire screen
-    // backgroundColor: '#082D4C',
-    alignItems: 'center', //horizontal
+     flex: 1,
+    alignItems: 'center', 
     justifyContent: 'space-between',
     zIndex: 100,
     height: '100%',
-
   },
   landingImg: {
     flex: 1,
@@ -63,7 +59,7 @@ const styles = StyleSheet.create({
     top: 600,
   },
   button: {
-    alignItems: 'center', //horizontal
+    alignItems: 'center', 
     justifyContent: 'center', 
     margin: 10,
 
