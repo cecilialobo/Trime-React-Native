@@ -7,6 +7,7 @@ import SearchBarComponent from '../components/searchBar';
 import SearchSliders from '../components/SearchSliders';
 import DateTimePickerComponent from './dateTimePickerComponent';
 import SessionButton from './SessionButton';
+import FilterButton from './FilterButton';
 
 export default function SearchOptions() {
 
@@ -67,10 +68,17 @@ export default function SearchOptions() {
         <SearchSliders
         text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
     
+        <Line />
+
         <View style={styles.sessionContainer}>
-          <SessionButton sessionType = 'Solo Session'></SessionButton>
-          <SessionButton sessionType = 'Both'></SessionButton>
-          <SessionButton sessionType = 'Group Session'></SessionButton>
+          <SessionButton sessionType = 'Solo Session'/>
+          <SessionButton sessionType = 'Both'/>
+          <SessionButton sessionType = 'Group Session'/>
+        </View>
+
+        <View style={styles.filterContainer}>
+          <FilterButton text = 'Search'/>
+          <FilterButton text = 'Clear filters'/>
         </View>
 
       </ScrollView>
@@ -165,5 +173,14 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginRight: 15,
     alignSelf: 'center'  
-}
+  },
+  filterContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    width: 370,
+    marginTop: 20,
+    marginRight: 15,
+    alignSelf: 'center',
+    marginBottom: 20
+  }
 });
