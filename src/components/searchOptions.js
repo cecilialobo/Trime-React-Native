@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { LinearGradient } from 'expo-linear-gradient';
 
 import SelectTrainingType from '../components/SelectTrainingType';
 import SearchBarComponent from '../components/searchBar';
@@ -9,6 +10,7 @@ import SessionButton from './SessionButton';
 
 export default function SearchOptions() {
 
+  const [ selectedTypes, setSelectedTypes ] = useState([]);
   const [dateFrom, setDateFrom] = useState('From:');
   const [timeFrom, setTimeFrom] = useState('From:');
   const [dateTo, setDateTo] = useState('To:');
@@ -21,6 +23,15 @@ export default function SearchOptions() {
       </View>
     )
 
+    const Line = () => (
+      <View>
+      <LinearGradient
+        colors={['#ededed', 'transparent']}
+        style={styles.line}
+      />
+      </View>
+    )
+
     return (
       <View style={styles.container}>
       <ScrollView>
@@ -28,7 +39,9 @@ export default function SearchOptions() {
         <SearchBarComponent />
        
         <HeaderText text={'Type of training'} />
-        <SelectTrainingType whiteText={false} />
+        <SelectTrainingType whiteText={false} selectedTypes={selectedTypes} setSelectedTypes={setSelectedTypes} />
+
+        <Line />
 
         <HeaderText text={'Date'} />
         <View style={styles.datePicker}>
@@ -36,14 +49,21 @@ export default function SearchOptions() {
           <DateTimePickerComponent type={'date'} input={dateTo} setInput={setDateTo} />
         </View>
 
+        <Line />
+
         <HeaderText text={'Time'} />
         <View style={styles.datePicker}>
           <DateTimePickerComponent type={'time'} input={timeFrom} setInput={setTimeFrom} />
           <DateTimePickerComponent type={'time'} input={timeTo} setInput={setTimeTo} />
         </View>
 
+        <Line />
+
         <SearchSliders
         text='Distance Limit' beginning='0 km' middle='10 km' end='∞'></SearchSliders>
+        
+        <Line />
+
         <SearchSliders
         text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
     
@@ -73,13 +93,21 @@ const styles = StyleSheet.create({
   headerContainer: {
     width: 414, 
     paddingHorizontal: 35, 
-    marginTop: 30, 
+    marginTop: 20, 
     marginBottom: 15, 
-    borderBottomColor: '#eee'
   },
   headerText: {
     textAlign: "left", 
     fontWeight: 'bold'
+  },
+  line: {
+    marginVertical: 4,
+    marginTop: 20,
+    height: 8,
+    borderBottomWidth: 8,
+    borderBottomColor: '#eeeeee'
+    // borderColor: '#eee',
+    // borderWidth: 2
   },
   datePicker: {
     alignSelf: 'flex-start',

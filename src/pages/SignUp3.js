@@ -15,10 +15,10 @@ export default function SignUp3() {
 
     // console.log('sign up 3')
     
-    const [image, setImage] = useState('https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png');
-    const [value, onChangeText] = useState('');
+    const [ image, setImage ] = useState('https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png');
+    const [ value, onChangeText ] = useState('');
     const [ selectedTypes, setSelectedTypes ] = useState([]);
-    const [level, setLevel] = useState('Intermediate')
+    const [ level, setLevel ] = useState('Intermediate')
 
     useEffect(() => {
       (async () => {
