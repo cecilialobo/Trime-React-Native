@@ -25,10 +25,10 @@ export default function SearchOptions() {
 
     const Line = () => (
       <View>
-      <LinearGradient
-        colors={['#ededed', 'transparent']}
-        style={styles.line}
-      />
+        <LinearGradient
+          colors={['#eee', 'transparent']}
+          style={styles.line}
+        />
       </View>
     )
 
@@ -104,10 +104,6 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     marginTop: 20,
     height: 8,
-    borderBottomWidth: 8,
-    borderBottomColor: '#eeeeee'
-    // borderColor: '#eee',
-    // borderWidth: 2
   },
   datePicker: {
     alignSelf: 'flex-start',
