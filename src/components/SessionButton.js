@@ -43,15 +43,15 @@ export default function SessionButton() {
     return (
         <View style={styles.sessionContainer}>
             <TouchableHighlight {...touchSoloProps}>
-                <Text style={{color: '#fff', fontSize: 12}}>Solo Session</Text>
+                <Text style={styles.text}>Solo Session</Text>
             </TouchableHighlight>
 
             <TouchableHighlight {...touchBothProps}>
-                <Text style={{color: '#fff', fontSize: 12}}>Both</Text>
+                <Text style={styles.text}>Both</Text>
             </TouchableHighlight>
 
             <TouchableHighlight {...touchGroupProps}>
-                <Text style={{color: '#fff', fontSize: 12}}>Group Session</Text>
+                <Text style={styles.text}>Group Session</Text>
             </TouchableHighlight>
         </View>
     )
@@ -66,6 +66,10 @@ const styles = StyleSheet.create({
         marginRight: 15,
         alignSelf: 'center'  
       },
+    text: {
+        color: '#fff', 
+        fontSize: 12,
+    },
     btnPress: {
         backgroundColor: '#0BD8A7',
         height: 33,
