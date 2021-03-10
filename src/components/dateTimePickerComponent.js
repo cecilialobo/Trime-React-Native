@@ -51,7 +51,7 @@ export default function DateTimePickerComponent ( { type, input, setInput } ){
     return (
         <View>
             <TouchableOpacity style={styles.inputStyle} onPress={showDatePicker}>
-                <Text placeholder="Search">{input}</Text>
+                <Text>{input}</Text>
             </TouchableOpacity>
             <DateTimePickerModal
                 isVisible={isDatePickerVisible}

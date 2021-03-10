@@ -23,10 +23,12 @@ export default function SearchOptions() {
     )
 
     const Line = () => (
+      <View>
       <LinearGradient
-        colors={['#eee', 'transparent']}
+        colors={['#ededed', 'transparent']}
         style={styles.line}
       />
+      </View>
     )
 
     return (
@@ -58,9 +60,14 @@ export default function SearchOptions() {
 
         <SearchSliders
         text='Distance Limit' beginning='0 km' middle='10 km' end='∞'></SearchSliders>
+        
+        <Line />
+
         <SearchSliders
         text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
-    
+        
+        <Line />
+
       </ScrollView>
       </View>
     )
@@ -92,6 +99,8 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     marginTop: 20,
     height: 8,
+    borderBottomWidth: 8,
+    borderBottomColor: '#eeeeee'
     // borderColor: '#eee',
     // borderWidth: 2
   },
