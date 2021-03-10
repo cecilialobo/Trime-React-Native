@@ -70,11 +70,7 @@ export default function SearchOptions() {
     
         <Line />
 
-        <View style={styles.sessionContainer}>
-          <SessionButton sessionType = 'Solo Session'/>
-          <SessionButton sessionType = 'Both'/>
-          <SessionButton sessionType = 'Group Session'/>
-        </View>
+        <SessionButton/>
 
         <View style={styles.filterContainer}>
           <FilterButton text = 'Search'/>
@@ -114,8 +110,6 @@ const styles = StyleSheet.create({
     height: 8,
     borderBottomWidth: 8,
     borderBottomColor: '#eeeeee'
-    // borderColor: '#eee',
-    // borderWidth: 2
   },
   datePicker: {
     alignSelf: 'flex-start',
@@ -165,14 +159,6 @@ const styles = StyleSheet.create({
   },
   statusText: {
     fontWeight: 'bold',
-  },
-  sessionContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    width: 370,
-    marginTop: 20,
-    marginRight: 15,
-    alignSelf: 'center'  
   },
   filterContainer: {
     flexDirection: 'row',
