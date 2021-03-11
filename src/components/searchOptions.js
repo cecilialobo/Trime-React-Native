@@ -108,7 +108,7 @@ const styles = StyleSheet.create({
     marginVertical: 4,
     marginTop: 20,
     borderBottomWidth: 8,
-    borderBottomColor: '#eeeeee'
+    borderBottomColor: '#eeeeee',
     height: 6,
     backgroundColor: '#eee'
   },
