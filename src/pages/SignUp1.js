@@ -6,6 +6,7 @@ import SignUp1Input from '../components/SignUp1Input.js';
 import CircleButton from '../components/CircleButton.js';
 import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
+import BigButton from '../components/BigButton'
 
 import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, Dimensions, TextInput } from 'react-native';
 const { width, height} = Dimensions.get('window');
@@ -43,14 +44,13 @@ export default function SignUp1() {
             </View>
           </View>
         </View>
-        <View style={styles.buttonContainer}>
-            <TouchableHighlight style={[styles.button, styles.signUpBtn]} underlayColor = {'#05668D'}  >
-                <Link to="/sign-up-2" underlayColor = {'#05668D'} style={{ height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    <Text style={[{fontSize: 30}, styles.buttonText]} underlayColor = {'#05668D'} >Next</Text>
-                </Link>
-            </TouchableHighlight>
+        <BigButton 
+              BGColor='#0BD8A7'  
+              text='Next' 
+              UColor='#05668D' 
+              linkTo='/sign-up-2' 
+          />
           
-        </View>
         <Shape style={{zIndex: -100}}></Shape>
       </SafeAreaView>
     )

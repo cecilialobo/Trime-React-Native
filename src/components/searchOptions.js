@@ -34,7 +34,11 @@ export default function SearchOptions() {
 
     return (
       <View style={styles.container}>
-      <ScrollView directionalLockEnabled={true} showsHorizontalScrollIndicator={false}  showsVerticalScrollIndicator={false} >
+      <ScrollView 
+        directionalLockEnabled={true} 
+        showsHorizontalScrollIndicator={false}  
+        showsVerticalScrollIndicator={false}
+      >
             
         <SearchBarComponent />
        

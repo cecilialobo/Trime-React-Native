@@ -84,9 +84,14 @@ export default function SignUp3() {
 
         <LevelSlider level={level} setLevel={setLevel} />
         
-        <Link onPress={() => saveChanges()} to={'/feed'} >
-          <BigButton  BGColor='#0BD8A7'  text='Next' />
-        </Link>
+
+          <BigButton onPress={saveChanges}
+              BGColor='#0BD8A7'  
+              text='Next' 
+              UColor='#05668D' 
+              linkTo='/feed' 
+          />
+          
         <Shape></Shape>
       </View>
     )
@@ -114,5 +119,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       backgroundColor: 'white',
       marginBottom: 20,
-  }
+  },
+  btnLink: { 
+    height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }
 });
