@@ -6,7 +6,7 @@ import SelectTrainingType from '../components/SelectTrainingType';
 import SearchBarComponent from '../components/searchBar';
 import SearchSliders from '../components/SearchSliders';
 import DateTimePickerComponent from './dateTimePickerComponent';
-import SessionButton from './SessionButton';
+import SessionButtons from './SessionButtons';
 import FilterButton from './FilterButton';
 
 export default function SearchOptions() {
@@ -70,7 +70,7 @@ export default function SearchOptions() {
     
         <Line />
 
-        <SessionButton/>
+        <SessionButtons/>
 
         <View style={styles.filterContainer}>
           <FilterButton text = 'Search'/>
