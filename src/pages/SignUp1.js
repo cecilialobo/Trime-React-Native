@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ScrollView } from 'react-native'
 import { Link } from "react-router-native";
 
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
@@ -14,17 +15,23 @@ const { width, height} = Dimensions.get('window');
 export default function SignUp1() {
 
   const [value, onChangeText] = React.useState('');
+  const [ selecedType, setSelectedType ] = useState('')
+
+  
 
     console.log('sign up 1')
 
     return (
-      <SafeAreaView style={styles.container}>
+        <ScrollView  contentContainerStyle={styles.container}
+          directionalLockEnabled={true} 
+          showsHorizontalScrollIndicator={false}  
+          showsVerticalScrollIndicator={false} >
       <Emoticons></Emoticons>
        <LogoSignUp style={styles.logo}/>
         <Text style={styles.title}>What are you?</Text>
         <View style={styles.circles}>
-          <CircleButton buttonLabel='Trainee'></CircleButton>
-          <CircleButton buttonLabel='Trainer'></CircleButton>
+          <CircleButton buttonLabel='Trainee' selectType={selecedType}></CircleButton>
+          <CircleButton buttonLabel='Trainer' selectType={selecedType}></CircleButton>
         </View>
         <View style={styles.signupContainer}>
           <SignUp1Input label='Full Name'/>
@@ -52,7 +59,8 @@ export default function SignUp1() {
           />
           
         <Shape style={{zIndex: -100}}></Shape>
-      </SafeAreaView>
+        </ScrollView>
+
     )
   }
  
@@ -63,7 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal 
     width: width,
-    height: height,
+    // height: height,
   },
   logo: {
     marginTop: 76,

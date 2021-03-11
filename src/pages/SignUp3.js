@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TextInput, TouchableOpacity } from 'react-native';
+import { TextInput, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import { Link } from "react-router-native";
 import * as ImagePicker from 'expo-image-picker';
 import { StyleSheet, Text, View, Image } from 'react-native';
@@ -10,6 +10,8 @@ import SmallLogo from '../components/SmallLogo'
 import LevelSlider from '../components/slider';
 import BigButton from '../components/BigButton'
 import Shape from '../components/Shape.js';
+
+const { width, height} = Dimensions.get('window');
 
 export default function SignUp3() {
 
@@ -54,18 +56,22 @@ export default function SignUp3() {
       }
 
     return (
-      <View style={styles.container}>
-      
-      <Emoticons></Emoticons>
-        <SmallLogo />
+      // <View>
+        <ScrollView  contentContainerStyle={styles.container}
+          directionalLockEnabled={true} 
+          showsHorizontalScrollIndicator={false}  
+          showsVerticalScrollIndicator={false} >
 
-        <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
-        
-        <TouchableOpacity onPress={selectImage} style={{marginTop: 6}} >
-         <Image source={{uri: image}} style={{margin: 4, width: 100, height: 100, borderRadius: 100}} />
-        </TouchableOpacity>
+          <SmallLogo />
+          <Emoticons></Emoticons>
 
-        <View>
+          <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
+          
+          <TouchableOpacity onPress={selectImage} style={{marginTop: 6}} >
+          <Image source={{uri: image}} style={{margin: 4, width: 100, height: 100, borderRadius: 100}} />
+          </TouchableOpacity>
+
+          <View>
             <Text  style={[styles.whiteText, {fontSize: 14, fontWeight: 'bold', marginBottom: 7}]}>Description: </Text>
             <TextInput
                 style={styles.textInput}
@@ -93,7 +99,8 @@ export default function SignUp3() {
           />
           
         <Shape></Shape>
-      </View>
+      </ScrollView>
+      // </View>
     )
   }
  
@@ -102,6 +109,8 @@ const styles = StyleSheet.create({
     flex: 1, // takes up the entire screen
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal 
+    width: width,
+    // height: height,
   },
   whiteText: {
     color: 'white'
