@@ -1,32 +1,44 @@
 
 import React from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { Link } from "react-router-native";
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-// export default function BigButton ( { BGColor, text, linkTo } ) 
-export default function BigButton ( { BGColor, UColor, text, linkTo } ){
+
+export default function BigButton ( { BGColor, UColor, text, linkTo, onPress } ){
 
     return (
-        // <View style={styles.buttonContainer} pointerEvents={"none"}>
+      <View style={styles.buttonContainer}>
 
-          
-            // <Link to={linkTo} onPress={() => console.log('go to feed')}>
-              <View style={[styles.button, {backgroundColor: BGColor}]} >
-                <Text style={styles.buttonText} pointerEvents={"none"}>{text}</Text>
-              </View>
-            // </Link>
-          
-        // </View>
+        <TouchableHighlight style={[styles.button, {backgroundColor: '#0BD8A7'}]} 
+                            underlayColor = {UColor} >
+
+            <Link to={linkTo} underlayColor={UColor} style={styles.link}
+              onPress={onPress}>
+
+                <Text style={styles.buttonText} underlayColor = {UColor}>
+                        {text}
+                </Text>
+
+            </Link>
+        </TouchableHighlight>
+      </View>
     )
   }
  
 
 const styles = StyleSheet.create({
     buttonContainer: {
-        // flex: 1,
-        // paddingBottom: 93,
-        // justifyContent: 'flex-end',
+        flex: 1,
+        justifyContent: 'flex-end',
+        marginBottom: 10
+      },
+      link: { 
+        height: '100%', 
+        width: '100%', 
+        borderRadius: 40, 
+        flex: 1, 
+        alignItems: 'center', 
+        justifyContent: 'center' 
       },
       button: {
         alignItems: 'center', //horizontal

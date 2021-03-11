@@ -15,19 +15,19 @@ export default function FooterMenu( active ) {
     return (
         <>
         <View style={styles.footer}>
-            <Link to={'/feed'} underlayColor="#f0f4f7">
+            <Link to={'/feed'} underlayColor="#082D4C">
                     { active.active === 'Home' ? <Home fill={'#0BD8A7'} /> : <Home fill={'white'} /> }
             </Link>
 
-            <Link to={'/search'} underlayColor="#f0f4f7">
+            <Link to={'/search'} underlayColor="#082D4C">
                 { active.active === 'Search' ? <Search fill={'#0BD8A7'} /> : <Search fill={'white'} /> }
             </Link>
 
-            <Link to={'/'} underlayColor="#f0f4f7">
+            <Link to={'/'} underlayColor="#082D4C">
                 { active.active === 'Calendar' ? <Calendar  fill={'#0BD8A7'} /> : <Calendar fill={'white'} /> }
             </Link>
 
-            <Link to={'/'} underlayColor="#f0f4f7">
+            <Link to={'/'} underlayColor="#082D4C">
                 { active.active === 'Menu' ? <Menu fill={'#0BD8A7'} /> : <Menu fill={'white'} /> } 
             </Link>
             <FooterBackground style={styles.footerBackground}/>    
@@ -55,15 +55,11 @@ const styles = StyleSheet.create({
         resizeMode: "cover",
         position: 'absolute',
         right: 0,
-        // top: 0,
         zIndex: -1,
         flex: 1,
     },
     backgroundImage: {
-        // width: '100%',
-        
         resizeMode: "cover",
         justifyContent: "center"
-
     }
 });

@@ -3,11 +3,9 @@ import React, { useState, useEffect } from 'react';
 
 // import all the components we are going to use
 import {
-  SafeAreaView,
   Text,
   StyleSheet,
   View,
-  FlatList,
   TextInput,
   Image
 } from 'react-native';
@@ -108,7 +106,8 @@ export default function SearchBarComponent () {
         // flex: 1,
       backgroundColor: 'white',
       width: '100%',
-      paddingHorizontal: 30
+      paddingHorizontal: 30,
+      marginTop: 20
     },
     itemStyle: {
       padding: 10,

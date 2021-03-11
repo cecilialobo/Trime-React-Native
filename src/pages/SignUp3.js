@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { TextInput, TouchableOpacity } from 'react-native';
+import { TextInput, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
 import { Link } from "react-router-native";
 import * as ImagePicker from 'expo-image-picker';
 import { StyleSheet, Text, View, Image } from 'react-native';
@@ -11,14 +11,16 @@ import LevelSlider from '../components/slider';
 import BigButton from '../components/BigButton'
 import Shape from '../components/Shape.js';
 
+const { width, height} = Dimensions.get('window');
+
 export default function SignUp3() {
 
     // console.log('sign up 3')
     
-    const [image, setImage] = useState('https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png');
-    const [value, onChangeText] = useState('');
+    const [ image, setImage ] = useState('https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png');
+    const [ value, onChangeText ] = useState('');
     const [ selectedTypes, setSelectedTypes ] = useState([]);
-    const [level, setLevel] = useState('Intermediate')
+    const [ level, setLevel ] = useState('Intermediate')
 
     useEffect(() => {
       (async () => {
@@ -54,18 +56,22 @@ export default function SignUp3() {
       }
 
     return (
-      <View style={styles.container}>
-      
-      <Emoticons></Emoticons>
-        <SmallLogo />
+      // <View>
+        <ScrollView  contentContainerStyle={styles.container}
+          directionalLockEnabled={true} 
+          showsHorizontalScrollIndicator={false}  
+          showsVerticalScrollIndicator={false} >
 
-        <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
-        
-        <TouchableOpacity onPress={selectImage} style={{marginTop: 6}} >
-         <Image source={{uri: image}} style={{margin: 4, width: 100, height: 100, borderRadius: 100}} />
-        </TouchableOpacity>
+          <SmallLogo />
+          <Emoticons></Emoticons>
 
-        <View>
+          <Text style={[styles.whiteText, {fontSize: 16, marginTop: 22}]}>Time to set up your profile</Text>
+          
+          <TouchableOpacity onPress={selectImage} style={{marginTop: 6}} >
+          <Image source={{uri: image}} style={{margin: 4, width: 100, height: 100, borderRadius: 100}} />
+          </TouchableOpacity>
+
+          <View>
             <Text  style={[styles.whiteText, {fontSize: 14, fontWeight: 'bold', marginBottom: 7}]}>Description: </Text>
             <TextInput
                 style={styles.textInput}
@@ -84,11 +90,17 @@ export default function SignUp3() {
 
         <LevelSlider level={level} setLevel={setLevel} />
         
-        <Link onPress={() => saveChanges()} to={'/feed'} >
-          <BigButton  BGColor='#0BD8A7'  text='Next' />
-        </Link>
+
+          <BigButton onPress={saveChanges}
+              BGColor='#0BD8A7'  
+              text='Next' 
+              UColor='#05668D' 
+              linkTo='/feed' 
+          />
+          
         <Shape></Shape>
-      </View>
+      </ScrollView>
+      // </View>
     )
   }
  
@@ -97,6 +109,8 @@ const styles = StyleSheet.create({
     flex: 1, // takes up the entire screen
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal 
+    width: width,
+    // height: height,
   },
   whiteText: {
     color: 'white'
@@ -114,5 +128,7 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       backgroundColor: 'white',
       marginBottom: 20,
-  }
+  },
+  btnLink: { 
+    height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }
 });
