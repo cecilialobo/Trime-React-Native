@@ -3,7 +3,7 @@ import { StyleSheet, View, Button, TouchableOpacity, Text } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 
-export default function BirthDatePickerComponent ( { type, input, setInput, placeholder} ){
+export default function BirthDatePickerComponent ( { type, input, setInput} ){
 
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
 

@@ -10,9 +10,7 @@ export default function CircleButton ( { buttonLabel } ) {
                                    activeOpacity={0.4}
                                    underlayColor="#0574a1" 
                                    onPress={() => console.log(buttonLabel)}>
-                <Link to="">
                     <Text style={styles.buttonLabel}>{buttonLabel}</Text>
-                </Link>
                 </TouchableHighlight>
             </View>
           )
