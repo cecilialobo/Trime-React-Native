@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient';
 
 import SelectTrainingType from '../components/SelectTrainingType';
@@ -34,7 +34,7 @@ export default function SearchOptions() {
 
     return (
       <View style={styles.container}>
-      <ScrollView>
+      <ScrollView directionalLockEnabled={true} showsHorizontalScrollIndicator={false}  showsVerticalScrollIndicator={false} >
             
         <SearchBarComponent />
        
