@@ -13,12 +13,13 @@ export default function NotificationIcons ( { BGColor, text, linkTo } ) {
     return (
         <View style={styles.notificationContainer}>
             <TouchableOpacity style={[styles.not]}>
-              <Link to={'/'}>
+              <Link to={'/'}  underlayColor="#082D4C">
                 <Notification />
               </Link>
             </TouchableOpacity>
+            
             <TouchableOpacity style={[styles.not]}>
-              <Link to={'/'}>
+              <Link to={'/'}  underlayColor="#082D4C">
                 <Inbox />
               </Link>
             </TouchableOpacity>
