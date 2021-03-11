@@ -56,13 +56,13 @@ export default function BdayPicker ( { day, setDay, month, setMonth, year, setYe
         <View style={styles.container}>
             <Text style={styles.label}>Birth Day</Text>
             <View style={styles.inputContainer}>
-                <TouchableOpacity style={styles.inputStyle} onPress={showDatePicker}>
+                <TouchableOpacity style={[styles.inputStyle, styles.month]} onPress={showDatePicker}>
                     <Text style={styles.text}>{month}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.inputStyle} onPress={showDatePicker}>
+                <TouchableOpacity style={[styles.inputStyle, styles.day]} onPress={showDatePicker}>
                     <Text style={styles.text}>{day}</Text>
                 </TouchableOpacity>
-                <TouchableOpacity style={styles.inputStyle} onPress={showDatePicker}>
+                <TouchableOpacity style={[styles.inputStyle, styles.year]} onPress={showDatePicker}>
                     <Text style={styles.text}>{year}</Text>
                 </TouchableOpacity>
                 <DateTimePickerModal
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     inputStyle: {
         width: 100,
         marginRight: '5%',
-        borderRadius: 7,
+        borderRadius: 8,
         padding: 7,
         height: 44, 
         justifyContent: 'center',
@@ -107,6 +107,15 @@ const styles = StyleSheet.create({
     },
     text: {
         textAlign: 'center'
+    },
+    month: {
+        width: '35%',
+    },
+    day: {
+        width: '20%',
+    },
+    year: {
+        width: '30%',
     }
 
 });

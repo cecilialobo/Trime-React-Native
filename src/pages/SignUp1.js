@@ -88,49 +88,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   circles: {
-    flex: 0.2,
+    flex: 0.4,
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: 45,
     width: '70%',
   },
   signupContainer: {
-    flex: 2.8,
+    flex: 3.6,
     flexDirection: 'column',
     marginTop: 15,
   },
-   birthDateContainer: {
-    flexDirection: 'column',
-    marginTop: 16,
-    padding: 20,
-   },
-   birthDateLabel: {
-    color: 'white',
-    padding: 4,
-    fontSize: 13,
-   },
-   dateInput: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-   },
-   input: {
-    backgroundColor: '#fff', 
-    borderRadius: 9,
-    height: 44,
-   },
-   day: {
-     width: 90,
-   },
-   month: {
-    width: 90,
-  },
-  year: {
-    width: 120,
-  },
-  buttonContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
-  },
+
   button: {
     alignItems: 'center', 
     justifyContent: 'center', 
