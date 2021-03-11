@@ -15,7 +15,7 @@ export default function SearchOptions() {
   const [timeFrom, setTimeFrom] = useState('From:');
   const [dateTo, setDateTo] = useState('To:');
   const [timeTo, setTimeTo] = useState('To:');
-  const [value, setValue] = useState('Search');
+
 
     const HeaderText = ({text}) => (
       <View style={styles.headerContainer}>
@@ -24,11 +24,11 @@ export default function SearchOptions() {
     )
 
     const Line = () => (
-      <View>
-        <LinearGradient
-          colors={['#eee', 'transparent']}
+      <View style={styles.line}>
+        {/* <LinearGradient
+          colors={['rgb(237,237,237)', 'transparent']}
           style={styles.line}
-        />
+        /> */}
       </View>
     )
 
@@ -83,11 +83,11 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    paddingTop: 20,
+    // paddingTop: 20,
     alignItems: 'center', 
     justifyContent: 'flex-start',
     width: '100%',
-    marginTop: 104,
+    marginTop: 94,
     marginBottom: 60
   },
   headerContainer: {
@@ -103,7 +103,8 @@ const styles = StyleSheet.create({
   line: {
     marginVertical: 4,
     marginTop: 20,
-    height: 8,
+    height: 6,
+    backgroundColor: '#eee'
   },
   datePicker: {
     alignSelf: 'flex-start',
