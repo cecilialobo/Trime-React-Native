@@ -6,6 +6,7 @@ import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp2Input from '../components/SignUp2Input.js';
 import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
+import BigButton from '../components/BigButton'
 
 import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, TouchableOpacity } from 'react-native';
 import WorkOutPlaces from '../components/WorkOutPlaces';
@@ -52,13 +53,13 @@ export default function SignUp2() {
           <WorkOutPlaces place='In-Person'/>
         </View>
 
-        <View style={styles.buttonContainer}>
-            <TouchableHighlight style={[styles.button, styles.signUpBtn]}>
-                <Link to="/sign-up-3">
-                    <Text style={styles.buttonText}>Next</Text>
-                </Link>
-            </TouchableHighlight>
-        </View>
+        <BigButton 
+              BGColor='#0BD8A7'  
+              text='Next' 
+              UColor='#05668D' 
+              linkTo='/sign-up-3' 
+          />
+
         <Shape></Shape>
       </SafeAreaView>
     )
