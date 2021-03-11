@@ -6,7 +6,8 @@ import SelectTrainingType from '../components/SelectTrainingType';
 import SearchBarComponent from '../components/searchBar';
 import SearchSliders from '../components/SearchSliders';
 import DateTimePickerComponent from './dateTimePickerComponent';
-import SessionButton from './SessionButton';
+import SessionButtons from './SessionButtons';
+import FilterButton from './FilterButton';
 
 export default function SearchOptions() {
 
@@ -67,10 +68,13 @@ export default function SearchOptions() {
         <SearchSliders
         text='Price Range' beginning='0 kr' middle='500 kr' end='∞'></SearchSliders>
     
-        <View style={styles.sessionContainer}>
-          <SessionButton sessionType = 'Solo Session'></SessionButton>
-          <SessionButton sessionType = 'Both'></SessionButton>
-          <SessionButton sessionType = 'Group Session'></SessionButton>
+        <Line />
+
+        <SessionButtons/>
+
+        <View style={styles.filterContainer}>
+          <FilterButton text = 'Search'/>
+          <FilterButton text = 'Clear filters'/>
         </View>
 
       </ScrollView>
@@ -103,6 +107,8 @@ const styles = StyleSheet.create({
   line: {
     marginVertical: 4,
     marginTop: 20,
+    borderBottomWidth: 8,
+    borderBottomColor: '#eeeeee'
     height: 6,
     backgroundColor: '#eee'
   },
@@ -155,12 +161,13 @@ const styles = StyleSheet.create({
   statusText: {
     fontWeight: 'bold',
   },
-  sessionContainer: {
+  filterContainer: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: 370,
     marginTop: 20,
     marginRight: 15,
-    alignSelf: 'center'  
-}
+    alignSelf: 'center',
+    marginBottom: 20
+  }
 });
