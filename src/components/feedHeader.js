@@ -1,8 +1,5 @@
-
 import React, { useState } from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
 import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
 
 import NotificationIcons from './NotificationIcons'
 import LogoFeed  from '../../assets/images/logo-feed.svg';

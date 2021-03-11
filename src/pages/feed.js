@@ -30,9 +30,9 @@ export default function Feed() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1, 
     backgroundColor: 'white',
-    alignItems: 'center', //horizontal 
+    alignItems: 'center',  
     width: '100%'
   }
 });

@@ -20,7 +20,6 @@ const styles = StyleSheet.create({
     inputContainer: {
         marginTop: 16,
         flex: 1,
-        // flexDirection: 'column',
         padding: 20,
     },
     label: {

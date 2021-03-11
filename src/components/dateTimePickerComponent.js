@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { StyleSheet, View, Button, TouchableOpacity, Text } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
 
@@ -17,7 +16,6 @@ export default function DateTimePickerComponent ( { type, input, setInput } ){
     };
   
     const handleConfirm = (output) => {
-        // console.log("A date has been picked: ", date);
         if (type === 'date') {
             let date, month
             output.getDate() < 10 
@@ -30,13 +28,12 @@ export default function DateTimePickerComponent ( { type, input, setInput } ){
 
             var year = output.getFullYear();
             setInput(date + '-' + month + '-' + year)
-            // You can turn it in to your desired format
-            console.log(date + '-' + month + '-' + year);//format: dd-mm-yyyy;
+            console.log(date + '-' + month + '-' + year);
         }
         if (type === 'time') {
             let min, hours;
             
-            hours = output.getHours(); //Current Hours
+            hours = output.getHours(); 
             output.getMinutes() < 10
                 ? min = '0' + output.getMinutes()
                 : min = output.getMinutes()

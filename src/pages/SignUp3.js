@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { TextInput, TouchableOpacity, ScrollView, Dimensions } from 'react-native';
-import { Link } from "react-router-native";
 import * as ImagePicker from 'expo-image-picker';
 import { StyleSheet, Text, View, Image } from 'react-native';
 
@@ -11,11 +10,9 @@ import LevelSlider from '../components/slider';
 import BigButton from '../components/BigButton'
 import Shape from '../components/Shape.js';
 
-const { width, height} = Dimensions.get('window');
+const { width } = Dimensions.get('window');
 
 export default function SignUp3() {
-
-    // console.log('sign up 3')
     
     const [ image, setImage ] = useState('https://www.kindpng.com/picc/m/722-7221920_placeholder-profile-image-placeholder-png-transparent-png.png');
     const [ value, onChangeText ] = useState('');
@@ -56,7 +53,6 @@ export default function SignUp3() {
       }
 
     return (
-      // <View>
         <ScrollView  contentContainerStyle={styles.container}
           directionalLockEnabled={true} 
           showsHorizontalScrollIndicator={false}  
@@ -100,17 +96,15 @@ export default function SignUp3() {
           
         <Shape></Shape>
       </ScrollView>
-      // </View>
     )
   }
  
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1, 
     backgroundColor: '#082D4C',
-    alignItems: 'center', //horizontal 
+    alignItems: 'center', 
     width: width,
-    // height: height,
   },
   whiteText: {
     color: 'white'

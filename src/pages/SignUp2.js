@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-native";
 import Slider from '@react-native-community/slider';
 
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
@@ -8,58 +7,67 @@ import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
 import BigButton from '../components/BigButton'
 
-import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions } from 'react-native';
 import WorkOutPlaces from '../components/WorkOutPlaces';
+
+const { width } = Dimensions.get('window');
 
 export default function SignUp2() {
     console.log('sign up 2');
 
     return (
-      <SafeAreaView style={styles.container}>
-        <Emoticons></Emoticons>
-        <LogoSignUp style={styles.logo}/>
-        <Text style={styles.subtitle}>Time to set up your profile</Text>
-        
-        <View style={styles.inputBlock}>
-          <SignUp2Input label='Age:' />
-          <SignUp2Input label='Height:'/>
-        </View>
-        <View style={styles.inputBlock}>
-          <SignUp2Input label='Gender:'/>
-          <SignUp2Input label='Weight:'/>
-        </View>
 
-        <Text style={styles.textTitle}>Level of training:</Text>
+      <ScrollView contentContainerStyle={{margin:0, padding:0, backgroundColor:'pink'}}
+        directionalLockEnabled={true} 
+        showsHorizontalScrollIndicator={false}  
+        showsVerticalScrollIndicator={false} >
 
-        <Slider
-          style={{width: 340, height: 40}}
-          minimumValue={0}
-          maximumValue={1}
-          minimumTrackTintColor='#0BD8A7'
-          maximumTrackTintColor='#0BD8A7'
-          thumbTintColor='#0BD8A7'
-        />
+        <SafeAreaView style={styles.container}>
+          <Emoticons></Emoticons>
+          <LogoSignUp style={styles.logo}/>
+          <Text style={styles.subtitle}>Time to set up your profile</Text>
+          
+          <View style={styles.inputBlock}>
+            <SignUp2Input label='Age:' />
+            <SignUp2Input label='Height:'/>
+          </View>
+          <View style={styles.inputBlock}>
+            <SignUp2Input label='Gender:'/>
+            <SignUp2Input label='Weight:'/>
+          </View>
 
-        <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-around'}}>
-          <Text style={{color: '#fff'}}>Beginner</Text>
-          <Text style={{color: '#fff'}}>Intermediate</Text>
-          <Text style={{color: '#fff'}}>Pro</Text>
-        </View>
+          <Text style={styles.textTitle}>Level of training:</Text>
 
-        <Text style={styles.textTitle}>How do you want to work out:</Text>
-        
-    
-        <WorkOutPlaces/>
-
-        <BigButton 
-              BGColor='#0BD8A7'  
-              text='Next' 
-              UColor='#05668D' 
-              linkTo='/sign-up-3' 
+          <Slider
+            style={{width: 340, height: 40}}
+            minimumValue={0}
+            maximumValue={1}
+            minimumTrackTintColor='#0BD8A7'
+            maximumTrackTintColor='#0BD8A7'
+            thumbTintColor='#0BD8A7'
           />
 
-        <Shape></Shape>
-      </SafeAreaView>
+          <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-around'}}>
+            <Text style={{color: '#fff'}}>Beginner</Text>
+            <Text style={{color: '#fff'}}>Intermediate</Text>
+            <Text style={{color: '#fff'}}>Pro</Text>
+          </View>
+
+          <Text style={styles.textTitle}>How do you want to work out:</Text>
+          
+      
+          <WorkOutPlaces/>
+
+          <BigButton 
+                BGColor='#0BD8A7'  
+                text='Next' 
+                UColor='#05668D' 
+                linkTo='/sign-up-3' 
+            />
+
+          <Shape></Shape>
+        </SafeAreaView>
+      </ScrollView>
     )
   }
  
@@ -67,7 +75,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, 
     backgroundColor: '#082D4C',
-    alignItems: 'center', 
+    alignItems: 'center',
+    width: width 
   },
   logo: {
     marginTop: 76,
