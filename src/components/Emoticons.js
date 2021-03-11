@@ -9,11 +9,10 @@ import EmojiRight from '../../assets/images/emoji-right.svg';
 export default function Emoticons () {
 
     return (
-            <View style={styles.emoticonContainer}>
-                <EmojiLeft style={styles.emojiLeft}></EmojiLeft>
-                <EmojiRight style={styles.emojiRight}></EmojiRight>
-            </View>
-
+        <View style={styles.emoticonContainer}>
+            <EmojiLeft style={styles.emojiLeft}></EmojiLeft>
+            <EmojiRight style={styles.emojiRight}></EmojiRight>
+        </View>
     )
 }
 
@@ -26,10 +25,10 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
 
       },
-      emojiLeft: {
-          top: 120,
-      },
-      emojiRight: {
-          top: 30,
-      },
+    emojiLeft: {
+        top: 120,
+    },
+    emojiRight: {
+        top: 30,
+    },
     });

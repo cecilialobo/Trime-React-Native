@@ -1,8 +1,7 @@
 
-import React, { useState } from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, ImageBackground, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import React from 'react';
+import { Link } from "react-router-native";
+import { StyleSheet, View } from 'react-native';
 
 import Home from '../../assets/images/menu-icons/Home.svg'
 import Calendar from '../../assets/images/menu-icons/Calendar.svg'
