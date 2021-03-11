@@ -3,42 +3,58 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
 export default function SessionButton() {
 
-    const [ isSoloPress, setIsSoloPress ] = useState(false);
-    const [ isBothPress, setIsBothPress ] = useState(false);
-    const [ isGroupPress, setIsGroupPress ] = useState(false);
+    const [isSoloPress, setIsSoloPress] = useState(false);
+    const [isBothPress, setIsBothPress] = useState(false);
+    const [isGroupPress, setIsGroupPress] = useState(false);
 
     const touchSoloProps = {
         activeOpacity: 1,
-        underlayColor: '#0BD8A7',                            
-        style: isSoloPress ? styles.btnPress : styles.btnNormal, 
+        underlayColor: '#0BD8A7',
+        style: isSoloPress ? styles.btnPress : styles.btnNormal,
         onPress: () => {
-            isSoloPress 
-            ? setIsSoloPress(false)  
-            : setIsSoloPress(true) & setIsBothPress(false) & setIsGroupPress(false) & console.log('Session type: Solo Session') 
-        },               
-      };
+            if (isSoloPress) {
+                setIsSoloPress(false)
+            } else {
+                setIsSoloPress(true)
+                setIsBothPress(false)
+                setIsGroupPress(false)
+                console.log('Session type: Solo Session')
+            }
+        },
+    };
 
-      const touchBothProps = {
+    const touchBothProps = {
         activeOpacity: 1,
-        underlayColor: '#0BD8A7',                            
-        style: isBothPress ? styles.btnPress : styles.btnNormal, 
+        underlayColor: '#0BD8A7',
+        style: isBothPress ? styles.btnPress : styles.btnNormal,
         onPress: () => {
-            isBothPress 
-            ? setIsBothPress(false)  
-            : setIsBothPress(true) & setIsSoloPress(false) & setIsGroupPress(false) & console.log('Session type: Both')
-        },               
-      };
+            if (isBothPress) {
+                setIsBothPress(false)
+            }
+            else {
+                setIsBothPress(true)
+                setIsSoloPress(false)
+                setIsGroupPress(false)
+                console.log('Session type: Both')
+            }
+        },
+    };
 
-      const touchGroupProps = {
+    const touchGroupProps = {
         activeOpacity: 1,
-        underlayColor: '#0BD8A7',                            
-        style: isGroupPress ? styles.btnPress : styles.btnNormal, 
+        underlayColor: '#0BD8A7',
+        style: isGroupPress ? styles.btnPress : styles.btnNormal,
         onPress: () => {
-            isGroupPress 
-            ? setIsGroupPress(false)  
-            : setIsGroupPress(true) & setIsSoloPress(false) & setIsBothPress(false) & console.log('Session type: Group Session')
-        },               
-      };
+            if (isGroupPress) {
+                setIsGroupPress(false)
+            } else {
+                setIsGroupPress(true)
+                setIsSoloPress(false)
+                setIsBothPress(false)
+                console.log('Session type: Group Session')
+            }
+        },
+    };
 
     return (
         <View style={styles.sessionContainer}>
@@ -64,10 +80,10 @@ const styles = StyleSheet.create({
         width: 370,
         marginTop: 20,
         marginRight: 15,
-        alignSelf: 'center'  
-      },
+        alignSelf: 'center'
+    },
     text: {
-        color: '#fff', 
+        color: '#fff',
         fontSize: 12,
     },
     btnPress: {
@@ -76,7 +92,7 @@ const styles = StyleSheet.create({
         width: 97,
         borderRadius: 40,
         alignItems: 'center',
-        justifyContent: 'center', 
+        justifyContent: 'center',
     },
     btnNormal: {
         backgroundColor: '#05668D',
@@ -84,6 +100,6 @@ const styles = StyleSheet.create({
         width: 97,
         borderRadius: 40,
         alignItems: 'center',
-        justifyContent: 'center', 
+        justifyContent: 'center',
     }
 })
