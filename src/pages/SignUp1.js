@@ -1,48 +1,56 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from "react-router-native";
+import DatePicker from 'react-native-datepicker';
+import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, Dimensions, TextInput } from 'react-native';
 
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp1Input from '../components/SignUp1Input.js';
 import CircleButton from '../components/CircleButton.js';
 import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
+import BirthDatePickerComponent  from '../components/BirthDatePickerComponent.js';
 
-import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, Dimensions, TextInput } from 'react-native';
 const { width, height} = Dimensions.get('window');
 
 export default function SignUp1() {
 
-  const [value, onChangeText] = React.useState('');
-
+//const [value, onChangeText] = React.useState('')'
+const [date, setDate] = React.useState('')
     console.log('sign up 1')
 
     return (
       <SafeAreaView style={styles.container}>
       <Emoticons></Emoticons>
        <LogoSignUp style={styles.logo}/>
+
         <Text style={styles.title}>What are you?</Text>
         <View style={styles.circles}>
           <CircleButton buttonLabel='Trainee'></CircleButton>
           <CircleButton buttonLabel='Trainer'></CircleButton>
         </View>
+
         <View style={styles.signupContainer}>
           <SignUp1Input label='Full Name'/>
           <SignUp1Input label='E-mail address'/>
           <SignUp1Input secureTextEntry={true} label='Password'/>
-           <SignUp1Input label='Gender'/>
+          <SignUp1Input label='Gender'/>
           <View style={styles.birthDateContainer}>
             <Text style={styles.birthDateLabel}>Birth date</Text>
-            <View style={styles.dateInput}>
-              <TextInput style={[styles.input, styles.day]}  onChangeText={day => onChangeText(day)}
-              value={value} />
+           <BirthDatePickerComponent type={'date'} input={date} setInput={setDate} placeholder={'MM-DD-YYYY'}></BirthDatePickerComponent>
+           
+        
+            {/* <View style={styles.dateInput}>
+            <TextInput style={[styles.input, styles.day]} onChangeText={month => onChangeText(month)}
+              value={day} />
               <TextInput style={[styles.input, styles.month]}
               onChangeText={month => onChangeText(month)}
-              value={value} />
+              value={month} />
               <TextInput style={[styles.input, styles.year]}  onChangeText={year => onChangeText(year)}
-              value={value} />
-            </View>
-          </View>
+              value={year} />
+            </View> */}
+         </View>
         </View>
+
         <View style={styles.buttonContainer}>
             <TouchableHighlight style={[styles.button, styles.signUpBtn]} underlayColor = {'#05668D'}  >
                 <Link to="/sign-up-2" underlayColor = {'#05668D'} style={{ height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }}>

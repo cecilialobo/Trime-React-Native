@@ -6,7 +6,10 @@ import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 export default function CircleButton ( { buttonLabel } ) {
         return (
             <View style={styles.circleContainer}>
-               <TouchableHighlight style={{height: 100, width: 100, borderRadius: 50, backgroundColor: '#05668D', alignItems: 'center', justifyContent: 'center'}}>
+               <TouchableHighlight style={{height: 100, width: 100, borderRadius: 50, backgroundColor: '#05668D', alignItems: 'center', justifyContent: 'center'}} 
+                                   activeOpacity={0.4}
+                                   underlayColor="#0574a1" 
+                                   onPress={() => console.log(buttonLabel)}>
                 <Link to="">
                     <Text style={styles.buttonLabel}>{buttonLabel}</Text>
                 </Link>

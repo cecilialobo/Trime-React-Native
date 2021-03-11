@@ -3,12 +3,12 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function SignUp1Input ( { label } ) {
     const [value, onChangeText] = React.useState('');
-
+    
     return (
         <View style={styles.inputContainer}>
             <Text style={styles.label}>{label}</Text>
             <TextInput
-            style={{ height: 44, width: 353, backgroundColor: '#fff', borderRadius: 8 }}
+            style={{ height: 44, width: 353, backgroundColor: '#fff', borderRadius: 8, paddingLeft: 7 }}
             onChangeText={text => onChangeText(text)}
             value={value}
             />
