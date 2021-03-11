@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ScrollView } from 'react-native'
-import { Link } from "react-router-native";
 
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp1Input from '../components/SignUp1Input.js';
@@ -8,15 +7,18 @@ import CircleButton from '../components/CircleButton.js';
 import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
 import BigButton from '../components/BigButton'
+import BdayPicker from '../components/BdayPicker'
 
-import { StyleSheet, Text, View, SafeAreaView, TouchableHighlight, Dimensions, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 const { width, height} = Dimensions.get('window');
 
 export default function SignUp1() {
 
-  const [value, onChangeText] = React.useState('');
   const [ selecedType, setSelectedType ] = useState('')
-
+  const [ day, setDay ] = useState('')
+  const [ month, setMonth ] = useState('')
+  const [ year, setYear ] = useState('')
+  
   
 
     console.log('sign up 1')
@@ -38,7 +40,8 @@ export default function SignUp1() {
           <SignUp1Input label='E-mail address'/>
           <SignUp1Input secureTextEntry={true} label='Password'/>
            <SignUp1Input label='Gender'/>
-          <View style={styles.birthDateContainer}>
+           <BdayPicker day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} />
+          {/* <View style={styles.birthDateContainer}>
             <Text style={styles.birthDateLabel}>Birth date</Text>
             <View style={styles.dateInput}>
               <TextInput style={[styles.input, styles.day]}  onChangeText={day => onChangeText(day)}
@@ -49,7 +52,7 @@ export default function SignUp1() {
               <TextInput style={[styles.input, styles.year]}  onChangeText={year => onChangeText(year)}
               value={value} />
             </View>
-          </View>
+          </View> */}
         </View>
         <BigButton 
               BGColor='#0BD8A7'  
