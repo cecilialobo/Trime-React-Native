@@ -4,12 +4,12 @@ import { StyleSheet, Text, TouchableHighlight } from 'react-native';
 export default function FilterButton({text}) {
 
     return (
-            <TouchableHighlight 
+        <TouchableHighlight 
             style={styles.filterButton} 
             underlayColor="#0BD8A7"
             onPress={() => console.log('Button Pressed')}>
                 <Text style={{color: '#fff', fontSize: 16}}>{text}</Text>
-            </TouchableHighlight>
+        </TouchableHighlight>
     )
 }
 

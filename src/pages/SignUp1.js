@@ -9,8 +9,9 @@ import Shape from '../components/Shape.js';
 import BigButton from '../components/BigButton'
 import BdayPicker from '../components/BdayPicker'
 
-import { StyleSheet, Text, View, Dimensions } from 'react-native';
-const { width, height} = Dimensions.get('window');
+import { StyleSheet, Text, View, Dimensions, TextInput } from 'react-native';
+const { width } = Dimensions.get('window');
+
 
 export default function SignUp1() {
 
@@ -18,18 +19,17 @@ export default function SignUp1() {
   const [ day, setDay ] = useState('')
   const [ month, setMonth ] = useState('')
   const [ year, setYear ] = useState('')
-  
-  
+
 
     console.log('sign up 1')
 
     return (
-        <ScrollView  contentContainerStyle={styles.container}
-          directionalLockEnabled={true} 
-          showsHorizontalScrollIndicator={false}  
-          showsVerticalScrollIndicator={false} >
-      <Emoticons></Emoticons>
-       <LogoSignUp style={styles.logo}/>
+      <ScrollView  contentContainerStyle={styles.container}
+        directionalLockEnabled={true} 
+        showsHorizontalScrollIndicator={false}  
+        showsVerticalScrollIndicator={false} >
+        <Emoticons></Emoticons>
+        <LogoSignUp style={styles.logo}/>
         <Text style={styles.title}>What are you?</Text>
         <View style={styles.circles}>
           <CircleButton buttonLabel='Trainee' selectType={selecedType}></CircleButton>
@@ -62,7 +62,7 @@ export default function SignUp1() {
           />
           
         <Shape style={{zIndex: -100}}></Shape>
-        </ScrollView>
+      </ScrollView>
 
     )
   }
@@ -70,11 +70,10 @@ export default function SignUp1() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1, 
     backgroundColor: '#082D4C',
-    alignItems: 'center', //horizontal 
+    alignItems: 'center', 
     width: width,
-    // height: height,
   },
   logo: {
     marginTop: 76,
@@ -129,7 +128,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
   },
   button: {
-    alignItems: 'center', //horizontal
+    alignItems: 'center', 
     justifyContent: 'center', 
     margin: 10,
     borderRadius: 40,
