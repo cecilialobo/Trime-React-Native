@@ -48,10 +48,8 @@ export default function SignUp2() {
 
         <Text style={styles.textTitle}>How do you want to work out:</Text>
         
-        <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-around', marginTop: 15, marginBottom: 40}}>
-          <WorkOutPlaces place='Virtual'/>
-          <WorkOutPlaces place='In-Person'/>
-        </View>
+    
+        <WorkOutPlaces/>
 
         <BigButton 
               BGColor='#0BD8A7'  
