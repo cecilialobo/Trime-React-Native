@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { FlatList, ScrollView, StyleSheet, Text, View } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+// import { LinearGradient } from 'expo-linear-gradient';
 
 import SelectTrainingType from '../components/SelectTrainingType';
 import SearchBarComponent from '../components/searchBar';
@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
-    // paddingTop: 20,
     alignItems: 'center', 
     justifyContent: 'flex-start',
     width: '100%',

@@ -1,14 +1,12 @@
 
 import React from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { Link } from "react-router-native";
+import { StyleSheet, View, TouchableOpacity } from 'react-native';
 
-import Home from '../../assets/images/menu-icons/Home.svg'
 import Inbox from '../../assets/images/menu-icons/Inbox.svg'
 import Notification from '../../assets/images/menu-icons/Notification.svg'
 
-export default function NotificationIcons ( { BGColor, text, linkTo } ) {
+export default function NotificationIcons () {
 
     return (
         <View style={styles.notificationContainer}>
@@ -17,7 +15,7 @@ export default function NotificationIcons ( { BGColor, text, linkTo } ) {
                 <Notification />
               </Link>
             </TouchableOpacity>
-            
+
             <TouchableOpacity style={[styles.not]}>
               <Link to={'/'}  underlayColor="#082D4C">
                 <Inbox />
@@ -31,7 +29,6 @@ export default function NotificationIcons ( { BGColor, text, linkTo } ) {
 
 const styles = StyleSheet.create({
     notificationContainer: {
-        // width: 100,
         flexDirection: "row",
         alignItems: 'flex-start',
         justifyContent: 'center',
@@ -39,7 +36,6 @@ const styles = StyleSheet.create({
         position: 'absolute',
         right: 30,
         top: 0,
-        // backgroundColor: 'yellow'
       },
       not: {
           height: 30,

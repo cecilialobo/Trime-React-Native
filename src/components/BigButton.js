@@ -1,10 +1,9 @@
 
 import React from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { Link } from "react-router-native";
+import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-// export default function BigButton ( { BGColor, text, linkTo } ) 
+
 export default function BigButton ( { BGColor, UColor, text, linkTo, onPress } ){
 
     return (
