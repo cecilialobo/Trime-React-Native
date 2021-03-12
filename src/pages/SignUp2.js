@@ -15,6 +15,20 @@ const { width } = Dimensions.get('window');
 export default function SignUp2() {
     console.log('sign up 2');
 
+    const setTrainingLevel = (value) => {
+
+      let currentLevel = Math.floor(value * 100);
+      if (currentLevel < 30){ 
+         setLevel('Beginner')
+
+      } else if (currentLevel >=30 && currentLevel < 70) {
+        setLevel('Intermediate')
+
+      } else if (currentLevel >= 70) {
+        setLevel('Pro')
+      }
+    }
+
     return (
 
       <ScrollView contentContainerStyle={{margin:0, padding:0, backgroundColor:'pink'}}
@@ -40,6 +54,8 @@ export default function SignUp2() {
 
           <Slider
             style={{width: 340, height: 40}}
+            value={0.5}
+            onSlidingComplete={(value) => setTrainingLevel(value)}
             minimumValue={0}
             maximumValue={1}
             minimumTrackTintColor='#0BD8A7'
@@ -47,9 +63,9 @@ export default function SignUp2() {
             thumbTintColor='#0BD8A7'
           />
 
-          <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-around'}}>
+          <View style={{flexDirection: 'row', width: 390, justifyContent: 'space-around'}}>
             <Text style={{color: '#fff'}}>Beginner</Text>
-            <Text style={{color: '#fff'}}>Intermediate</Text>
+            <Text style={{color: '#fff', paddingRight: 25}}>Intermediate</Text>
             <Text style={{color: '#fff'}}>Pro</Text>
           </View>
 
