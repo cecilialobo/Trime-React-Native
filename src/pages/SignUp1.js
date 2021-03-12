@@ -6,8 +6,8 @@ import SignUp1Input from '../components/SignUp1Input.js';
 import CircleButton from '../components/CircleButton.js';
 import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
-import BigButton from '../components/BigButton'
-import BdayPicker from '../components/BdayPicker'
+import BigButton from '../components/BigButton.js'
+import BdayPicker from '../components/BdayPicker.js'
 
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
@@ -31,15 +31,16 @@ export default function SignUp1() {
         <LogoSignUp style={styles.logo}/>
         <Text style={styles.title}>What are you?</Text>
         <View style={styles.circles}>
-          <CircleButton buttonLabel='Trainee' selectType={selecedType}></CircleButton>
-          <CircleButton buttonLabel='Trainer' selectType={selecedType}></CircleButton>
+          <CircleButton selectType={selecedType}></CircleButton>
         </View>
+
         <View style={styles.signupContainer}>
           <SignUp1Input label='Full Name'/>
           <SignUp1Input label='E-mail address'/>
           <SignUp1Input secureTextEntry={true} label='Password'/>
            <SignUp1Input label='Gender'/>
            <BdayPicker day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} />
+
         </View>
         <BigButton 
               BGColor='#0BD8A7'  
@@ -70,49 +71,18 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   circles: {
-    flex: 0.2,
+    flex: 0.4,
     flexDirection: 'row',
     justifyContent: 'space-around',
     marginTop: 45,
     width: '70%',
   },
   signupContainer: {
-    flex: 2.8,
+    flex: 3.6,
     flexDirection: 'column',
     marginTop: 15,
   },
-   birthDateContainer: {
-    flexDirection: 'column',
-    marginTop: 16,
-    padding: 20,
-   },
-   birthDateLabel: {
-    color: 'white',
-    padding: 4,
-    fontSize: 13,
-   },
-   dateInput: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-   },
-   input: {
-    backgroundColor: '#fff', 
-    borderRadius: 9,
-    height: 44,
-   },
-   day: {
-     width: 90,
-   },
-   month: {
-    width: 90,
-  },
-  year: {
-    width: 120,
-  },
-  buttonContainer: {
-    flex: 1,
-    justifyContent: 'flex-start',
-  },
+
   button: {
     alignItems: 'center', 
     justifyContent: 'center', 

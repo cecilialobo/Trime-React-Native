@@ -3,7 +3,7 @@ import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function SignUp1Input ( { label } ) {
     const [value, onChangeText] = React.useState('');
-
+    
     return (
         <View style={styles.inputContainer}>
             <Text style={styles.label}>{label}</Text>
