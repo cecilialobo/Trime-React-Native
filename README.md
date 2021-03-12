@@ -19,12 +19,12 @@ Trime is an App that connects trainers and trainees and simplifies the complete 
 3. A deliverable that adds value to the client's current app
 4. Learn and develop skills on UX and Frontend Development
 
-**App Stack**
+**App Stack**  
 React Native (Expo cli)
 
-**Tools**
-Figma
-Miro
-Trello
-Slack
+**Tools**  
+Figma  
+Miro  
+Trello  
+Slack  
 Google Meet
