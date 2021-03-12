@@ -1,28 +1,25 @@
 import React from 'react';
 import Slider from '@react-native-community/slider';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 
+import BigButton from '../components/BigButton'
+import Emoticons from '../components/Emoticons.js';
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp2Input from '../components/SignUp2Input.js';
-import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
-import BigButton from '../components/BigButton'
-
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions } from 'react-native';
 import WorkOutPlaces from '../components/WorkOutPlaces';
 
 const { width } = Dimensions.get('window');
 
 export default function SignUp2() {
-    console.log('sign up 2');
 
     return (
 
-      <ScrollView contentContainerStyle={{margin:0, padding:0, backgroundColor:'pink'}}
+      <ScrollView contentContainerStyle={styles.container}
         directionalLockEnabled={true} 
         showsHorizontalScrollIndicator={false}  
         showsVerticalScrollIndicator={false} >
 
-        <SafeAreaView style={styles.container}>
           <Emoticons></Emoticons>
           <LogoSignUp style={styles.logo}/>
           <Text style={styles.subtitle}>Time to set up your profile</Text>
@@ -66,7 +63,6 @@ export default function SignUp2() {
             />
 
           <Shape></Shape>
-        </SafeAreaView>
       </ScrollView>
     )
   }
@@ -89,7 +85,7 @@ const styles = StyleSheet.create({
   inputBlock: {
     flex: 0.3,
     flexDirection: 'row',
-    paddingLeft: 15,
+    // paddingLeft: 15,
     width: 346
   },
   textTitle: {
