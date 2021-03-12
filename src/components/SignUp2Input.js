@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function SignUp2Input ( { label } ) {
-    const [value, onChangeText] = React.useState('');
+    const [value, onChangeText] = useState('');
 
     return (
         <View style={styles.inputContainer}>

@@ -13,18 +13,24 @@ const { width } = Dimensions.get('window');
 
 export default function SignUp2() {
 
+    const [ level, setLevel ] = useState('Intermediate')
+
     const setTrainingLevel = (value) => {
 
       let currentLevel = Math.floor(value * 100);
       if (currentLevel < 30){ 
-         console.log('Training Level: Beginner')
+         setLevel('Beginner')
 
       } else if (currentLevel >=30 && currentLevel < 70) {
-        console.log('Training Level: Intermediate')
+        setLevel('Intermediate')
 
       } else if (currentLevel >= 70) {
-        console.log('Training Level: Pro')
+        setLevel('Pro')
       }
+    }
+
+    const saveChanges = () => {
+      console.log('Level of Training(2): ' + level)
     }
 
     return (
@@ -40,11 +46,11 @@ export default function SignUp2() {
           
           <View style={styles.inputBlock}>
             <SignUp2Input label='Age:' />
-            <SignUp2Input label='Height:'/>
+            <SignUp2Input label='Height:' />
           </View>
           <View style={styles.inputBlock}>
-            <SignUp2Input label='Gender:'/>
-            <SignUp2Input label='Weight:'/>
+            <SignUp2Input label='Gender:' />
+            <SignUp2Input label='Weight:' />
           </View>
 
           <Text style={styles.textTitle}>Level of training:</Text>
@@ -71,7 +77,7 @@ export default function SignUp2() {
       
           <WorkOutPlaces/>
 
-          <BigButton 
+          <BigButton onPress={saveChanges}
                 BGColor='#0BD8A7'  
                 text='Next' 
                 UColor='#05668D' 
@@ -114,7 +120,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   button: {
-    alignItems: 'center', //horizontal
+    alignItems: 'center', 
     justifyContent: 'center', 
 
     borderRadius: 40,
