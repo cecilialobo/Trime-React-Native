@@ -32,8 +32,7 @@ export default function SignUp1() {
         <LogoSignUp style={styles.logo}/>
         <Text style={styles.title}>What are you?</Text>
         <View style={styles.circles}>
-          <CircleButton buttonLabel='Trainee' selectType={selecedType}></CircleButton>
-          <CircleButton buttonLabel='Trainer' selectType={selecedType}></CircleButton>
+          <CircleButton selectType={selecedType}></CircleButton>
         </View>
 
         <View style={styles.signupContainer}>
