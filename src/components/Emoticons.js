@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { StyleSheet, View } from 'react-native';
 
 import EmojiLeft from '../../assets/images/emoji-left.svg';
@@ -16,7 +15,6 @@ export default function Emoticons () {
 }
 
 const styles = StyleSheet.create({
-
     emoticonContainer: {
         flexDirection: 'row',
         width: '100%',

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-
 import { Text, StyleSheet, View, TextInput, Image } from 'react-native';
 
 export default function SearchBarComponent () {

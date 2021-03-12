@@ -12,7 +12,6 @@ export default function Search() {
     const [searchOptions, setSearchOptions] = useState(true);
     const [searchResults, setSearchResults] = useState(false);
   
-
     return (
       <View style={styles.container}>
         <SearchHeader showButtons={searchResults} />

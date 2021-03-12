@@ -48,7 +48,6 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
     )
   }
  
-
 const styles = StyleSheet.create({
     header: {
         position: 'absolute',

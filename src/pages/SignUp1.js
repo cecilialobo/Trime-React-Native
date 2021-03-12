@@ -12,7 +12,6 @@ import BdayPicker from '../components/BdayPicker'
 import { StyleSheet, Text, View, Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
 
-
 export default function SignUp1() {
 
   const [ selecedType, setSelectedType ] = useState('')

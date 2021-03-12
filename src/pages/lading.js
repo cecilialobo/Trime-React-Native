@@ -34,7 +34,6 @@ export default function Home() {
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -91,5 +90,4 @@ const styles = StyleSheet.create({
   logInBtn: {
     backgroundColor: 'rgba(5,102,141,0.8)',
   }
-
 });

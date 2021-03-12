@@ -13,19 +13,19 @@ export default function CircleButton ( { buttonLabel } ) {
             </View>
           )
         }
-        
-        const styles = StyleSheet.create({
-          circleContainer: {
-            flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center',
-          },
-          buttonLabel: {
-            fontSize: 14,
-            textAlign: 'center',
-            color: 'white',
-            color: '#fff',
-            margin: 10,
-          }
-        })
+           
+const styles = StyleSheet.create({
+    circleContainer: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    buttonLabel: {
+      fontSize: 14,
+      textAlign: 'center',
+      color: 'white',
+      color: '#fff',
+      margin: 10,
+    }
+})
     

@@ -33,8 +33,7 @@ export default function FooterMenu( active ) {
         
         </>
     )
-  }
- 
+} 
 
 const styles = StyleSheet.create({
     footer: {

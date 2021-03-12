@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
-
 export default function DateTimePickerComponent ( { type, input, setInput } ){
 
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);

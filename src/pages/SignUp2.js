@@ -107,7 +107,6 @@ const styles = StyleSheet.create({
   inputBlock: {
     flex: 0.3,
     flexDirection: 'row',
-    // paddingLeft: 15,
     width: 346
   },
   textTitle: {

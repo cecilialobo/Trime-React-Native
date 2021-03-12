@@ -194,9 +194,9 @@ export default function GeneralFeed() {
  
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1, 
     backgroundColor: 'white',
-    alignItems: 'flex-start', //horizontal 
+    alignItems: 'flex-start',  
     width: '100%',
     marginTop: 150,
     marginBottom: 40

@@ -44,7 +44,6 @@ export default function LevelSlider ({ level, setLevel }) {
     )
   }
  
-
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',
