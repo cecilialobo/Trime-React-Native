@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from "react-router-native";
+import { StyleSheet, Dimensions, Text, View, SafeAreaView,TouchableHighlight } from 'react-native';
 
 import LogoLanding from '../../assets/images/logo-landing.svg'
 import LandingImg from '../../assets/images/landing-image.svg' 
 
-import { StyleSheet, Text, View, SafeAreaView,TouchableHighlight } from 'react-native';
+const { width, height } = Dimensions.get('window');
 
 export default function Home() {
 
+ 
     console.log("Landing page");
  
     const signUp = () => {
@@ -20,8 +22,8 @@ export default function Home() {
 
     return (
         <SafeAreaView style={styles.container}>
-          <LandingImg style={styles.landingImg}/>
-            <LogoLanding style={styles.logo}/>
+          <LandingImg style={styles.landingImg} width={width + 100} heigth={height + 100}/>
+            <LogoLanding style={styles.logo} />
               <View style={styles.buttonContainer}>
                 <TouchableHighlight style={[styles.button, styles.signUpBtn]} underlayColor = {'#05668D'} onPress={signUp}>
                   <Link to="/sign-up-1" underlayColor = {'#05668D'} style={{ height: '100%', width: '100%', borderRadius: 40, flex: 1, alignItems: 'center', justifyContent: 'center' }}><Text style={styles.buttonText}>Sign Up</Text></Link>
@@ -35,19 +37,19 @@ export default function Home() {
 
 const styles = StyleSheet.create({
   container: {
-     flex: 1,
+    flex: 1,
     alignItems: 'center', 
-    justifyContent: 'space-between',
-    zIndex: 100,
-    height: '100%',
+    justifyContent: 'space-evenly',
+    zIndex: 9,
+    height: height,
   },
   landingImg: {
     flex: 1,
     position: 'absolute',
-    zIndex: -10,
+    zIndex: 0,
     top: 0,
-    height: null,
-    width: null,
+    height: height + 100,
+    width: width + 100,
     resizeMode: 'stretch',
   },
   logo: {
@@ -55,8 +57,10 @@ const styles = StyleSheet.create({
     zIndex: 10,
   },
   buttonContainer: {
-    position: 'absolute',
-    top: 600,
+    justifyContent: "flex-end",
+    position: "relative",
+    top: '75%',
+    zIndex: 10
   },
   button: {
     alignItems: 'center', 

@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'flex-end',
+        paddingRight: 20,
+
+        width: '60%'
+        
     },
     label: {
         color: '#fff',
