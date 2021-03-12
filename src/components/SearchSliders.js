@@ -44,7 +44,6 @@ export default function SearchSliders ({ text, beginning, middle, end }) {
     )
   }
  
-
 const styles = StyleSheet.create({
     container: {
         justifyContent: 'center',

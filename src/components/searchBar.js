@@ -1,14 +1,5 @@
-// import React in our code
 import React, { useState, useEffect } from 'react';
-
-// import all the components we are going to use
-import {
-  Text,
-  StyleSheet,
-  View,
-  TextInput,
-  Image
-} from 'react-native';
+import { Text, StyleSheet, View, TextInput, Image } from 'react-native';
 
 export default function SearchBarComponent () {
     const [search, setSearch] = useState('');
@@ -28,12 +19,8 @@ export default function SearchBarComponent () {
     }, []);
   
     const searchFilterFunction = (text) => {
-      // Check if searched text is not blank
       if (text) {
-        // Inserted text is not blank
-        // Filter the masterDataSource and update FilteredDataSource
         const newData = masterDataSource.filter(function (item) {
-          // Applying filter for the inserted text in search bar
           const itemData = item.title
             ? item.title.toUpperCase()
             : ''.toUpperCase();
@@ -43,8 +30,6 @@ export default function SearchBarComponent () {
         setFilteredDataSource(newData);
         setSearch(text);
       } else {
-        // Inserted text is blank
-        // Update FilteredDataSource with masterDataSource
         setFilteredDataSource(masterDataSource);
         setSearch(text);
       }
@@ -52,7 +37,6 @@ export default function SearchBarComponent () {
   
     const ItemView = ({ item }) => {
       return (
-        // Flat List Item
         <Text style={styles.itemStyle} onPress={() => getItem(item)}>
           {item.id}
           {'.'}
@@ -63,7 +47,6 @@ export default function SearchBarComponent () {
   
     const ItemSeparatorView = () => {
       return (
-        // Flat List Item Separator
         <View
           style={{
             height: 0.5,
@@ -75,7 +58,6 @@ export default function SearchBarComponent () {
     };
   
     const getItem = (item) => {
-      // Function for click on an item
       alert('Id : ' + item.id + ' Title : ' + item.title);
     };
   
@@ -91,19 +73,12 @@ export default function SearchBarComponent () {
                     placeholder="Search"
                 />
             </View>
-          {/* <FlatList
-            data={filteredDataSource}
-            keyExtractor={(item, index) => index.toString()}
-            ItemSeparatorComponent={ItemSeparatorView}
-            renderItem={ItemView}
-          /> */}
         </View>
     );
   };
   
   const styles = StyleSheet.create({
     container: {
-        // flex: 1,
       backgroundColor: 'white',
       width: '100%',
       paddingHorizontal: 30,

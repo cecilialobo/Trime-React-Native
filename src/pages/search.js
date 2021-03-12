@@ -12,7 +12,6 @@ export default function Search() {
     const [searchOptions, setSearchOptions] = useState(true);
     const [searchResults, setSearchResults] = useState(false);
   
-
     return (
       <View style={styles.container}>
         <SearchHeader showButtons={searchResults} />
@@ -26,7 +25,6 @@ export default function Search() {
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
     flex: 1, 

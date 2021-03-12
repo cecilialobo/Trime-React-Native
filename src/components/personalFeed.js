@@ -1,9 +1,6 @@
-
-import React, { useState } from 'react';
-import { TextInput, SectionList, FlatList } from 'react-native';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import React from 'react';
+import { SectionList, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function PersonalFeed() {
 
@@ -202,9 +199,9 @@ const Item = ({ item }) => (
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1, // takes up the entire screen
+    flex: 1, 
     backgroundColor: 'white',
-    alignItems: 'flex-start', //horizontal 
+    alignItems: 'flex-start', 
     width: '100%',
     marginTop: 150,
     marginBottom: 40
@@ -213,7 +210,6 @@ const styles = StyleSheet.create({
   section: {
     paddingVertical: 5,
     paddingBottom: 10,
-    // marginBottom: 10,
     borderBottomWidth: 4,
     borderBottomColor: '#eeeeee'
   },
@@ -259,18 +255,12 @@ const styles = StyleSheet.create({
     marginTop: 10,
     marginLeft: 10
   },
-  title: {
-    // fontSize: 24
-  },
   status: {
-    // height: 72,
     width: 100,
     alignItems: 'center',
     marginRight: 20
   },
   statusText: {
     fontWeight: 'bold',
-    // fontSize: 20, 
-    // backgroundColor: 'green'
   }
 });

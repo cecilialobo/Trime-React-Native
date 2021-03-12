@@ -9,9 +9,8 @@ import Shape from '../components/Shape.js';
 import BigButton from '../components/BigButton.js'
 import BdayPicker from '../components/BdayPicker.js'
 
-import { StyleSheet, Text, View, Dimensions, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 const { width } = Dimensions.get('window');
-
 
 export default function SignUp1() {
 
@@ -41,21 +40,7 @@ export default function SignUp1() {
           <SignUp1Input secureTextEntry={true} label='Password'/>
            <SignUp1Input label='Gender'/>
            <BdayPicker day={day} setDay={setDay} month={month} setMonth={setMonth} year={year} setYear={setYear} />
-          {/* <View style={styles.birthDateContainer}>
-            <Text style={styles.birthDateLabel}>Birth date</Text>
-           <BirthDatePickerComponent type={'date'} input={date} setInput={setDate} placeholder={'MM-DD-YYYY'}></BirthDatePickerComponent>
-           
-        
-            {/* <View style={styles.dateInput}>
-            <TextInput style={[styles.input, styles.day]} onChangeText={month => onChangeText(month)}
-              value={day} />
-              <TextInput style={[styles.input, styles.month]}
-              onChangeText={month => onChangeText(month)}
-              value={month} />
-              <TextInput style={[styles.input, styles.year]}  onChangeText={year => onChangeText(year)}
-              value={value} />
-            </View>
-          </View> */}
+
         </View>
         <BigButton 
               BGColor='#0BD8A7'  
@@ -70,7 +55,6 @@ export default function SignUp1() {
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
     flex: 1, 

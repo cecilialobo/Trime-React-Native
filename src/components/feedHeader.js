@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 
 import NotificationIcons from './NotificationIcons'
 import LogoFeed  from '../../assets/images/logo-feed.svg';
@@ -48,7 +48,6 @@ export default function FeedHeader( { personal, setPersonal, general, setGeneral
     )
   }
  
-
 const styles = StyleSheet.create({
     header: {
         position: 'absolute',

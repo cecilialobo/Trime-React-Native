@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { Link } from "react-router-native";
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-
 export default function CircleButton () {
   const [isTraineePress, setIsTraineePress] = useState(false);
   const [isTrainerPress, setIsTrainerPress] = useState(false);
@@ -35,7 +34,6 @@ export default function CircleButton () {
         }
     }
   };
-
         return (
             <View style={styles.circleContainer}>
                <TouchableHighlight {...touchTraineeProps}>             
@@ -47,7 +45,7 @@ export default function CircleButton () {
             </View>
           )
         }
-        
+
         const styles = StyleSheet.create({
           circleContainer: {
             flex: 1,
@@ -79,4 +77,3 @@ export default function CircleButton () {
           justifyContent: 'center',
       },
         })
-    

@@ -1,20 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
+
 import React from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import { NativeRouter, Route } from "react-router-native";
+import { StyleSheet, Dimensions, SafeAreaView } from 'react-native';
+
+import Feed from './src/pages/feed'
 import Home from './src/pages/lading'
+import Search from './src/pages/search'
 import SignUp1 from './src/pages/SignUp1'
 import SignUp2 from './src/pages/SignUp2'
 import SignUp3 from './src/pages/SignUp3'
-import Feed from './src/pages/feed'
-import Search from './src/pages/search'
+
+const { width, height } = Dimensions.get('window');
 
 export default function App() {
 
   return (
     <>
-    <NativeRouter style={{width: '100%', height: '100%'}}>
+    <NativeRouter style={{width: width, height: height}}>
       <Route exact path="/" component={Home} />
       <SafeAreaView style={styles.container}>
         <Route path="/sign-up-1" component={SignUp1} />
@@ -34,36 +36,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#082D4C',
     alignItems: 'center', //horizontal
     justifyContent: 'space-between', 
-    overflow: 'scroll',
+    zIndex: -1
   },
-  logo: {
-    marginTop: 125
-  },
-  buttonContainer: {
-    paddingBottom: 125,
-  },
-  button: {
-    alignItems: 'center', //horizontal
-    justifyContent: 'center', 
-
-    paddingVertical: 15,
-    paddingHorizontal: 40,
-    margin: 10,
-
-    borderRadius: 40,
-
-    width: 260,
-    height: 73,
-  },
-  buttonText: {
-    fontSize: 30,
-    color: "white",
-  },
-  signUpBtn: {
-    backgroundColor: '#0BD8A7',
-  },
-  logInBtn: {
-    backgroundColor: '#05668D',
-  }
-
 });

@@ -1,45 +1,64 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Slider from '@react-native-community/slider';
+import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 
+import BigButton from '../components/BigButton'
+import Emoticons from '../components/Emoticons.js';
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
 import SignUp2Input from '../components/SignUp2Input.js';
-import Emoticons from '../components/Emoticons.js';
 import Shape from '../components/Shape.js';
-import BigButton from '../components/BigButton'
-
-import { StyleSheet, Text, View, SafeAreaView, ScrollView, Dimensions } from 'react-native';
 import WorkOutPlaces from '../components/WorkOutPlaces';
 
 const { width } = Dimensions.get('window');
 
 export default function SignUp2() {
-    console.log('sign up 2');
+
+    const [ level, setLevel ] = useState('Intermediate')
+
+    const setTrainingLevel = (value) => {
+
+      let currentLevel = Math.floor(value * 100);
+      if (currentLevel < 30){ 
+         setLevel('Beginner')
+
+      } else if (currentLevel >=30 && currentLevel < 70) {
+        setLevel('Intermediate')
+
+      } else if (currentLevel >= 70) {
+        setLevel('Pro')
+      }
+    }
+
+    const saveChanges = () => {
+      console.log('Level of Training(2): ' + level)
+    }
 
     return (
 
-      <ScrollView contentContainerStyle={{margin:0, padding:0, backgroundColor:'pink'}}
+      <ScrollView contentContainerStyle={styles.container}
         directionalLockEnabled={true} 
         showsHorizontalScrollIndicator={false}  
         showsVerticalScrollIndicator={false} >
 
-        <SafeAreaView style={styles.container}>
           <Emoticons></Emoticons>
           <LogoSignUp style={styles.logo}/>
           <Text style={styles.subtitle}>Time to set up your profile</Text>
           
           <View style={styles.inputBlock}>
             <SignUp2Input label='Age:' />
-            <SignUp2Input label='Height:'/>
+            <SignUp2Input label='Height:' />
           </View>
           <View style={styles.inputBlock}>
-            <SignUp2Input label='Gender:'/>
-            <SignUp2Input label='Weight:'/>
+            <SignUp2Input label='Gender:' />
+            <SignUp2Input label='Weight:' />
           </View>
 
           <Text style={styles.textTitle}>Level of training:</Text>
 
           <Slider
             style={{width: 340, height: 40}}
+            value={0.5}
+            onSlidingComplete={(value) => setTrainingLevel(value)}
             minimumValue={0}
             maximumValue={1}
             minimumTrackTintColor='#0BD8A7'
@@ -47,9 +66,9 @@ export default function SignUp2() {
             thumbTintColor='#0BD8A7'
           />
 
-          <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-around'}}>
+          <View style={{flexDirection: 'row', width: 390, justifyContent: 'space-around'}}>
             <Text style={{color: '#fff'}}>Beginner</Text>
-            <Text style={{color: '#fff'}}>Intermediate</Text>
+            <Text style={{color: '#fff', paddingRight: 25}}>Intermediate</Text>
             <Text style={{color: '#fff'}}>Pro</Text>
           </View>
 
@@ -58,7 +77,7 @@ export default function SignUp2() {
       
           <WorkOutPlaces/>
 
-          <BigButton 
+          <BigButton onPress={saveChanges}
                 BGColor='#0BD8A7'  
                 text='Next' 
                 UColor='#05668D' 
@@ -66,7 +85,6 @@ export default function SignUp2() {
             />
 
           <Shape></Shape>
-        </SafeAreaView>
       </ScrollView>
     )
   }
@@ -89,7 +107,6 @@ const styles = StyleSheet.create({
   inputBlock: {
     flex: 0.3,
     flexDirection: 'row',
-    paddingLeft: 15,
     width: 346
   },
   textTitle: {
@@ -102,7 +119,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-end',
   },
   button: {
-    alignItems: 'center', //horizontal
+    alignItems: 'center', 
     justifyContent: 'center', 
 
     borderRadius: 40,

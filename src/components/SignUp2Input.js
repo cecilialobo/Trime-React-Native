@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View, TextInput } from 'react-native';
 
 export default function SignUp2Input ( { label } ) {
-    const [value, onChangeText] = React.useState('');
+    const [value, onChangeText] = useState('');
 
     return (
         <View style={styles.inputContainer}>
@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+        justifyContent: 'flex-end',
+        paddingRight: 20,
+
+        width: '60%'
+        
     },
     label: {
         color: '#fff',
