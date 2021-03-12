@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Slider from '@react-native-community/slider';
 
 import LogoSignUp  from '../../assets/images/logo-sign-up.svg';
@@ -19,13 +19,13 @@ export default function SignUp2() {
 
       let currentLevel = Math.floor(value * 100);
       if (currentLevel < 30){ 
-         setLevel('Beginner')
+         console.log('Training Level: Beginner')
 
       } else if (currentLevel >=30 && currentLevel < 70) {
-        setLevel('Intermediate')
+        console.log('Training Level: Intermediate')
 
       } else if (currentLevel >= 70) {
-        setLevel('Pro')
+        console.log('Training Level: Pro')
       }
     }
 
