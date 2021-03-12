@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Slider from '@react-native-community/slider';
 import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
 
@@ -12,6 +12,20 @@ import WorkOutPlaces from '../components/WorkOutPlaces';
 const { width } = Dimensions.get('window');
 
 export default function SignUp2() {
+
+    const setTrainingLevel = (value) => {
+
+      let currentLevel = Math.floor(value * 100);
+      if (currentLevel < 30){ 
+         console.log('Training Level: Beginner')
+
+      } else if (currentLevel >=30 && currentLevel < 70) {
+        console.log('Training Level: Intermediate')
+
+      } else if (currentLevel >= 70) {
+        console.log('Training Level: Pro')
+      }
+    }
 
     return (
 
@@ -37,6 +51,8 @@ export default function SignUp2() {
 
           <Slider
             style={{width: 340, height: 40}}
+            value={0.5}
+            onSlidingComplete={(value) => setTrainingLevel(value)}
             minimumValue={0}
             maximumValue={1}
             minimumTrackTintColor='#0BD8A7'
@@ -44,9 +60,9 @@ export default function SignUp2() {
             thumbTintColor='#0BD8A7'
           />
 
-          <View style={{flexDirection: 'row', width: 380, justifyContent: 'space-around'}}>
+          <View style={{flexDirection: 'row', width: 390, justifyContent: 'space-around'}}>
             <Text style={{color: '#fff'}}>Beginner</Text>
-            <Text style={{color: '#fff'}}>Intermediate</Text>
+            <Text style={{color: '#fff', paddingRight: 25}}>Intermediate</Text>
             <Text style={{color: '#fff'}}>Pro</Text>
           </View>
 
