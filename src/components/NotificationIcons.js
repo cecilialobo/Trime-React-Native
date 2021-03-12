@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from "react-router-native";
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
@@ -25,7 +24,6 @@ export default function NotificationIcons () {
         </View>
     )
   }
- 
 
 const styles = StyleSheet.create({
     notificationContainer: {
@@ -44,7 +42,7 @@ const styles = StyleSheet.create({
           padding: 5
       },
       button: {
-        alignItems: 'center', //horizontal
+        alignItems: 'center', 
         justifyContent: 'center', 
     
         paddingVertical: 15,

@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-native";
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-
 export default function BigButton ( { UColor, text, linkTo, onPress } ){
 
     return (
@@ -24,7 +23,6 @@ export default function BigButton ( { UColor, text, linkTo, onPress } ){
     )
   }
  
-
 const styles = StyleSheet.create({
     buttonContainer: {
         flex: 1,

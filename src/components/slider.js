@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Slider from '@react-native-community/slider';
 
-
 export default function LevelSlider ({ level, setLevel }) {
 
     const [value, setValue] = useState(0.5)

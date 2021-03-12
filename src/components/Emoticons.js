@@ -5,7 +5,6 @@ import { StyleSheet, View } from 'react-native';
 import EmojiLeft from '../../assets/images/emoji-left.svg';
 import EmojiRight from '../../assets/images/emoji-right.svg';
 
-
 export default function Emoticons () {
 
     return (

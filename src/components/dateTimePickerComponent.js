@@ -60,7 +60,6 @@ export default function DateTimePickerComponent ( { type, input, setInput } ){
     )
   }
  
-
 const styles = StyleSheet.create({
     inputStyle: {
         width: 167,

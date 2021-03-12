@@ -1,10 +1,8 @@
-
 import React, { useState } from 'react';
-import { StyleSheet, View, Button, TouchableOpacity, Text, Dimensions } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, Text, Dimensions } from 'react-native';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import moment from 'moment';
 
-const { width, height} = Dimensions.get('window');
+const { width, height } = Dimensions.get('window');
 
 export default function BdayPicker ( { day, setDay, month, setMonth, year, setYear } ){
 
@@ -25,10 +23,6 @@ export default function BdayPicker ( { day, setDay, month, setMonth, year, setYe
             ? date = '0' + output.getDate()
             : date = output.getDate();
 
-        // output.getMonth() < 10
-        //     ? month = '0' + (output.getMonth() + 1)
-        //     : month = (output.getMonth() + 1)
-
         if (output.getMonth() + 1 === 1 ) month = 'January'
         else if (output.getMonth()+ 1 === 2 ) month = 'February'
         else if (output.getMonth() + 1 === 3 ) month = 'March'
@@ -47,7 +41,7 @@ export default function BdayPicker ( { day, setDay, month, setMonth, year, setYe
         setMonth(month)
         setYear(year)
 
-        console.log(date + '-' + month + '-' + year);//format: dd-mm-yyyy;
+        console.log(date + '-' + month + '-' + year);
 
         hideDatePicker();
     };
@@ -77,15 +71,12 @@ export default function BdayPicker ( { day, setDay, month, setMonth, year, setYe
     )
   }
  
-
 const styles = StyleSheet.create({
     container: {
         marginTop: 20,
         width: 393, 
         padding: 20,
         paddingRight: 0
-        
-
     },
     inputContainer: {
         flexDirection: 'row',
@@ -108,5 +99,4 @@ const styles = StyleSheet.create({
     text: {
         textAlign: 'center'
     }
-
 });

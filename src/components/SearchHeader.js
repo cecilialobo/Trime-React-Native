@@ -1,11 +1,7 @@
-
-import React, { useState } from 'react';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button, TouchableOpacity } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 import NotificationIcons from './NotificationIcons'
-import LogoFeed  from '../../assets/images/logo-feed.svg';
 
 export default function SearchHeader( { showButtons } ) {
     
@@ -18,36 +14,8 @@ export default function SearchHeader( { showButtons } ) {
         <View style={styles.header}>
             <View style={{flexDirection: 'row', justifyContent: 'center', width: '100%'}}>
                 <Text  style={{marginBottom: 15, color: 'white', fontSize: 30}}>Search</Text>
-                {/* <LogoFeed style={{marginBottom: 15, flex: 1}} /> */}
                 <NotificationIcons />
             </View>
-            {/* <View style={styles.selectFeedBtn}>
-                <>
-                    {
-                        personal && 
-                            <>
-                                <View style={[styles.btn, styles.selected, {right: 0}]}>
-                                    <Text style={[styles.btnText, styles.selected]}>Personal</Text>
-                                </View>
-                                <TouchableOpacity onPress={selectFeed} style={[styles.btn, {left: 0}]}>
-                                    <Text style={[styles.btnText]}>General</Text>
-                                </TouchableOpacity>
-                            </>
-                    }
-                    {
-                        general &&
-                            <>
-                                <TouchableOpacity onPress={selectFeed} style={[styles.btn, {right: 0}]}>
-                                    <Text style={[styles.btnText, {backgroundColor: 'transparent'}]}>Personal</Text>
-                                </TouchableOpacity>
-                                <View style={[styles.btn, styles.selected, {left: 0}]}>
-                                    <Text style={[styles.btnText, styles.selected]}>General</Text>
-                                </View>
-                            </>
-                    }
-                    
-                </>
-            </View> */}
         </View>
     )
   }

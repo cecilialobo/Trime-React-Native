@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { StyleSheet, View } from 'react-native';
 
 import TrainingItem from './TrainingItem'
@@ -82,17 +82,14 @@ export default function SelectTrainingType( { whiteText, selectedTypes, setSelec
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
-    // flex: 1, // takes up the entire screen
     flexDirection: 'row',
     flexWrap: 'wrap',
     width: 414,
     height: 180,
-    // backgroundColor: '#082D4C',
     paddingHorizontal: 25,
-    alignItems: 'flex-start', //horizontal
+    alignItems: 'flex-start',
     justifyContent: "space-evenly", 
   },
   whiteText: {
@@ -115,5 +112,4 @@ const styles = StyleSheet.create({
     backgroundColor: '#05668D',
     marginBottom: 5
   }
-
 });

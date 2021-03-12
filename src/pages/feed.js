@@ -27,7 +27,6 @@ export default function Feed() {
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
     flex: 1, 

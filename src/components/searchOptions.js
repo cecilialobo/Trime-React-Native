@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
-// import { LinearGradient } from 'expo-linear-gradient';
 
 import SelectTrainingType from '../components/SelectTrainingType';
 import SearchBarComponent from '../components/searchBar';
@@ -26,10 +25,6 @@ export default function SearchOptions() {
 
     const Line = () => (
       <View style={styles.line}>
-        {/* <LinearGradient
-          colors={['rgb(237,237,237)', 'transparent']}
-          style={styles.line}
-        /> */}
       </View>
     )
 

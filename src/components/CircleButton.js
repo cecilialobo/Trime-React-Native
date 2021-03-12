@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from "react-router-native";
 import { StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 
-
 export default function CircleButton ( { buttonLabel } ) {
         return (
             <View style={styles.circleContainer}>

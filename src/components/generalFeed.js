@@ -1,9 +1,6 @@
-
-import React, { useState } from 'react';
-import { TextInput, SectionList, FlatList, ListItem } from 'react-native';
-import { NativeRouter, Route, Link } from "react-router-native";
-import { StyleSheet, Text, View, Image, SafeAreaView, TouchableHighlight, Button } from 'react-native';
-import { useDimensions, useDeviceOrientation } from '@react-native-community/hooks';
+import React from 'react';
+import { SectionList, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 export default function GeneralFeed() {
 
@@ -156,7 +153,6 @@ export default function GeneralFeed() {
         }
       ];
 
-
   const ListItem = ({ item }) => {
     return (
       <View key={item.id} style={styles.item}>
@@ -176,7 +172,7 @@ export default function GeneralFeed() {
             sections={DATA}
             keyExtractor={(item, index) => item + index}
             renderItem={({ item, section }) => {
-              return null; // otherwise it renders both horizontally and vertically
+              return null; 
             }}
             renderSectionHeader={({ section }) => (
               <View style={styles.sectionContainer}>
@@ -196,7 +192,6 @@ export default function GeneralFeed() {
     )
   }
  
-
 const styles = StyleSheet.create({
   container: {
     flex: 1, // takes up the entire screen
